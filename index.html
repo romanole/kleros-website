@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kleros - Consulenza Patrimoniale</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/promo-tabs.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/1080');">
+    <div class="hero-content">
+      <h1 class="hero-title">Costruisci, Proteggi, Cresci<br>Il Tuo Patrimonio</h1>
+      <p class="hero-subtitle">Da oltre 20 anni partner di fiducia per la gestione patrimoniale integrata.<br>Consulenza professionale, formazione d'eccellenza e strumenti all'avanguardia.</p>
+      <div class="hero-buttons">
+        <a href="#cta-section" class="cta-button">Richiedi una consulenza</a>
+        <a href="#servizi-principali" class="btn-secondary">Scopri i nostri servizi</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">20+</span>
+          <span class="stat-label">Anni di Esperienza</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Clienti Soddisfatti</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Consulenti Certificati</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating CTA Banner -->
+  <div class="floating-cta">
+    <div class="container">
+      <div class="floating-cta-content">
+        <span class="promo-badge">OFFERTA SPECIALE</span>
+        <p>Prima consulenza gratuita e sconto del 20% sul software myarp@</p>
+        <div class="floating-cta-buttons">
+          <a href="#cta-section" class="btn-primary">Scopri l'Offerta</a>
+          <button class="btn-close"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Servizi Principali Section -->
+  <section id="servizi-principali" class="section features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="pre-heading">I NOSTRI SERVIZI</span>
+        <h2 class="section-title">Soluzioni Complete per il Tuo Patrimonio</h2>
+        <p class="section-subtitle">Un approccio integrato per la gestione e la protezione del tuo patrimonio</p>
+      </div>
+      
+      <div class="features-grid">
+        <!-- Consulenza Patrimoniale -->
+        <div class="feature-card highlight">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="feature-title">Consulenza Patrimoniale</h3>
+          <ul class="feature-list">
+            <li>Analisi completa del patrimonio</li>
+            <li>Pianificazione finanziaria personalizzata</li>
+            <li>Strategie di investimento su misura</li>
+            <li>Protezione e ottimizzazione fiscale</li>
+          </ul>
+          <a href="consulenza.html" class="btn-feature">Scopri la Consulenza</a>
+        </div>
+
+        <!-- Software myarp@ -->
+        <div class="feature-card highlight">
+          <div class="feature-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="feature-title">Software myarp@</h3>
+          <ul class="feature-list">
+            <li>Monitoraggio in tempo reale</li>
+            <li>Analisi avanzata del portafoglio</li>
+            <li>Report personalizzati</li>
+            <li>Integrazione multi-piattaforma</li>
+          </ul>
+          <a href="software.html" class="btn-feature">Prova la Demo</a>
+        </div>
+
+        <!-- Formazione -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="feature-title">Formazione Professionale</h3>
+          <ul class="feature-list">
+            <li>Corsi certificati</li>
+            <li>Workshop specialistici</li>
+            <li>E-learning platform</li>
+            <li>Aggiornamento continuo</li>
+          </ul>
+          <a href="formazione.html" class="btn-feature">Vedi i Corsi</a>
+        </div>
+      </div>
+
+      <div class="features-grid secondary-features">
+        <div class="feature-card small">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="feature-title">Protezione Patrimoniale</h3>
+          <p>Strategie avanzate per la tutela del tuo patrimonio</p>
+        </div>
+        
+        <div class="feature-card small">
+          <div class="feature-icon">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <h3 class="feature-title">Pianificazione Successoria</h3>
+          <p>Soluzioni per un efficiente passaggio generazionale</p>
+        </div>
+        
+        <div class="feature-card small">
+          <div class="feature-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="feature-title">Consulenza Aziendale</h3>
+          <p>Supporto strategico per imprenditori e aziende</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img">
+          <img src="https://picsum.photos/600/400" alt="About Kleros">
+        </div>
+        <div class="about-content">
+          <h3>Chi è Kleros</h3>
+          <p>Fondata da esperti del settore finanziario con oltre 20 anni di esperienza, Kleros è un punto di riferimento per la consulenza patrimoniale in Italia.</p>
+          <p>Il nostro approccio innovativo combina expertise tradizionale con tecnologie all'avanguardia.</p>
+          
+          <ul class="about-list">
+            <li>Consulenti certificati in tutta Italia</li>
+            <li>Software proprietari per analisi finanziaria</li>
+            <li>Formazione continua e certificazioni riconosciute</li>
+            <li>Approccio personalizzato per ogni cliente</li>
+          </ul>
+          
+          <a href="chi-siamo.html" class="cta-button">Scopri di più</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section features">
+    <div class="container">
+      <h2 class="section-title">I Nostri Servizi</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://picsum.photos/500/300?random=1" alt="Consulenza" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Consulenza Patrimoniale</h3>
+            <p class="card-text">Analisi completa della situazione patrimoniale e pianificazione strategica personalizzata.</p>
+            <a href="servizi.html" class="card-link">Scopri di più →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://picsum.photos/500/300?random=2" alt="Software" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Software myarp@</h3>
+            <p class="card-text">Piattaforma avanzata per l'analisi e la gestione integrata del patrimonio.</p>
+            <a href="software.html" class="card-link">Scopri di più →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://picsum.photos/500/300?random=3" alt="Formazione" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Formazione Professionale</h3>
+            <p class="card-text">Corsi e certificazioni per consulenti e professionisti del settore.</p>
+            <a href="formazione.html" class="card-link">Scopri di più →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consulting Benefits Banner -->
+  <section class="section consulting-benefits" style="background-color: var(--primary-color); color: white; padding: 80px 0; margin: 40px 0;">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <span class="pre-heading" style="color: rgba(255, 255, 255, 0.9);">CONSULENZA STRATEGICA</span>
+        <h2 class="section-title" style="color: white;">Proteggi il tuo futuro: i vantaggi della consulenza patrimoniale</h2>
+      </div>
+      <div style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 1.8;">
+        <p style="margin-bottom: 30px; font-size: 1.1em;">
+          Affidarsi a una consulenza patrimoniale strategica è un passo fondamentale per la serenità finanziaria di famiglie e imprese. Questo approccio integrato non solo mira a una gestione efficiente e alla crescita del patrimonio nel tempo, ma offre anche strumenti cruciali per la tutela dei beni aziendali da imprevisti e aggressioni esterne.
+        </p>
+        <p style="margin-bottom: 40px; font-size: 1.1em;">
+          In ottica successoria, una pianificazione mirata si rivela essenziale per garantire un passaggio generazionale sereno e fiscalmente ottimizzato, preservando il valore costruito e prevenendo possibili conflitti futuri tra gli eredi.
+        </p>
+        <div class="hero-buttons" style="justify-content: center;">
+          <a href="consulenza.html" class="cta-button" style="background: white; color: var(--primary-color);">Scopri i nostri servizi di consulenza</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Courses Banner -->
+  <section class="section training-courses" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1920/600?random=10'); background-size: cover; background-position: center; color: white; padding: 80px 0; margin-bottom: 40px; position: relative;">
+    <div class="container">
+      <div class="row" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+          <span class="pre-heading" style="color: rgba(255, 255, 255, 0.9); margin-bottom: 20px; display: block;">FORMAZIONE PROFESSIONALE</span>
+          <h2 class="section-title" style="color: white; margin-bottom: 25px;">Catalogo Corsi 2025</h2>
+          <p style="font-size: 1.1em; margin-bottom: 25px; line-height: 1.6;">
+            Scopri la nostra offerta formativa completa: corsi certificati, workshop specialistici e programmi di aggiornamento professionale per consulenti patrimoniali.
+          </p>
+          <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+            <li style="margin-bottom: 15px; display: flex; align-items: center;">
+              <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+              <span>Corsi certificati con riconoscimento professionale</span>
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center;">
+              <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+              <span>Formazione in aula e piattaforma e-learning</span>
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center;">
+              <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+              <span>Docenti esperti del settore</span>
+            </li>
+          </ul>
+          <div class="hero-buttons">
+            <a href="formazione.html#catalogo" class="cta-button" style="background: var(--primary-color); border: 2px solid var(--primary-color);">Scopri il Catalogo Corsi</a>
+            <a href="formazione.html#calendario" class="btn-secondary" style="border: 2px solid white; color: white;">Calendario Corsi</a>
+          </div>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+            <h3 style="color: white; margin-bottom: 20px;">Prossimi Corsi in Partenza</h3>
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+              <span style="color: var(--primary-color); font-weight: bold;">20 Giugno 2025</span>
+              <h4 style="color: white; margin: 10px 0;">Pianificazione Patrimoniale Avanzata</h4>
+              <p style="color: rgba(255, 255, 255, 0.8);">Corso professionale con certificazione finale</p>
+            </div>
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+              <span style="color: var(--primary-color); font-weight: bold;">5 Luglio 2025</span>
+              <h4 style="color: white; margin: 10px 0;">Gestione del Passaggio Generazionale</h4>
+              <p style="color: rgba(255, 255, 255, 0.8);">Workshop specialistico per professionisti</p>
+            </div>
+            <div>
+              <span style="color: var(--primary-color); font-weight: bold;">15 Luglio 2025</span>
+              <h4 style="color: white; margin: 10px 0;">Finanza Comportamentale</h4>
+              <p style="color: rgba(255, 255, 255, 0.8);">Seminario avanzato con casi pratici</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Software Platform Showcase -->
+  <section class="section software-showcase" style="padding: 80px 0; background: #f8f9fa;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 60px;">
+        <span class="pre-heading">PIATTAFORMA SOFTWARE</span>
+        <h2 class="section-title">myarp@ - Il Tuo Partner Tecnologico</h2>
+        <p class="section-subtitle">Gestione patrimoniale intelligente e analisi avanzata in un'unica piattaforma</p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 60px;">
+        <!-- Platform Preview -->
+        <div style="flex: 1; min-width: 300px;">
+          <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+            <img src="https://picsum.photos/800/600?random=20" alt="myarp@ Platform Interface" style="width: 100%; height: auto; display: block;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);"></div>
+            <div style="position: absolute; bottom: 30px; left: 30px; color: white;">
+              <span style="background: var(--primary-color); padding: 8px 16px; border-radius: 20px; font-size: 0.9em;">Versione 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features List -->
+        <div style="flex: 1; min-width: 300px;">
+          <div class="features-list">
+            <div style="margin-bottom: 30px;">
+              <h3 style="color: var(--primary-color); margin-bottom: 20px; display: flex; align-items: center;">
+                <i class="fas fa-chart-line" style="margin-right: 15px;"></i>
+                Analisi Patrimoniale Completa
+              </h3>
+              <p>Dashboard personalizzabile con visione completa del patrimonio, analisi real-time e reportistica avanzata per decisioni informate.</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+              <h3 style="color: var(--primary-color); margin-bottom: 20px; display: flex; align-items: center;">
+                <i class="fas fa-shield-alt" style="margin-right: 15px;"></i>
+                Sicurezza e Privacy
+              </h3>
+              <p>Massimi standard di sicurezza con crittografia end-to-end e conformità GDPR per la protezione dei dati sensibili.</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+              <h3 style="color: var(--primary-color); margin-bottom: 20px; display: flex; align-items: center;">
+                <i class="fas fa-sync-alt" style="margin-right: 15px;"></i>
+                Integrazione Multi-piattaforma
+              </h3>
+              <p>Sincronizzazione automatica con i principali istituti finanziari e compatibilità con sistemi gestionali esistenti.</p>
+            </div>
+
+            <div class="hero-buttons" style="margin-top: 40px;">
+              <a href="software.html#demo" class="cta-button">Richiedi una Demo</a>
+              <a href="software.html#features" class="btn-secondary">Scopri tutte le funzionalità</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform Statistics -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 60px; text-align: center;">
+        <div style="flex: 1; min-width: 200px; max-width: 250px;">
+          <div style="font-size: 2.5em; font-weight: bold; color: var(--primary-color); margin-bottom: 10px;">5000+</div>
+          <div style="font-size: 1.1em; color: #666;">Utenti Attivi</div>
+        </div>
+        <div style="flex: 1; min-width: 200px; max-width: 250px;">
+          <div style="font-size: 2.5em; font-weight: bold; color: var(--primary-color); margin-bottom: 10px;">€10B+</div>
+          <div style="font-size: 1.1em; color: #666;">Patrimonio Gestito</div>
+        </div>
+        <div style="flex: 1; min-width: 200px; max-width: 250px;">
+          <div style="font-size: 2.5em; font-weight: bold; color: var(--primary-color); margin-bottom: 10px;">99.9%</div>
+          <div style="font-size: 1.1em; color: #666;">Uptime Garantito</div>
+        </div>
+        <div style="flex: 1; min-width: 200px; max-width: 250px;">
+          <div style="font-size: 2.5em; font-weight: bold; color: var(--primary-color); margin-bottom: 10px;">24/7</div>
+          <div style="font-size: 1.1em; color: #666;">Supporto Tecnico</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="section success-stories">
+    <div class="container">
+      <div class="section-header">
+        <span class="pre-heading">TESTIMONIANZE</span>
+        <h2 class="section-title">Le Storie di Successo dei Nostri Clienti</h2>
+        <p class="section-subtitle">Scopri come aiutiamo professionisti e aziende a raggiungere i loro obiettivi</p>
+      </div>
+
+      <!-- Case Studies Slider -->
+      <div class="case-studies-slider">
+        <div class="case-study-card">
+          <div class="case-study-content">
+            <div class="case-study-header">
+              <div class="case-study-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="case-study-meta">
+                <span class="case-study-category">Aziende</span>
+                <h3>Passaggio Generazionale di Successo</h3>
+              </div>
+            </div>
+            <p class="case-study-text">"Grazie alla consulenza Kleros, abbiamo completato con successo il passaggio generazionale della nostra azienda, proteggendo il patrimonio familiare e garantendo continuità al business."</p>
+            <div class="case-study-results">
+              <div class="result-item">
+                <span class="result-number">€15M</span>
+                <span class="result-label">Patrimonio Gestito</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">12</span>
+                <span class="result-label">Mesi di Progetto</span>
+              </div>
+            </div>
+            <div class="client-info">
+              <img src="https://picsum.photos/100/100?random=1" alt="Cliente" class="client-img">
+              <div>
+                <h4 class="client-name">Marco Rossi</h4>
+                <p class="client-position">CEO, Industria Meccanica Rossi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study-card">
+          <div class="case-study-content">
+            <div class="case-study-header">
+              <div class="case-study-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="case-study-meta">
+                <span class="case-study-category">Professionisti</span>
+                <h3>Ottimizzazione Portfolio Clienti</h3>
+              </div>
+            </div>
+            <p class="case-study-text">"Il software myarp@ ha trasformato il mio studio professionale, permettendomi di gestire il patrimonio dei clienti in modo più efficiente e di offrire un servizio di consulenza di altissimo livello."</p>
+            <div class="case-study-results">
+              <div class="result-item">
+                <span class="result-number">+40%</span>
+                <span class="result-label">Efficienza</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">100+</span>
+                <span class="result-label">Clienti Gestiti</span>
+              </div>
+            </div>
+            <div class="client-info">
+              <img src="https://picsum.photos/100/100?random=2" alt="Cliente" class="client-img">
+              <div>
+                <h4 class="client-name">Laura Bianchi</h4>
+                <p class="client-position">Consulente Finanziario Indipendente</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study-card">
+          <div class="case-study-content">
+            <div class="case-study-header">
+              <div class="case-study-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="case-study-meta">
+                <span class="case-study-category">Formazione</span>
+                <h3>Crescita Professionale Certificata</h3>
+              </div>
+            </div>
+            <p class="case-study-text">"I corsi di formazione Kleros mi hanno fornito le competenze necessarie per fare il salto di qualità nella mia professione. La certificazione ottenuta è riconosciuta e apprezzata dai clienti."</p>
+            <div class="case-study-results">
+              <div class="result-item">
+                <span class="result-number">6</span>
+                <span class="result-label">Certificazioni</span>
+              </div>
+              <div class="result-item">
+                <span class="result-number">+65%</span>
+                <span class="result-label">Fatturato</span>
+              </div>
+            </div>
+            <div class="client-info">
+              <img src="https://picsum.photos/100/100?random=3" alt="Cliente" class="client-img">
+              <div>
+                <h4 class="client-name">Giovanni Verdi</h4>
+                <p class="client-position">Wealth Manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promozioni & Novità -->
+  <section class="section promotions-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="pre-heading">OFFERTE SPECIALI</span>
+        <h2 class="section-title">Promozioni & Novità</h2>
+      </div>
+      
+      <div class="promo-tabs">
+        <div class="tab-header">
+          <button class="tab-btn active" data-tab="tab-giugno">Giugno 2025</button>
+          <button class="tab-btn" data-tab="tab-luglio">Luglio 2025</button>
+          <button class="tab-btn" data-tab="tab-agosto">Agosto 2025</button>
+        </div>
+        
+        <div class="tab-content">
+          <!-- Tab Giugno -->
+          <div class="tab-pane active" id="tab-giugno">
+            <div class="promo-grid">
+              <!-- Promo Item 1 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">20</span>
+                  <span class="month">Giugno</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=203" alt="Libro Novità">
+                  <div class="promo-badge">Novità</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">Novità Editoriale: "Il Futuro del Wealth Management"</h3>
+                  <div class="price-tag">
+                    <span class="old-price">€45</span>
+                    <span class="new-price">€36</span>
+                  </div>
+                  <p class="promo-desc">Il nuovo libro che esplora le tendenze e le strategie del wealth management moderno.</p>
+                  <a href="editoria.html" class="btn-promo">Prenota la tua copia</a>
+                </div>
+              </div>
+              
+              <!-- Promo Item 2 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">25</span>
+                  <span class="month">Giugno</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=204" alt="Consulenza Estate">
+                  <div class="promo-badge">Speciale Estate</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">Check-up Patrimoniale Estivo</h3>
+                  <p class="promo-desc">Analisi completa del portafoglio con consulenza personalizzata.</p>
+                  <a href="consulenza.html" class="btn-promo">Prenota ora</a>
+                </div>
+              </div>
+
+              <!-- Promo Item 3 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">30</span>
+                  <span class="month">Giugno</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=207" alt="Collection Libri">
+                  <div class="promo-badge discount">-25%</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">Collection "Gestione Patrimoniale"</h3>
+                  <div class="price-tag">
+                    <span class="old-price">€120</span>
+                    <span class="new-price">€90</span>
+                  </div>
+                  <p class="promo-desc">Set completo di 3 libri sulla gestione patrimoniale avanzata.</p>
+                  <a href="editoria.html" class="btn-promo">Acquista ora</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tab Luglio -->
+          <div class="tab-pane" id="tab-luglio">
+            <div class="promo-grid">
+              <!-- Promo Item 1 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">10</span>
+                  <span class="month">Luglio</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=205" alt="E-book Pack">
+                  <div class="promo-badge discount">-40%</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">E-book Pack "Financial Planning"</h3>
+                  <div class="price-tag">
+                    <span class="old-price">€75</span>
+                    <span class="new-price">€45</span>
+                  </div>
+                  <p class="promo-desc">5 e-book essenziali per la pianificazione finanziaria moderna.</p>
+                  <a href="editoria.html" class="btn-promo">Scarica ora</a>
+                </div>
+              </div>
+              
+              <!-- Promo Item 2 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">15</span>
+                  <span class="month">Luglio</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=206" alt="Software Bundle">
+                  <div class="promo-badge discount">-30%</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">Bundle Software + Formazione</h3>
+                  <div class="price-tag">
+                    <span class="old-price">€2500</span>
+                    <span class="new-price">€1750</span>
+                  </div>
+                  <p class="promo-desc">myarp@ Professional + Corso Avanzato di Analisi Finanziaria.</p>
+                  <a href="software.html" class="btn-promo">Approfitta ora</a>
+                </div>
+              </div>
+
+              <!-- Promo Item 3 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">20</span>
+                  <span class="month">Luglio</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=208" alt="Libro Digital">
+                  <div class="promo-badge">Nuovo</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">Digital Edition: "Blockchain e Patrimoni"</h3>
+                  <p class="promo-desc">Edizione digitale del nuovo libro sulla tecnologia blockchain.</p>
+                  <a href="editoria.html" class="btn-promo">Anteprima Gratuita</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tab Agosto -->
+          <div class="tab-pane" id="tab-agosto">
+            <div class="promo-grid">
+              <!-- Promo Item 1 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">5</span>
+                  <span class="month">Agosto</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=209" alt="Bundle Libri">
+                  <div class="promo-badge discount">-35%</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">Summer Pack "Professional Growth"</h3>
+                  <div class="price-tag">
+                    <span class="old-price">€180</span>
+                    <span class="new-price">€117</span>
+                  </div>
+                  <p class="promo-desc">4 libri + accesso alla piattaforma e-learning per 3 mesi.</p>
+                  <a href="editoria.html" class="btn-promo">Acquista ora</a>
+                </div>
+              </div>
+              
+              <!-- Promo Item 2 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">12</span>
+                  <span class="month">Agosto</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=210" alt="Corso Online">
+                  <div class="promo-badge">Early Bird</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">Corso Online "Risk Management"</h3>
+                  <div class="price-tag">
+                    <span class="old-price">€590</span>
+                    <span class="new-price">€472</span>
+                  </div>
+                  <p class="promo-desc">Prenotazione anticipata per il corso autunnale con il 20% di sconto.</p>
+                  <a href="formazione.html" class="btn-promo">Prenota ora</a>
+                </div>
+              </div>
+
+              <!-- Promo Item 3 -->
+              <div class="promo-item">
+                <div class="promo-date">
+                  <span class="day">20</span>
+                  <span class="month">Agosto</span>
+                </div>
+                <div class="promo-image">
+                  <img src="https://picsum.photos/400/250?random=211" alt="Webinar Series">
+                  <div class="promo-badge">Limited</div>
+                </div>
+                <div class="promo-content">
+                  <h3 class="promo-title">Back to Business Webinar Series</h3>
+                  <p class="promo-desc">Serie di 4 webinar su trend e innovazioni nel wealth management.</p>
+                  <a href="formazione.html" class="btn-promo">Iscriviti ora</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-CTA Banner Section -->
+  <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e50 100%); color: white; padding: 80px 0;">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span class="pre-heading" style="color: rgba(255, 255, 255, 0.9);">INIZIA ORA</span>
+        <h2 class="section-title" style="color: white;">Scopri Tutto Ciò Che Kleros Ha da Offrirti</h2>
+        <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 20px auto;">
+          Scegli il percorso più adatto alle tue esigenze: prova il nostro software all'avanguardia, consulta i nostri esperti o inizia il tuo percorso formativo
+        </p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1200px; margin: 0 auto;">
+        <!-- Software Demo CTA -->
+        <div style="flex: 1; min-width: 300px; background: rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px); text-align: center;">
+          <div style="font-size: 3em; margin-bottom: 20px;">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 style="color: white; margin-bottom: 15px; font-size: 1.5em;">Prova myarp@</h3>
+          <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 25px;">
+            Scopri la potenza del nostro software con una demo gratuita di 30 giorni. Analisi avanzate, reportistica professionale e gestione integrata.
+          </p>
+          <a href="software.html#demo" class="cta-button" style="background: white; color: var(--primary-color); width: 100%; margin-top: auto;">
+            Attiva Demo Gratuita
+          </a>
+        </div>
+
+        <!-- Consulenza CTA -->
+        <div style="flex: 1; min-width: 300px; background: rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px); text-align: center;">
+          <div style="font-size: 3em; margin-bottom: 20px;">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 style="color: white; margin-bottom: 15px; font-size: 1.5em;">Consulenza Personalizzata</h3>
+          <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 25px;">
+            Incontra i nostri esperti per un'analisi completa della tua situazione patrimoniale e ricevi consulenza su misura per i tuoi obiettivi.
+          </p>
+          <a href="consulenza.html#richiedi" class="cta-button" style="background: white; color: var(--primary-color); width: 100%; margin-top: auto;">
+            Richiedi Consulenza
+          </a>
+        </div>
+
+        <!-- Formazione CTA -->
+        <div style="flex: 1; min-width: 300px; background: rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px); text-align: center;">
+          <div style="font-size: 3em; margin-bottom: 20px;">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 style="color: white; margin-bottom: 15px; font-size: 1.5em;">Formazione Professionale</h3>
+          <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 25px;">
+            Accedi ai nostri corsi certificati e workshop specialistici. Sviluppa le competenze necessarie per eccellere nel settore.
+          </p>
+          <a href="formazione.html#catalogo" class="cta-button" style="background: white; color: var(--primary-color); width: 100%; margin-top: auto;">
+            Scopri i Corsi
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contattaci</h2>
+      <div class="service-cards-container">
+        <div class="service-card">
+          <div class="card-content">
+            <h3 class="card-title">Richiesta Informazioni</h3>
+            <p class="card-text">Hai domande sui nostri servizi? Compila il modulo e ti contatteremo al più presto.</p>
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Il tuo nome" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="La tua email" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <select name="richiesta_info_argomento" class="form-input">
+                  <option value="" disabled selected>Seleziona argomento...</option>
+                  <option value="consulenza">Consulenza Finanziaria</option>
+                  <option value="formazione">Corsi di Formazione</option>
+                  <option value="software">Software MyARP@</option>
+                  <option value="editoria">Editoria (Libri/Manuali)</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="5" placeholder="Il tuo messaggio..." class="form-input"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Invia Richiesta</button>
+            </form>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card-content">
+            <h3 class="card-title">Proponi una Collaborazione</h3>
+            <p class="card-text">Sei interessato a collaborare con noi? Raccontaci la tua proposta e saremo felici di valutarla.</p>
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Nome Referente / Azienda" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email di contatto" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <select name="collaborazione_tipo" class="form-input">
+                  <option value="" disabled selected>Tipo di collaborazione...</option>
+                  <option value="consulente">Diventa Consulente Kleros</option>
+                  <option value="partnership">Partnership Commerciale</option>
+                  <option value="contenuti">Proposta Contenuti/Docenza</option>
+                  <option value="altro">Altra Proposta</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="5" placeholder="Descrivi la tua proposta..." class="form-input"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Invia Proposta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Kleros</h3>
+          <ul class="footer-links">
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="consulenza.html">Consulenza</a></li>
+            <li><a href="software.html">Prodotti</a></li>
+            <li><a href="consulenti.html">Consulenti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Risorse</h3>
+          <ul class="footer-links">
+            <li><a href="formazione.html">Formazione</a></li>
+            <li><a href="editoria.html">Editoria</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">Termini di Servizio</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contatti</h3>
+          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
+          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
+          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <script>
+    // Initialize the map
+    var map = L.map('map').setView([45.4642, 9.1900], 6);  // Centered on Italy
+    
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add markers for main offices
+    var offices = [
+      {
+        lat: 45.4642,
+        lng: 9.1900,
+        title: "Sede Milano",
+        address: "Via Roma 123, Milano"
+      },
+      {
+        lat: 41.9028,
+        lng: 12.4964,
+        title: "Sede Roma",
+        address: "Via Nazionale 45, Roma"
+      },
+      {
+        lat: 45.0703,
+        lng: 7.6869,
+        title: "Sede Torino",
+        address: "Corso Vittorio Emanuele II 82, Torino"
+      }
+    ];
+
+    offices.forEach(function(office) {
+      L.marker([office.lat, office.lng])
+        .bindPopup('<strong>' + office.title + '</strong><br>' + office.address)
+        .addTo(map);
+    });
+  </script>
+  
+  <!-- Tabs JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab Navigation
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+      
+      if (tabButtons.length > 0) {
+        tabButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all tab panes
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            
+            // Show the selected tab pane
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+          });
+        });
+      }
+      
+      // Animate promo items on scroll
+      const promoItems = document.querySelectorAll('.promo-item');
+      
+      function checkPromoItemsVisibility() {
+        promoItems.forEach((item, index) => {
+          const itemTop = item.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (itemTop < windowHeight - 100) {
+            // Add delay based on index for staggered animation
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * 150);
+          }
+        });
+      }
+      
+      // Add visible class to the items
+      promoItems.forEach(item => {
+        item.classList.add('animate-on-scroll');
+      });
+      
+      // Initial check
+      checkPromoItemsVisibility();
+      
+      // Check on scroll
+      window.addEventListener('scroll', checkPromoItemsVisibility);
+    });
+  </script>
+</body>
+</html>

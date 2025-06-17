@@ -1,0 +1,48 @@
+# Requisiti Immagini Sito Kleros
+
+## Immagini Team (400x500px)
+/img/team/team-doria.jpg - Foto di Massimo Doria - Visualizzata nella pagina Chi Siamo, sezione team
+/img/team/team-fuolega.jpg - Foto di Gianni Fuolega - Visualizzata nella pagina Chi Siamo, sezione team
+/img/team/team-perini.jpg - Foto di Massimo Perini - Visualizzata nella pagina Chi Siamo, sezione team
+/img/team/team-boscolo.jpg - Foto di Martina Boscolo - Visualizzata nella pagina Chi Siamo, sezione team
+/img/team/team-cigna.jpg - Foto di Giulia Cigna - Visualizzata nella pagina Chi Siamo, sezione team
+/img/team/team-doria-martina.jpg - Foto di Martina Doria - Visualizzata nella pagina Chi Siamo, sezione team
+/img/team/team-boscarato.jpg - Foto di Elisa Boscarato - Visualizzata nella pagina Chi Siamo, sezione team
+/img/team/team-rossetti.jpg - Foto di Gloria Rossetti - Visualizzata nella pagina Chi Siamo, sezione team
+/img/team/team-elia.jpg - Foto di Tommaso Elia - Visualizzata nella pagina Chi Siamo, sezione team
+
+## Immagini Servizi (800x600px)
+/img/servizi/servizio-successorio.jpg - Immagine rappresentativa pianificazione successoria - Visualizzata nella pagina Servizi
+/img/servizi/servizio-aziende.jpg - Immagine rappresentativa passaggio generazionale aziendale - Visualizzata nella pagina Servizi
+/img/servizi/servizio-famiglia.jpg - Immagine rappresentativa tutela personale e familiare - Visualizzata nella pagina Servizi
+/img/servizi/servizio-previdenza.jpg - Immagine rappresentativa tutela previdenziale - Visualizzata nella pagina Servizi
+/img/servizi/servizio-tutela.jpg - Immagine rappresentativa tutela patrimoniale - Visualizzata nella pagina Servizi
+
+## Screenshot Software (1200x800px)
+/img/software/software.jpg - Screenshot panoramica principale myarp@ - Visualizzato nella pagina Software, sezione overview
+/img/software/myarpa-anonimo.jpg - Screenshot funzionalità anonimizzazione - Visualizzato nella pagina Software, sezione features
+/img/software/myarpa-dettaglio.jpg - Screenshot vista dettaglio - Visualizzato nella pagina Software, sezione features
+/img/software/myarpa-ai.jpg - Screenshot funzionalità AI - Visualizzato nella pagina Software, sezione features
+
+## Loghi Partner (300x200px)
+/img/partner/partner-1.png - Logo partner 1 - Visualizzato nella pagina Chi Siamo, sezione partner
+/img/partner/partner-2.png - Logo partner 2 - Visualizzato nella pagina Chi Siamo, sezione partner
+/img/partner/partner-3.png - Logo partner 3 - Visualizzato nella pagina Chi Siamo, sezione partner
+
+## Immagini Hero (1920x600px)
+/img/hero/storia-kleros.jpg - Immagine storia aziendale - Visualizzata nella pagina Chi Siamo, header
+/img/hero/hero-consulenza.jpg - Immagine header consulenza - Visualizzata nella pagina Consulenza, header
+/img/hero/hero-servizi.jpg - Immagine header servizi - Visualizzata nella pagina Servizi, header
+/img/hero/hero-software.jpg - Immagine header software - Visualizzata nella pagina Software, header
+
+## Immagini Blog (800x500px)
+/img/blog/blog-1.jpg - Immagine articolo 1 - Visualizzata nella pagina News
+/img/blog/blog-2.jpg - Immagine articolo 2 - Visualizzata nella pagina News
+
+Note:
+- Tutte le immagini devono essere ottimizzate per il web (formato JPG o PNG con compressione ottimale)
+- Le foto del team dovrebbero essere su sfondo neutro e professionale
+- I loghi partner devono avere sfondo trasparente (formato PNG)
+- Le immagini hero devono essere sufficientemente larghe per coprire l'intera larghezza della pagina
+- Le immagini dei servizi dovrebbero essere coerenti nello stile e rappresentative del servizio
+- Gli screenshot del software devono essere nitidi e mostrar chiaramente le funzionalità

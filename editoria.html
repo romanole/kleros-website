@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  <title>Editoria - Kleros</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/promo-tabs.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('https://picsum.photos/1920/600?grayscale&blur=2'); height: 50vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Editoria</h1>
+      <p class="hero-subtitle">Libri, manuali e pubblicazioni per approfondire la tua conoscenza finanziaria.</p>
+    </div>
+  </section>
+  <!-- Pubblicazioni Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Libri & Manuali</h2>
+      <p style="text-align:center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Esplora il nostro catalogo editoriale dedicato a finanza personale, investimenti, pianificazione successoria e molto altro. Trova le risorse giuste per accrescere le tue competenze.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://picsum.photos/500/300?random=1" alt="Guida Finanza Personale" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Guida Completa alla Finanza Personale</h3>
+            <p class="card-text">Un manuale pratico per gestire al meglio le tue finanze quotidiane, dal bilancio familiare agli investimenti a lungo termine.</p>
+            <p><strong>Tematiche:</strong> Finanza personale, Budgeting, Risparmio.</p>
+            <a href="contatti.html?prodotto=guida-finanza-personale" class="btn-primary">Acquista Online</a>
+            <a href="#" class="btn-secondary">Leggi Anteprima</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="https://picsum.photos/500/300?random=2" alt="Investimenti" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Investimenti Intelligenti per il Futuro</h3>
+            <p class="card-text">Scopri le strategie di investimento più efficaci per costruire un portafoglio solido e raggiungere i tuoi obiettivi finanziari.</p>
+            <p><strong>Tematiche:</strong> Investimenti, Mercati finanziari, Gestione del portafoglio.</p>
+            <a href="contatti.html?prodotto=investimenti-intelligenti" class="btn-primary">Acquista Online</a>
+            <a href="#" class="btn-secondary">Leggi Anteprima</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="https://picsum.photos/500/300?random=3" alt="Pianificazione Successoria" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Pianificazione Successoria Senza Stress</h3>
+            <p class="card-text">Una guida essenziale per affrontare la pianificazione successoria con serenità e consapevolezza.</p>
+            <p><strong>Tematiche:</strong> Successione, Diritto di famiglia, Pianificazione patrimoniale.</p>
+            <a href="contatti.html?prodotto=pianificazione-successoria" class="btn-primary">Acquista Online</a>
+            <a href="#" class="btn-secondary">Leggi Anteprima</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Recensioni e Anteprime Section -->
+  <section class="section features">
+    <div class="container">
+      <h2 class="section-title">Recensioni e Anteprime</h2>
+      <p style="text-align:center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Leggi cosa dicono i nostri lettori e sfoglia le anteprime dei nostri bestseller.</p>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Un libro essenziale per chi vuole pianificare il proprio futuro finanziario. L'ho trovato incredibilmente utile e pratico."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-img">
+              <img src="https://picsum.photos/100/100?random=1" alt="Marco R.">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>Marco R.</h4>
+              <p>Imprenditore</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Ho apprezzato molto l'approccio pratico e le soluzioni concrete presentate. Un'ottima guida per chi vuole proteggere il proprio patrimonio."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-img">
+              <img src="https://picsum.photos/100/100?random=2" alt="Giulia M.">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>Giulia M.</h4>
+              <p>Consulente Fiscale</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Finalmente un libro che spiega in modo semplice come gestire la pianificazione successoria. Lo consiglio vivamente."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-img">
+              <img src="https://picsum.photos/100/100?random=3" alt="Andrea B.">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>Andrea B.</h4>
+              <p>Professionista</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title">Richiedi Informazioni</h2>
+      <p style="max-width: 700px; margin: 0 auto 2rem;">
+        Vuoi saperne di più sulle nostre pubblicazioni o ricevere un estratto gratuito? Contattaci subito!
+      </p>
+      <a href="contatti.html" class="cta-button">Contattaci</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Kleros</h3>
+          <ul class="footer-links">
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="consulenza.html">Consulenza</a></li>
+            <li><a href="prodotti.html">Prodotti</a></li>
+            <li><a href="consulenti.html">Consulenti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Risorse</h3>
+          <ul class="footer-links">
+            <li><a href="formazione.html">Formazione</a></li>
+            <li><a href="editoria.html">Editoria</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">Termini di Servizio</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contatti</h3>
+          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
+          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
+          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Area Riservata - Kleros</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/promo-tabs.css">
+  <style>
+    :root {
+      --primary-color: #0787A5;
+      --secondary-color: #D8E7EB;
+      --text-color: #333;
+      --font-main: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-color);
+      line-height: 1.6;
+      background-color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      display: flex; /* Added for vertical alignment of image */
+      align-items: center; /* Added for vertical alignment of image */
+    }
+
+    .logo-img {
+      height: 40px; 
+      width: auto;
+      vertical-align: middle;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    .cta-button {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(7, 135, 165, 0.3);
+    }
+
+    .cta-button:hover {
+      background: #57A6C3;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
+
+    .hero-section {
+      background: url('https://picsum.photos/1920/600 ') no-repeat center center/cover;
+      height: auto;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      padding: 2rem;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    }
+
+    .login-box {
+      max-width: 500px;
+      margin: 4rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 1rem;
+    }
+
+    .login-box input[type="email"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .login-box button {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(7, 135, 165, 0.3);
+    }
+
+    .login-box button:hover {
+      background: #57A6C3;
+    }
+
+    .login-box p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccc;
+      margin: 0 1rem;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo"><img src="logo.png" alt="Kleros Logo" class="logo-img"></div>
+      <nav id="main-nav">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="prodotti.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+          <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy Policy & Termini di Servizio</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Area Riservata Consulenti</h1>
+      <p>Accedi ai tuoi strumenti, materiali formativi e report commissioni.</p>
+    </div>
+  </section>
+
+  <!-- Login Box -->
+  <section>
+    <div class="login-box">
+      <h2>Accedi all'Area Riservata</h2>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Accedi</button>
+        <p><a href="#">Hai dimenticato la password?</a></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Sezione Utente Loggato -->
+  <section style="text-align: center; padding: 4rem 2rem;">
+    <h2 class="section-title">Ciao Marco! Benvenuto nell'Area Riservata</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 2rem auto;">
+      <div style="background:white; padding:1.5rem; border-radius:10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <h3>Materiali Formativi</h3>
+        <p>Scarica guide, presentazioni e modelli per supportarti nella consulenza.</p>
+        <a href="#" style="color: var(--primary-color);">Vai ai materiali →</a>
+      </div>
+      <div style="background:white; padding:1.5rem; border-radius:10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <h3>Report Commissioni</h3>
+        <p>Consulta le tue prestazioni e guadagni mensili.</p>
+        <a href="#" style="color: var(--primary-color);">Visualizza report →</a>
+      </div>
+      <div style="background:white; padding:1.5rem; border-radius:10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <h3>Comunicazioni Interne</h3>
+        <p>Aggiornamenti, novità e comunicazioni dirette dal team Kleros.</p>
+        <a href="#" style="color: var(--primary-color);">Leggi comunicazioni →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a> | <a href="#">Termini di Servizio</a></p>
+    <p>Email: info@kleros.it | Telefono: +39 02 12345678</p>
+    <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-nav").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

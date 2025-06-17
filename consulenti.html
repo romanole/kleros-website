@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consulenti - Kleros</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+          <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy Policy & Termini di Servizio</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('https://picsum.photos/1920/600'); height: 50vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Rete Nazionale di Consulenti Esperti</h1>
+      <p class="hero-subtitle">Trova il tuo consulente più vicino e fissa un appuntamento oggi stesso.</p>
+    </div>
+  </section>
+
+  <!-- Mappa Interattiva -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Mappa dei Consulenti</h2>
+      <div class="filter-container">
+        <select class="filter-select">
+          <option value="">Seleziona Regione</option>
+          <option value="nord">Nord Italia</option>
+          <option value="centro">Centro Italia</option>
+          <option value="sud">Sud Italia</option>
+        </select>
+        <select class="filter-select">
+          <option value="">Specializzazione</option>
+          <option value="finanza">Finanza Personale</option>
+          <option value="successione">Pianificazione Successoria</option>
+          <option value="rischio">Risk Management</option>
+        </select>
+        <button class="filter-btn">Filtra</button>
+      </div>
+      <div class="map-placeholder">
+        Mappa Interattiva Geolocalizzata (placeholder)
+      </div>
+    </div>
+  </section>
+
+  <!-- Profili Consulenti -->
+  <section class="section features">
+    <div class="container">
+      <h2 class="section-title">I Nostri Consulenti</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://picsum.photos/200/200?random=1" alt="Dott. Mario Rossi" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Dott. Mario Rossi</h3>
+            <p class="card-text">Specializzato in Pianificazione Successoria, Roma</p>
+            <p><i class="fas fa-star" style="color: gold;"></i> Recensioni: 4.8</p>
+            <a href="contatti.html" class="cta-button">Prenota Appuntamento</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://picsum.photos/200/200?random=2" alt="Avv. Laura Bianchi" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Avv. Laura Bianchi</h3>
+            <p class="card-text">Finanza Aziendale, Milano</p>
+            <p><i class="fas fa-star" style="color: gold;"></i> Recensioni: 4.5</p>
+            <a href="contatti.html" class="cta-button">Prenota Appuntamento</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://picsum.photos/200/200?random=3" alt="Ing. Marco Verdi" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Ing. Marco Verdi</h3>
+            <p class="card-text">Risk Management, Torino</p>
+            <p><i class="fas fa-star" style="color: gold;"></i> Recensioni: 4.7</p>
+            <a href="contatti.html" class="cta-button">Prenota Appuntamento</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonianze -->
+  <section class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">Cosa Dicono i Clienti</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Il Dott. Rossi mi ha aiutato a pianificare la successione aziendale in modo estremamente professionale. Consigliato!"</p>
+          <div class="client-info">
+            <img src="https://picsum.photos/100/100?random=4" alt="Cliente" class="client-img">
+            <div>
+              <h4 class="client-name">Giuseppe Esposito</h4>
+              <p class="client-position">Imprenditore</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"L'Avv. Bianchi ha una preparazione eccezionale. Ha ristrutturato completamente il mio portafoglio finanziario con risultati notevoli."</p>
+          <div class="client-info">
+            <img src="https://picsum.photos/100/100?random=5" alt="Cliente" class="client-img">
+            <div>
+              <h4 class="client-name">Francesca Neri</h4>
+              <p class="client-position">Medico</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"L'approccio dell'Ing. Verdi alla valutazione dei rischi finanziari è stato illuminante. Professionalità e competenza."</p>
+          <div class="client-info">
+            <img src="https://picsum.photos/100/100?random=6" alt="Cliente" class="client-img">
+            <div>
+              <h4 class="client-name">Antonio Russo</h4>
+              <p class="client-position">Dirigente</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Finale -->
+  <section class="section" style="text-align: center;">
+    <div class="container">
+      <h2 class="section-title">Non hai ancora trovato il tuo consulente ideale?</h2>
+      <p style="max-width: 700px; margin: 0 auto 2rem;">Ti aiutiamo a trovare il professionista più adatto alle tue esigenze specifiche.</p>
+      <a href="contatti.html" class="cta-button">Contattaci</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Kleros</h3>
+          <ul class="footer-links">
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="consulenza.html">Consulenza</a></li>
+            <li><a href="prodotti.html">Prodotti</a></li>
+            <li><a href="consulenti.html">Consulenti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Risorse</h3>
+          <ul class="footer-links">
+            <li><a href="formazione.html">Formazione</a></li>
+            <li><a href="editoria.html">Editoria</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">Termini di Servizio</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contatti</h3>
+          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
+          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
+          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

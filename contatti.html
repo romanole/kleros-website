@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contatti - Kleros</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/promo-tabs.css">
+  <style>
+    #map {
+      height: 500px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .consultant-filters {
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .consultant-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .consultant-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .consultant-info {
+      flex: 1;
+    }
+    .consultant-specialties {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 0.5rem 0;
+    }
+    .specialty-tag {
+      background: var(--light-bg);
+      color: var(--primary-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+    }
+    .rating {
+      color: #ffd700;
+      margin: 0.5rem 0;
+    }
+    .consultants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('https://picsum.photos/1920/600?grayscale&blur=2'); height: 50vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Contattaci</h1>
+      <p class="hero-subtitle">Hai domande o desideri fissare un appuntamento? Siamo qui per aiutarti.</p>
+      <div class="hero-buttons">
+        <a href="#richiesta-info" class="cta-button">Richiedi Informazioni</a>
+        <a href="#faq" class="btn-secondary">Domande Frequenti</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Network dei Consulenti -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Network dei Consulenti</h2>
+        <p class="section-subtitle">Trova il professionista più vicino a te</p>
+      </div>
+
+      <!-- Filtri Consulenti -->
+      <div class="consultant-filters">
+        <select class="filter-select" id="region-filter">
+          <option value="">Tutte le regioni</option>
+          <option value="lombardia">Lombardia</option>
+          <option value="piemonte">Piemonte</option>
+          <option value="veneto">Veneto</option>
+          <option value="lazio">Lazio</option>
+          <option value="toscana">Toscana</option>
+        </select>
+        <select class="filter-select" id="profession-filter">
+          <option value="">Tutte le professioni</option>
+          <option value="avvocato">Avvocato</option>
+          <option value="commercialista">Commercialista</option>
+          <option value="consulente-finanziario">Consulente Finanziario</option>
+          <option value="agente-assicurativo">Agente Assicurativo</option>
+        </select>
+        <select class="filter-select" id="specialty-filter">
+          <option value="">Tutte le specializzazioni</option>
+          <option value="successioni">Successioni e Trust</option>
+          <option value="pianificazione">Pianificazione Patrimoniale</option>
+          <option value="fiscale">Consulenza Fiscale</option>
+          <option value="finanza">Finanza Personale</option>
+        </select>
+        <button class="filter-btn" id="filter-btn">
+          <i class="fas fa-filter"></i> Applica Filtri
+        </button>
+      </div>
+
+      <!-- Mappa e Lista Consulenti -->
+      <div class="about-grid">
+        <div class="about-content">
+          <!-- Mappa Interattiva -->
+          <div id="map"></div>
+        </div>
+        
+        <!-- Lista Consulenti Filtrata -->
+        <div class="consultants-grid">
+          <div class="consultant-card">
+            <img src="https://picsum.photos/100/100?random=1" alt="Dott. Marco Rossi" class="consultant-avatar">
+            <div class="consultant-info">
+              <h3>Dott. Marco Rossi</h3>
+              <p class="consultant-location"><i class="fas fa-map-marker-alt"></i> Milano, Lombardia</p>
+              <div class="consultant-specialties">
+                <span class="specialty-tag">Commercialista</span>
+                <span class="specialty-tag">Pianificazione Patrimoniale</span>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.5/5 - 28 recensioni)</span>
+              </div>
+              <p>15+ anni di esperienza in consulenza fiscale e pianificazione patrimoniale.</p>
+              <a href="#" class="btn-secondary">Visualizza Profilo</a>
+            </div>
+          </div>
+
+          <div class="consultant-card">
+            <img src="https://picsum.photos/100/100?random=2" alt="Avv. Laura Bianchi" class="consultant-avatar">
+            <div class="consultant-info">
+              <h3>Avv. Laura Bianchi</h3>
+              <p class="consultant-location"><i class="fas fa-map-marker-alt"></i> Torino, Piemonte</p>
+              <div class="consultant-specialties">
+                <span class="specialty-tag">Avvocato</span>
+                <span class="specialty-tag">Successioni</span>
+                <span class="specialty-tag">Trust</span>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(5/5 - 32 recensioni)</span>
+              </div>
+              <p>Specializzata in diritto successorio e trust con 20 anni di esperienza.</p>
+              <a href="#" class="btn-secondary">Visualizza Profilo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Sedi e Contatti -->
+      <div class="contact-info mt-4">
+        <h3>Sedi Kleros</h3>
+        <div class="contact-locations">
+          <div class="contact-location">
+            <h4>Sede Legale</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Via Monte Napoleone 8<br />20121 Milano (MI)</p>
+          </div>
+          <div class="contact-location">
+            <h4>Sede Operativa Principale</h4>
+            <p><i class="fas fa-building"></i> Corso Vittorio Emanuele II, 15<br />10123 Torino (TO)</p>
+          </div>
+        </div>
+        
+        <h3 class="mt-4">Contatti Diretti</h3>
+        <ul class="about-list">
+          <li><i class="fas fa-phone"></i> <strong>Telefono:</strong> +39 02 12345678</li>
+          <li><i class="fas fa-envelope"></i> <strong>Email:</strong> info@kleros.it</li>
+          <li><i class="fas fa-clock"></i> <strong>Orari:</strong> Lunedì-Venerdì 9:00-18:00</li>
+        </ul>
+        
+        <div class="social-links mt-4">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form di Contatto -->
+  <section class="section features" id="richiesta-info">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Moduli di Contatto</h2>
+        <p class="section-subtitle">Compila il modulo pi� adatto alle tue esigenze</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="card-content">
+            <h3 class="card-title">Richiesta Informazioni</h3>
+            <p class="card-text">Hai domande sui nostri servizi? Compila il modulo e ti contatteremo al pi� presto.</p>
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Il tuo nome" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="La tua email" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <select name="richiesta_info_argomento" class="form-input">
+                  <option value="" disabled selected>Seleziona argomento...</option>
+                  <option value="consulenza">Consulenza Finanziaria</option>
+                  <option value="formazione">Corsi di Formazione</option>
+                  <option value="software">Software MyARP@</option>
+                  <option value="editoria">Editoria (Libri/Manuali)</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="5" placeholder="Il tuo messaggio..." class="form-input"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Invia Richiesta</button>
+            </form>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card-content">
+            <h3 class="card-title">Proponi una Collaborazione</h3>
+            <p class="card-text">Sei interessato a collaborare con noi? Raccontaci la tua proposta e saremo felici di valutarla.</p>
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Nome Referente / Azienda" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email di contatto" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <select name="collaborazione_tipo" class="form-input">
+                  <option value="" disabled selected>Tipo di collaborazione...</option>
+                  <option value="consulente">Diventa Consulente Kleros</option>
+                  <option value="partnership">Partnership Commerciale</option>
+                  <option value="contenuti">Proposta Contenuti/Docenza</option>
+                  <option value="altro">Altra Proposta</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="5" placeholder="Descrivi la tua proposta..." class="form-input"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Invia Proposta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Domande Frequenti (FAQ)</h2>
+        <p class="section-subtitle">Risposte alle domande pi� comuni sui nostri servizi</p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>Come posso richiedere una consulenza personalizzata?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>Puoi compilare il form di richiesta informazioni in questa pagina, specificando le tue esigenze, oppure contattarci telefonicamente o via email. Sarai ricontattato da un nostro consulente per un primo colloquio gratuito.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>Quali sono i requisiti per diventare un consulente Kleros?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>Cerchiamo professionisti con comprovata esperienza nel settore finanziario e una forte etica professionale. Puoi inviare la tua candidatura tramite il form "Proponi una Collaborazione". Valuteremo attentamente ogni profilo.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>I corsi di formazione online sono accessibili in qualsiasi momento?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>S�, una volta iscritto a un corso online, avrai accesso ai materiali e alle lezioni 24/7 tramite la nostra piattaforma e-learning, permettendoti di studiare secondo i tuoi ritmi.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>Come funziona il software MyARP@?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>MyARP@ � una piattaforma software avanzata per analisi e gestione del portafoglio. Per maggiori dettagli, visita la pagina dedicata "Software MyARP@" o richiedi una demo tramite il form di contatto.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>Dove si tengono i corsi in presenza?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>I nostri corsi in presenza sono organizzati periodicamente in diverse citt� italiane. Consulta la sezione "Formazione" per il calendario aggiornato degli eventi e le relative sedi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Hai altre domande?</h2>
+        <p class="section-subtitle">Siamo qui per aiutarti, non esitare a contattarci</p>
+      </div>
+      <div class="hero-buttons text-center">
+        <a href="tel:+390212345678" class="cta-button">Chiamaci Ora</a>
+        <a href="mailto:info@kleros.it" class="btn-secondary">Invia un'Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Kleros</h3>
+          <ul class="footer-links">
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="consulenza.html">Consulenza</a></li>
+            <li><a href="prodotti.html">Prodotti</a></li>
+            <li><a href="consulenti.html">Consulenti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Risorse</h3>
+          <ul class="footer-links">
+            <li><a href="formazione.html">Formazione</a></li>
+            <li><a href="editoria.html">Editoria</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">Termini di Servizio</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contatti</h3>
+          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
+          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
+          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p> 2025 Kleros  Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Inizializzazione della mappa
+    const map = L.map('map').setView([45.4642, 9.1900], 6); // Centro su Milano
+
+    // Aggiungi il layer della mappa
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Dati di esempio dei consulenti
+    const consulenti = [
+      {
+        nome: "Dott. Marco Rossi",
+        posizione: [45.4642, 9.1900], // Milano
+        professione: "Commercialista",
+        specializzazioni: ["Pianificazione Patrimoniale"],
+        regione: "Lombardia"
+      },
+      {
+        nome: "Avv. Laura Bianchi",
+        posizione: [45.0703, 7.6869], // Torino
+        professione: "Avvocato",
+        specializzazioni: ["Successioni", "Trust"],
+        regione: "Piemonte"
+      }
+    ];
+
+    // Aggiungi i marker dei consulenti
+    consulenti.forEach(consulente => {
+      const marker = L.marker(consulente.posizione)
+        .bindPopup(`
+          <strong>${consulente.nome}</strong><br>
+          ${consulente.professione}<br>
+          ${consulente.specializzazioni.join(", ")}
+        `)
+        .addTo(map);
+    });
+
+    // Funzione per filtrare i consulenti
+    document.getElementById('filter-btn').addEventListener('click', function() {
+      const regione = document.getElementById('region-filter').value;
+      const professione = document.getElementById('profession-filter').value;
+      const specializzazione = document.getElementById('specialty-filter').value;
+
+      // Qui implementeremo la logica di filtro
+      console.log('Filtri:', { regione, professione, specializzazione });
+    });
+  </script>
+</body>
+</html>

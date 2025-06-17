@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servizi - Kleros</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/promo-tabs.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('https://picsum.photos/1920/600'); height: 50vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Servizi di Consulenza Patrimoniale</h1>
+      <p class="hero-subtitle">Soluzioni complete per la gestione e la tutela del tuo patrimonio.</p>
+      <div class="hero-buttons">
+        <a href="contatti.html" class="cta-button">Contattaci</a>
+        <a href="#consulenza" class="btn-secondary">Scopri di più</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezioni Consulenza -->
+  <section class="section services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">I Nostri Servizi</h2>
+        <p class="section-subtitle">Soluzioni personalizzate per la tutela e la trasmissione del patrimonio, per privati e aziende.</p>
+      </div>
+      <div class="services-slider-wrapper">
+        <div class="services-slider" id="servicesSlider">
+          <div class="service-card">
+            <img src="img/servizio-successorio.jpg" alt="Pianificazione Successoria" class="service-img">
+            <div class="service-icon"><i class="fas fa-users"></i></div>
+            <h3>Pianificazione Successoria Personale e Familiare</h3>
+            <p>Soluzioni per la trasmissione del patrimonio, tutela degli eredi e pianificazione fiscale.</p>
+          </div>
+          <div class="service-card">
+            <img src="img/servizio-aziende.jpg" alt="Passaggio Generazionale Aziendale" class="service-img">
+            <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+            <h3>Passaggio Generazionale Aziendale (Azienda Futuro)</h3>
+            <p>Continuità aziendale e passaggio sicuro dell’azienda agli eredi, riducendo rischi e conflitti.</p>
+          </div>
+          <div class="service-card">
+            <img src="img/servizio-famiglia.jpg" alt="Tutela Personale e Familiare" class="service-img">
+            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Tutela Personale e Familiare</h3>
+            <p>Protezione del patrimonio personale e familiare da rischi imprevisti, debiti e responsabilità.</p>
+          </div>
+          <div class="service-card">
+            <img src="img/servizio-previdenza.jpg" alt="Tutela Previdenziale" class="service-img">
+            <div class="service-icon"><i class="fas fa-user-clock"></i></div>
+            <h3>Tutela Previdenziale (Longevity Risk)</h3>
+            <p>Analisi e riprogettazione della posizione previdenziale per garantire stabilità economica futura.</p>
+          </div>
+          <div class="service-card">
+            <img src="img/servizio-tutela.jpg" alt="Tutela Patrimoniale" class="service-img">
+            <div class="service-icon"><i class="fas fa-lock"></i></div>
+            <h3>Tutela Patrimoniale (Cassaforte GiuridiKa)</h3>
+            <p>Soluzioni avanzate per la protezione del patrimonio da aggressioni esterne e crisi familiari.</p>
+          </div>
+        </div>
+        <button class="slider-btn prev" id="prevService">&#10094;</button>
+        <button class="slider-btn next" id="nextService">&#10095;</button>
+      </div>
+      <div class="cta-services" style="text-align:center; margin-top:2.5rem;">
+        <a href="contatti.html" class="cta-button">Richiedi maggiori informazioni</a>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slider = document.getElementById('servicesSlider');
+      const cards = slider.querySelectorAll('.service-card');
+      const prevBtn = document.getElementById('prevService');
+      const nextBtn = document.getElementById('nextService');
+      let current = 0;
+      function updateSlider() {
+        slider.style.transform = `translateX(-${current * 100}%)`;
+      }
+      nextBtn.addEventListener('click', function() {
+        current = (current + 1) % cards.length;
+        updateSlider();
+      });
+      prevBtn.addEventListener('click', function() {
+        current = (current - 1 + cards.length) % cards.length;
+        updateSlider();
+      });
+      function setSliderWidth() {
+        let cardsToShow = 1;
+        if(window.innerWidth >= 900) cardsToShow = 3;
+        else if(window.innerWidth >= 600) cardsToShow = 2;
+        slider.style.width = `${cards.length * (100 / cardsToShow)}%`;
+        cards.forEach(card => card.style.width = `${100 / cardsToShow}%`);
+      }
+      setSliderWidth();
+      window.addEventListener('resize', setSliderWidth);
+      updateSlider();
+    });
+  </script>
+  <style>
+    .services-slider-wrapper {
+      position: relative;
+      overflow: hidden;
+      margin: 2rem 0 1rem 0;
+    }
+    .services-slider {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+    }
+    .service-card {
+      background: linear-gradient(135deg, #f8fafc 60%, #e0f4ff 100%);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+      margin: 0 1rem;
+      padding: 2.5rem 1.5rem 2rem 1.5rem;
+      min-width: 0;
+      flex: 0 0 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      box-shadow: 0 12px 40px rgba(0,123,182,0.18);
+      transform: translateY(-6px) scale(1.03);
+    }
+    .service-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 2px 12px rgba(0,123,182,0.08);
+    }
+    .service-icon {
+      font-size: 2.5rem;
+      color: #0077b6;
+      margin-bottom: 1.2rem;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,123,182,0.10);
+      padding: 0.7rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+    }
+    .service-card h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      color: #222;
+      margin-top: 0.5rem;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 0;
+    }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      color: #0077b6;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .slider-btn:hover {
+      background: #e0f4ff;
+    }
+    .slider-btn.prev { left: 0.5rem; }
+    .slider-btn.next { right: 0.5rem; }
+    @media (min-width: 600px) {
+      .service-card { padding: 2.5rem 2rem 2rem 2rem; }
+      .service-img { height: 200px; }
+    }
+    @media (min-width: 900px) {
+      .service-card { padding: 2.5rem 2.5rem 2rem 2.5rem; }
+      .service-img { height: 220px; }
+    }
+  </style>
+
+  <!-- CTA Finale -->
+  <section class="section" style="text-align: center; background-color: var(--light-bg-color); padding: 60px 0;">
+    <div class="container">
+      <h2 class="section-title">Hai bisogno di una consulenza personalizzata?</h2>
+      <p class="section-subtitle" style="margin-bottom: 30px;">Contatta il nostro team per una consulenza personalizzata</p>
+      <div class="hero-buttons">
+        <a href="contatti.html" class="cta-button">Richiedi informazioni</a>
+        <a href="tel:+390212345678" class="btn-secondary">Chiamaci ora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Kleros</h3>
+          <ul class="footer-links">
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="consulenza.html">Consulenza</a></li>
+            <li><a href="prodotti.html">Prodotti</a></li>
+            <li><a href="consulenti.html">Consulenti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Risorse</h3>
+          <ul class="footer-links">
+            <li><a href="formazione.html">Formazione</a></li>
+            <li><a href="editoria.html">Editoria</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">Termini di Servizio</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contatti</h3>
+          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
+          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
+          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

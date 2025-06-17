@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Software - Kleros</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/promo-tabs.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link active">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), url('https://picsum.photos/1920/800?blur=2'); background-size: cover; background-position: center; height: 80vh; position: relative;">
+    <div class="hero-content" style="text-align: center; max-width: 800px;">
+      <span class="pre-heading" style="color: var(--primary-color); font-size: 1.2em; text-transform: uppercase; margin-bottom: 1em; display: block;">Innovazione Tecnologica</span>
+      <h1 class="hero-title" style="font-size: 3.5em; margin-bottom: 0.5em;">Software myarp@</h1>
+      <p class="hero-subtitle" style="font-size: 1.5em; margin-bottom: 2em;">La piattaforma digitale all'avanguardia per la gestione patrimoniale</p>
+      <div class="hero-buttons">
+        <a href="#demo" class="cta-button" style="padding: 15px 40px; font-size: 1.2em;">Prova Gratuita</a>
+        <a href="#features" class="btn-secondary" style="padding: 15px 40px; font-size: 1.2em;">Scopri di Più</a>
+      </div>
+    </div>
+    <div class="hero-features" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 20px 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; color: white;">
+          <div>
+            <i class="fas fa-shield-alt fa-2x" style="color: var(--primary-color);"></i>
+            <h4>Sicurezza Avanzata</h4>
+          </div>
+          <div>
+            <i class="fas fa-robot fa-2x" style="color: var(--primary-color);"></i>
+            <h4>AI Integrata</h4>
+          </div>
+          <div>
+            <i class="fas fa-chart-line fa-2x" style="color: var(--primary-color);"></i>
+            <h4>Analisi in Tempo Reale</h4>
+          </div>
+          <div>
+            <i class="fas fa-users fa-2x" style="color: var(--primary-color);"></i>
+            <h4>Multi-utente</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Navigation -->
+  <section class="quick-nav" style="background: white; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;">
+    <div class="container">
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="#features" class="nav-pill" style="padding: 10px 20px; border-radius: 25px; background: var(--light-bg); color: var(--text-color); text-decoration: none; transition: all 0.3s;">
+          <i class="fas fa-list"></i> Funzionalità
+        </a>
+        <a href="#modules" class="nav-pill" style="padding: 10px 20px; border-radius: 25px; background: var(--light-bg); color: var(--text-color); text-decoration: none; transition: all 0.3s;">
+          <i class="fas fa-cube"></i> Moduli
+        </a>
+        <a href="#demo" class="nav-pill" style="padding: 10px 20px; border-radius: 25px; background: var(--light-bg); color: var(--text-color); text-decoration: none; transition: all 0.3s;">
+          <i class="fas fa-play"></i> Demo
+        </a>
+        <a href="#pricing" class="nav-pill" style="padding: 10px 20px; border-radius: 25px; background: var(--light-bg); color: var(--text-color); text-decoration: none; transition: all 0.3s;">
+          <i class="fas fa-tag"></i> Prezzi
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Panoramica -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Panoramica della piattaforma</h2>
+          <ul class="about-list">
+            <li>Dashboard personalizzabile con tutti i dati finanziari rilevanti</li>
+            <li>Analisi avanzata del portafoglio con parametri di rischio</li>
+            <li>Simulazioni di scenari futuri per ottimizzare le strategie</li>
+            <li>Reportistica professionale per presentazioni ai clienti</li>
+          </ul>
+        </div>
+        <div class="about-img">
+          <img src="img/software.jpg" alt="Panoramica myarp@" style="width:100%; max-width:600px; border-radius:12px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section" style="background: var(--light-bg);">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span class="pre-heading" style="color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px;">Caratteristiche Principali</span>
+        <h2 class="section-title">Tutto ciò che ti serve in un'unica piattaforma</h2>
+        <p class="section-subtitle">Gestisci il patrimonio dei tuoi clienti con strumenti all'avanguardia</p>
+      </div>
+
+      <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <!-- Feature Card 1 -->
+        <div class="feature-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+          <div style="margin-bottom: 20px;">
+            <i class="fas fa-chart-pie fa-3x" style="color: var(--primary-color);"></i>
+          </div>
+          <h3 style="margin-bottom: 15px;">Dashboard Personalizzabile</h3>
+          <p>Visualizza tutti i dati rilevanti in un'unica schermata, personalizza i widget in base alle tue esigenze.</p>
+          <ul style="list-style: none; padding: 0; margin-top: 15px;">
+            <li style="margin-bottom: 10px;">
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              KPI personalizzabili
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              Grafici interattivi
+            </li>
+            <li>
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              Report in tempo reale
+            </li>
+          </ul>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="feature-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+          <div style="margin-bottom: 20px;">
+            <i class="fas fa-robot fa-3x" style="color: var(--primary-color);"></i>
+          </div>
+          <h3 style="margin-bottom: 15px;">Intelligenza Artificiale</h3>
+          <p>Sfrutta il potere dell'AI per ottimizzare le strategie di investimento e l'analisi dei dati.</p>
+          <ul style="list-style: none; padding: 0; margin-top: 15px;">
+            <li style="margin-bottom: 10px;">
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              Analisi predittiva
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              Suggerimenti automatici
+            </li>
+            <li>
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              Ottimizzazione portafoglio
+            </li>
+          </ul>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="feature-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+          <div style="margin-bottom: 20px;">
+            <i class="fas fa-file-alt fa-3x" style="color: var(--primary-color);"></i>
+          </div>
+          <h3 style="margin-bottom: 15px;">Reportistica Avanzata</h3>
+          <p>Genera report professionali personalizzati per i tuoi clienti con pochi click.</p>
+          <ul style="list-style: none; padding: 0; margin-top: 15px;">
+            <li style="margin-bottom: 10px;">
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              Template personalizzabili
+            </li>
+            <li style="margin-bottom: 10px;">
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              Export multipli formati
+            </li>
+            <li>
+              <i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i>
+              Branding personalizzato
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules Section -->
+  <section id="modules" class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span class="pre-heading" style="color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px;">I Nostri Moduli</span>
+        <h2 class="section-title">Soluzioni Personalizzate per Ogni Esigenza</h2>
+        <p class="section-subtitle">Scegli il modulo più adatto al tuo business o combinali per una soluzione completa</p>
+      </div>
+
+      <div class="modules-grid">
+        <!-- Modulo Anonimo -->
+        <div class="module-card">
+          <div class="module-image">
+            <img src="img/myarpa-anonimo.jpg" alt="myarp@ Anonimo">
+            <div class="module-badge">Base</div>
+          </div>
+          <div class="module-content">
+            <h3 class="module-title">myarp@ <span>Anonimo</span></h3>
+            <p class="module-description">Analisi patrimoniale rapida e sicura senza necessità di registrazione. Ideale per valutazioni preliminari e simulazioni immediate.</p>
+            <div class="module-features">
+              <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Privacy al 100% garantita</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-bolt"></i>
+                <span>Analisi istantanea</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Report preliminare</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-chart-pie"></i>
+                <span>Grafici interattivi base</span>
+              </div>
+            </div>
+            <div class="module-action">
+              <a href="#" class="btn-secondary" style="width: 100%; text-align: center;">Prova Gratuitamente</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modulo Dettaglio -->
+        <div class="module-card featured">
+          <div class="module-image">
+            <img src="img/myarpa-dettaglio.jpg" alt="myarp@ Dettaglio">
+            <div class="module-badge">Professional</div>
+          </div>
+          <div class="module-content">
+            <h3 class="module-title">myarp@ <span>Dettaglio</span></h3>
+            <p class="module-description">Gestione patrimoniale completa con analisi approfondita e strumenti avanzati per professionisti del settore.</p>
+            <div class="module-features">
+              <div class="feature-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Analisi multi-scenario avanzata</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-tasks"></i>
+                <span>Gestione completa portafoglio</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-file-invoice"></i>
+                <span>Report professionali personalizzati</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-database"></i>
+                <span>Archivio dati illimitato</span>
+              </div>
+            </div>
+            <div class="module-action">
+              <a href="#" class="cta-button" style="width: 100%; text-align: center;">Scopri di Più</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modulo AI -->
+        <div class="module-card">
+          <div class="module-image">
+            <img src="img/myarpa-ai.jpg" alt="myarp@ K-AI">
+            <div class="module-badge">Enterprise</div>
+          </div>
+          <div class="module-content">
+            <h3 class="module-title">myarp@ <span>K-AI</span></h3>
+            <p class="module-description">Intelligenza artificiale avanzata per ottimizzare le strategie di investimento e l'analisi predittiva del patrimonio.</p>
+            <div class="module-features">
+              <div class="feature-item">
+                <i class="fas fa-robot"></i>
+                <span>AI Assistant personalizzato</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-brain"></i>
+                <span>Analisi predittiva avanzata</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-bullseye"></i>
+                <span>Ottimizzazione automatica</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-comments"></i>
+                <span>Supporto conversazionale 24/7</span>
+              </div>
+            </div>
+            <div class="module-action">
+              <a href="#" class="btn-secondary" style="width: 100%; text-align: center;">Contattaci</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabella Comparativa -->
+      <div class="comparison-section" style="margin-top: 60px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 30px;">
+          <h3>Confronto Dettagliato dei Moduli</h3>
+          <p>Scopri quale modulo si adatta meglio alle tue esigenze</p>
+        </div>
+        
+        <div style="overflow-x: auto;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Funzionalità</th>
+                <th style="text-align: center;">Anonimo</th>
+                <th style="text-align: center;">Dettaglio</th>
+                <th style="text-align: center;">K-AI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Analisi patrimoniale base</td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Report personalizzati</td>
+                <td style="text-align: center;"><i class="fas fa-minus"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Analisi multi-scenario</td>
+                <td style="text-align: center;"><i class="fas fa-minus"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>AI Assistant</td>
+                <td style="text-align: center;"><i class="fas fa-minus"></i></td>
+                <td style="text-align: center;"><i class="fas fa-minus"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Supporto prioritario</td>
+                <td style="text-align: center;"><i class="fas fa-minus"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+                <td style="text-align: center;"><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Archiviazione dati</td>
+                <td style="text-align: center;">Base</td>
+                <td style="text-align: center;">Illimitata</td>
+                <td style="text-align: center;">Illimitata</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div style="text-align: center; margin-top: 40px;">
+        <p style="margin-bottom: 20px;">Non sei sicuro di quale modulo scegliere?</p>
+        <a href="contatti.html" class="btn-secondary">Contatta un nostro esperto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefici -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Benefici per gli utenti</h2>
+          <ul class="about-list">
+            <li>Risparmio di tempo e automazione delle analisi</li>
+            <li>Maggiore controllo e sicurezza sui dati</li>
+            <li>Decisioni informate grazie a report e simulazioni</li>
+            <li>Supporto costante grazie all’AI Assistant</li>
+          </ul>
+        </div>
+        <div class="about-img">
+          <img src="img/software.jpg" alt="Benefici myarp@" style="width:100%; max-width:600px; border-radius:12px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo e Video Tour -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Report demo e video tour</h2>
+      <div class="about-grid">
+        <div class="about-content">
+          <p>Scopri tutte le funzionalità con una demo interattiva e un video tour della piattaforma.</p>
+          <a href="#" class="btn-secondary" target="_blank">Guarda la demo</a> &nbsp;|&nbsp; <a href="#" class="btn-secondary" target="_blank">Video tour</a>
+        </div>
+        <div class="about-img">
+          <img src="img/myarpa-dettaglio.jpg" alt="Demo myarp@" style="width:100%; max-width:600px; border-radius:12px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accesso demo gratuito -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Accesso demo gratuito</h2>
+      <div class="about-grid">
+        <div class="about-content">
+          <p>Prova myarp@ gratuitamente con funzionalità limitate nel tempo e nelle opzioni disponibili.<br>
+          <strong>Registrazione richiesta</strong> (nome, e-mail).</p>
+          <a href="#" class="cta-button">Richiedi una demo</a>
+        </div>
+        <div class="about-img">
+          <img src="img/myarpa-anonimo.jpg" alt="Accesso demo myarp@" style="width:100%; max-width:600px; border-radius:12px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Piani di licenza -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Piani di licenza d’uso</h2>
+      <ul class="about-list">
+        <li>Piani disponibili: <strong>mensile</strong>, <strong>annuale</strong>, <strong>aziendale</strong></li>
+        <li>Iscrizione, costi e acquisto online direttamente dalla piattaforma</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Accesso area riservata -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Accesso area riservata myarp@</h2>
+      <p>Gli utenti registrati possono accedere all'area riservata per usufruire di contenuti esclusivi, report e strumenti avanzati.</p>
+      <a href="area-riservata.html" class="cta-button">Accedi all'area riservata</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">FAQ - Guida all’utilizzo e supporto tecnico</h2>
+      <ul class="about-list">
+        <li><strong>Come posso registrarmi?</strong> Compila il form di registrazione e riceverai le credenziali via email.</li>
+        <li><strong>Come funziona la demo gratuita?</strong> Dopo la registrazione puoi accedere per un periodo limitato e provare tutte le funzioni principali.</li>
+        <li><strong>Come posso acquistare una licenza?</strong> Accedi alla piattaforma, scegli il piano e completa l’acquisto online.</li>
+        <li><strong>Serve assistenza?</strong> Contatta il nostro supporto tecnico tramite l’area riservata o la pagina contatti.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span class="pre-heading" style="color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px;">Piani e Prezzi</span>
+        <h2 class="section-title">Scegli il Piano Più Adatto a Te</h2>
+        <p class="section-subtitle">Soluzioni flessibili per professionisti e aziende</p>
+      </div>
+
+      <div class="pricing-toggle" style="text-align: center; margin-bottom: 40px;">
+        <span>Mensile</span>
+        <label class="switch" style="position: relative; display: inline-block; width: 60px; height: 34px; margin: 0 15px;">
+          <input type="checkbox" style="opacity: 0; width: 0; height: 0;">
+          <span class="slider round"></span>
+        </label>
+        <span>Annuale <span style="color: var(--primary-color);">(2 mesi gratis)</span></span>
+      </div>
+
+      <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <!-- Piano Base -->
+        <div class="pricing-card" style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+          <h3>Base</h3>
+          <div class="price" style="margin: 20px 0;">
+            <span style="font-size: 2.5em; font-weight: bold;">€49</span>
+            <span>/mese</span>
+          </div>
+          <p style="color: #666; margin-bottom: 20px;">Ideale per consulenti individuali</p>
+          <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 30px;">
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Dashboard base</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Fino a 10 clienti</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Report standard</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Supporto email</li>
+          </ul>
+          <a href="#" class="btn-secondary" style="display: block;">Inizia Ora</a>
+        </div>
+
+        <!-- Piano Pro -->
+        <div class="pricing-card featured" style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 8px 12px rgba(0,0,0,0.1); text-align: center; border: 2px solid var(--primary-color); transform: translateY(-20px);">
+          <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">
+            Più Popolare
+          </div>
+          <h3>Professional</h3>
+          <div class="price" style="margin: 20px 0;">
+            <span style="font-size: 2.5em; font-weight: bold;">€99</span>
+            <span>/mese</span>
+          </div>
+          <p style="color: #666; margin-bottom: 20px;">Per consulenti esperti</p>
+          <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 30px;">
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Dashboard avanzata</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Clienti illimitati</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Report personalizzati</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> AI Assistant</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Supporto prioritario</li>
+          </ul>
+          <a href="#" class="cta-button" style="display: block;">Inizia Ora</a>
+        </div>
+
+        <!-- Piano Enterprise -->
+        <div class="pricing-card" style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+          <h3>Enterprise</h3>
+          <div class="price" style="margin: 20px 0;">
+            <span style="font-size: 1.5em;">Contattaci</span>
+          </div>
+          <p style="color: #666; margin-bottom: 20px;">Per società e team</p>
+          <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 30px;">
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Tutto di Professional</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Multi-utente</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> API personalizzate</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Account manager</li>
+            <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> SLA garantito</li>
+          </ul>
+          <a href="#" class="btn-secondary" style="display: block;">Contattaci</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <p style="color: #666;">Hai domande sui nostri piani?</p>
+        <a href="contatti.html" class="btn-link">Contatta il nostro team commerciale</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e50 100%); color: white; padding: 80px 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2.5em; margin-bottom: 20px;">Pronto a Rivoluzionare la Tua Gestione Patrimoniale?</h2>
+        <p style="font-size: 1.2em; margin-bottom: 40px;">Inizia oggi la prova gratuita di 14 giorni e scopri il potere di myarp@</p>
+        <div class="cta-buttons">
+          <a href="#demo" class="cta-button" style="padding: 15px 40px; font-size: 1.2em; margin-right: 20px;">Inizia la Prova Gratuita</a>
+          <a href="#" class="btn-secondary" style="padding: 15px 40px; font-size: 1.2em;">Richiedi una Demo</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9em;">Non è richiesta carta di credito</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="background: var(--light-bg);">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span class="pre-heading" style="color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px;">FAQ</span>
+        <h2 class="section-title">Domande Frequenti</h2>
+        <p class="section-subtitle">Trova rapidamente le risposte alle domande più comuni</p>
+      </div>
+
+      <div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+        <div class="faq-item" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <h3 style="color: var(--primary-color); margin-bottom: 15px;">
+            <i class="fas fa-question-circle" style="margin-right: 10px;"></i>
+            Come funziona la prova gratuita?
+          </h3>
+          <p>La prova gratuita dura 14 giorni e include tutte le funzionalità del piano Professional. Non è richiesta carta di credito per iniziare. Al termine del periodo di prova, potrai scegliere il piano più adatto alle tue esigenze.</p>
+        </div>
+
+        <div class="faq-item" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <h3 style="color: var(--primary-color); margin-bottom: 15px;">
+            <i class="fas fa-question-circle" style="margin-right: 10px;"></i>
+            I miei dati sono al sicuro?
+          </h3>
+          <p>Assolutamente sì. Utilizziamo la crittografia SSL di ultima generazione e tutti i dati sono archiviati in server sicuri con backup automatici. Rispettiamo rigorosamente il GDPR e le normative sulla privacy.</p>
+        </div>
+
+        <div class="faq-item" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <h3 style="color: var(--primary-color); margin-bottom: 15px;">
+            <i class="fas fa-question-circle" style="margin-right: 10px;"></i>
+            Posso cambiare piano in qualsiasi momento?
+          </h3>
+          <p>Sì, puoi passare a un piano superiore o inferiore in qualsiasi momento. Il cambio sarà effettivo dal successivo periodo di fatturazione e la differenza di prezzo sarà calcolata proporzionalmente.</p>
+        </div>
+
+        <div class="faq-item" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <h3 style="color: var(--primary-color); margin-bottom: 15px;">
+            <i class="fas fa-question-circle" style="margin-right: 10px;"></i>
+            Che tipo di supporto è incluso?
+          </h3>
+          <p>Tutti i piani includono supporto via email. I piani Professional ed Enterprise includono supporto prioritario e accesso diretto al team tecnico. Il piano Enterprise include anche un account manager dedicato.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <p>Non hai trovato la risposta che cercavi?</p>
+        <a href="contatti.html" class="btn-secondary">Contattaci</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Numeri Section -->
+  <section class="section" style="background: white;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+        <div class="stat-item">
+          <i class="fas fa-users fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+          <h3 style="font-size: 2.5em; margin-bottom: 10px;">1000+</h3>
+          <p>Professionisti Attivi</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-chart-line fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+          <h3 style="font-size: 2.5em; margin-bottom: 10px;">€5B+</h3>
+          <p>Patrimonio Gestito</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-file-alt fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+          <h3 style="font-size: 2.5em; margin-bottom: 10px;">50K+</h3>
+          <p>Report Generati</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-star fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+          <h3 style="font-size: 2.5em; margin-bottom: 10px;">4.9/5</h3>
+          <p>Valutazione Media</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Kleros</h3>
+          <ul class="footer-links">
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="consulenza.html">Consulenza</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="consulenti.html">Consulenti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Risorse</h3>
+          <ul class="footer-links">
+            <li><a href="formazione.html">Formazione</a></li>
+            <li><a href="editoria.html">Editoria</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contatti</h3>
+          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
+          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
+          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/slider.js"></script>
+</body>
+</html>

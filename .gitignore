@@ -1,0 +1,13 @@
+# File di backup
+*.bak
+*.bak2
+*.bak3
+*.new
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Script di utility
+update_logo.ps1
+update_logo.sh

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formazione - Kleros</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/promo-tabs.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1920/600'); height: 60vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Formazione d'Eccellenza per Professionisti</h1>
+      <p class="hero-subtitle">Sviluppa le tue competenze con i migliori esperti del settore patrimoniale</p>
+      <div class="hero-buttons">
+        <a href="#catalogo-corsi" class="cta-button">Scopri i Corsi</a>
+        <a href="#area-riservata" class="btn-secondary">Area E-Learning</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="quick-links" style="background: white; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div class="container">
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="#catalogo" class="link-button"><i class="fas fa-book-open"></i> Catalogo Corsi</a>
+        <a href="#online" class="link-button"><i class="fas fa-laptop"></i> Formazione Online</a>
+        <a href="#academy" class="link-button"><i class="fas fa-graduation-cap"></i> Accademia</a>
+        <a href="#prezzi" class="link-button"><i class="fas fa-tag"></i> Prezzi e Iscrizioni</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presentazione Corsi -->
+  <section id="catalogo" class="section" style="background: #f8f9fa;">
+    <div class="container">
+      <div class="section-header">
+        <span class="pre-heading">CATALOGO FORMATIVO</span>
+        <h2 class="section-title">La Nostra Offerta Formativa</h2>
+        <p class="section-subtitle">Percorsi formativi personalizzati per ogni esigenza professionale</p>
+      </div>
+
+      <div class="features-grid" style="margin-bottom: 60px;">
+        <!-- Catalogo Corsi -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3 class="feature-title">Corsi in Presenza</h3>
+          <p class="feature-text">Formazione d'aula con i migliori docenti del settore</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Percorsi formativi certificati</li>
+            <li><i class="fas fa-check"></i> Workshop specialistici</li>
+            <li><i class="fas fa-check"></i> Seminari di approfondimento</li>
+            <li><i class="fas fa-check"></i> Formazione continua</li>
+          </ul>
+          <div class="feature-price">
+            <span>A partire da</span>
+            <strong>€299</strong>
+          </div>
+          <a href="catalogo.html" class="btn-feature">Scopri i Corsi</a>
+        </div>
+
+        <!-- Kleros Community -->
+        <div class="feature-card" id="online">
+          <div class="feature-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3 class="feature-title">Formazione Online</h3>
+          <p class="feature-text">Accesso illimitato alla piattaforma e-learning Kleros</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Corsi on-demand</li>
+            <li><i class="fas fa-check"></i> Webinar live interattivi</li>
+            <li><i class="fas fa-check"></i> Materiali scaricabili</li>
+            <li><i class="fas fa-check"></i> Community esclusiva</li>
+          </ul>
+          <div class="feature-price">
+            <span>Abbonamento mensile</span>
+            <strong>€49</strong>
+          </div>
+          <a href="#community" class="btn-feature">Unisciti Ora</a>
+        </div>
+
+        <!-- Accademia -->
+        <div class="feature-card" id="academy">
+          <div class="feature-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="feature-title">Accademia del Patrimonialista</h3>
+          <p class="feature-text">Il percorso formativo completo per diventare un professionista certificato</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Percorso formativo completo (200 ore)</li>
+            <li><i class="fas fa-check"></i> Certificazione professionale</li>
+            <li><i class="fas fa-check"></i> Mentoring personalizzato</li>
+            <li><i class="fas fa-check"></i> Network esclusivo</li>
+          </ul>
+          <div class="feature-price">
+            <span>Percorso completo</span>
+            <strong>€2.999</strong>
+          </div>
+          <a href="#accademia" class="btn-feature">Scopri l'Accademia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalogo Editoriale -->
+  <section id="editoria" class="section" style="background: white;">
+    <div class="container">
+      <div class="section-header">
+        <span class="pre-heading">EDITORIA SPECIALIZZATA</span>
+        <h2 class="section-title">Catalogo Editoriale</h2>
+        <p class="section-subtitle">Libri e manuali professionali per il tuo aggiornamento continuo</p>
+      </div>
+
+      <div class="publications-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
+        <!-- Pubblicazione 1 -->
+        <div class="publication-card" style="background: var(--light-bg); border-radius: 10px; overflow: hidden;">
+          <img src="https://picsum.photos/500/300?random=7" alt="Manuale del Patrimonialista" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 20px;">
+            <span class="badge" style="background: var(--primary-color); color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">Bestseller</span>
+            <h3 style="margin: 15px 0;">Manuale del Patrimonialista</h3>
+            <p>La guida completa alla gestione patrimoniale moderna. Include casi studio ed esempi pratici.</p>
+            <div class="price-tag" style="margin: 15px 0;">
+              <span class="price">€45,00</span>
+              <span class="discount" style="color: var(--primary-color); margin-left: 10px;">-15% Online</span>
+            </div>
+            <div class="rating" style="margin-bottom: 15px;">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(4.5/5 - 128 recensioni)</span>
+            </div>
+            <a href="#" class="btn-primary" style="display: block; text-align: center;">Acquista Ora</a>
+          </div>
+        </div>
+
+        <!-- Pubblicazione 2 -->
+        <div class="publication-card" style="background: var(--light-bg); border-radius: 10px; overflow: hidden;">
+          <img src="https://picsum.photos/500/300?random=8" alt="Strategie di Investimento" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 20px;">
+            <span class="badge" style="background: #28a745; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">Novità</span>
+            <h3 style="margin: 15px 0;">Strategie di Investimento</h3>
+            <p>Tecniche avanzate per la gestione del portafoglio e l'analisi dei mercati finanziari.</p>
+            <div class="price-tag" style="margin: 15px 0;">
+              <span class="price">€39,00</span>
+              <span class="discount" style="color: var(--primary-color); margin-left: 10px;">-10% Online</span>
+            </div>
+            <div class="rating" style="margin-bottom: 15px;">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(5/5 - 84 recensioni)</span>
+            </div>
+            <a href="#" class="btn-primary" style="display: block; text-align: center;">Acquista Ora</a>
+          </div>
+        </div>
+
+        <!-- Pubblicazione 3 -->
+        <div class="publication-card" style="background: var(--light-bg); border-radius: 10px; overflow: hidden;">
+          <img src="https://picsum.photos/500/300?random=9" alt="Guida alla Pianificazione" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 20px;">
+            <h3 style="margin: 15px 0;">Guida alla Pianificazione Successoria</h3>
+            <p>Pianificazione successoria e protezione patrimoniale: aspetti legali e fiscali.</p>
+            <div class="price-tag" style="margin: 15px 0;">
+              <span class="price">€42,00</span>
+              <span class="discount" style="color: var(--primary-color); margin-left: 10px;">-12% Online</span>
+            </div>
+            <div class="rating" style="margin-bottom: 15px;">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(4/5 - 96 recensioni)</span>
+            </div>
+            <a href="#" class="btn-primary" style="display: block; text-align: center;">Acquista Ora</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bundle Offerta -->
+      <div class="bundle-offer" style="background: var(--primary-color); color: white; padding: 30px; border-radius: 10px; margin-top: 40px; text-align: center;">
+        <h3>Offerta Speciale Bundle</h3>
+        <p>Acquista tutti e 3 i manuali e risparmia il 25%</p>
+        <div class="price-tag" style="margin: 15px 0;">
+          <span style="text-decoration: line-through;">€126,00</span>
+          <span style="font-size: 1.5em; margin-left: 15px;">€94,50</span>
+        </div>
+        <a href="#" class="btn-secondary" style="background: white; color: var(--primary-color);">Acquista Bundle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Area Download Materiali e Calendario Completo -->
+  <section class="section" id="calendario-completo">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Materiali Didattici e Calendario Corsi</h2>
+        <p class="section-subtitle">Accesso esclusivo a risorse premium per i nostri iscritti</p>
+      </div>
+      
+      <div class="modern-features-grid">
+        <div class="modern-feature-card">
+          <div class="modern-feature-icon">
+            <i class="fas fa-file-pdf"></i>
+          </div>
+          <h3 class="modern-feature-title">Download Materiali Didattici</h3>
+          <ul class="feature-list">
+            <li>Slides dei corsi (PDF)</li>
+            <li>Esercizi pratici e risolti</li>
+            <li>Case Study reali</li>
+            <li>Modelli di Analisi Finanziaria (Excel)</li>
+            <li>Registrazioni dei webinar passati</li>
+          </ul>
+          <div style="margin-top: 1.5rem;">
+            <a href="accesso.html" class="btn-primary">Accedi ai Materiali</a>
+          </div>
+        </div>
+        <div class="modern-feature-card">
+          <div class="modern-feature-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3 class="modern-feature-title">Calendario Corsi Completo</h3>
+          <p class="modern-feature-text">Rimani aggiornato su tutte le date dei nostri corsi in presenza, webinar live e scadenze per le iscrizioni.</p>
+          <p class="modern-feature-text"><strong>Prossimi Eventi Principali:</strong></p>
+          <ul class="feature-list">
+            <li><strong>15 Giugno 2025:</strong> Workshop "Strategie di Investimento" - Milano</li>
+            <li><strong>28 Giugno 2025:</strong> Seminario "Pianificazione Successoria" - Roma</li>
+            <li><strong>10 Luglio 2025:</strong> Corso "Risk Management" - Torino</li>
+          </ul>
+          <div style="margin-top: 1.5rem;">
+            <a href="contatti.html#calendario" class="btn-primary">Visualizza Calendario</a>
+          </div>
+        </div>
+        <div class="modern-feature-card">
+          <div class="modern-feature-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3 class="modern-feature-title">Certificazioni Rilasciate</h3>
+          <p class="modern-feature-text">Al completamento dei percorsi formativi e superamento dei test finali, vengono rilasciate certificazioni Kleros che attestano le competenze acquisite.</p>
+          <p class="modern-feature-text">Le nostre certificazioni sono riconosciute nel settore finanziario e rappresentano un valore aggiunto per il tuo curriculum professionale.</p>
+          <div style="margin-top: 1.5rem;">
+            <a href="contatti.html" class="btn-primary">Richiedi Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Area Riservata Consulenti -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Area Riservata</h2>
+        <p class="section-subtitle">Accedi ai tuoi contenuti formativi e al tuo percorso di apprendimento</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-img">
+          <img src="https://picsum.photos/600/400?random=11" alt="Area Riservata">
+        </div>
+        <div class="about-content">
+          <h3>Accesso Esclusivo per Iscritti</h3>
+          <p>Accedi alla tua area personale per usufruire di tutti i vantaggi riservati agli iscritti ai nostri corsi:</p>
+          <ul class="about-list">
+            <li>Visualizza i corsi acquistati e il tuo percorso di apprendimento</li>
+            <li>Scarica materiali didattici esclusivi e aggiornati</li>
+            <li>Interagisci con docenti e altri partecipanti nei forum dedicati</li>
+            <li>Accedi alle registrazioni dei webinar e agli aggiornamenti</li>
+            <li>Stampa i tuoi certificati e attestati di partecipazione</li>
+          </ul>
+          <div class="hero-buttons" style="margin-top: 1.5rem;">
+            <a href="area-riservata.html" class="cta-button">Accedi all'Area Riservata</a>
+            <a href="contatti.html" class="btn-secondary">Assistenza Tecnica</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prezzi e Iscrizioni -->
+  <section id="prezzi" class="section" style="background: var(--light-bg);">
+    <div class="container">
+      <div class="section-header">
+        <span class="pre-heading">COSTI E MODALITÀ</span>
+        <h2 class="section-title">Prezzi e Modalità di Iscrizione</h2>
+        <p class="section-subtitle">Soluzioni flessibili per ogni esigenza formativa</p>
+      </div>
+
+      <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0;">
+        <!-- Piano Basic -->
+        <div class="pricing-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <div class="pricing-header" style="text-align: center; margin-bottom: 20px;">
+            <h3>Basic</h3>
+            <div class="price">
+              <span class="currency">€</span>
+              <span class="amount">299</span>
+              <span class="period">/corso</span>
+            </div>
+          </div>
+          <ul class="pricing-features" style="list-style: none; padding: 0;">
+            <li><i class="fas fa-check"></i> Accesso a un singolo corso</li>
+            <li><i class="fas fa-check"></i> Materiale didattico digitale</li>
+            <li><i class="fas fa-check"></i> Attestato di partecipazione</li>
+            <li><i class="fas fa-check"></i> Supporto email</li>
+          </ul>
+          <a href="#" class="btn-primary" style="display: block; text-align: center; margin-top: 20px;">Iscriviti Ora</a>
+        </div>
+
+        <!-- Piano Professional -->
+        <div class="pricing-card featured" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 2px solid var(--primary-color);">
+          <div class="pricing-header" style="text-align: center; margin-bottom: 20px;">
+            <h3>Professional</h3>
+            <div class="price">
+              <span class="currency">€</span>
+              <span class="amount">999</span>
+              <span class="period">/anno</span>
+            </div>
+          </div>
+          <ul class="pricing-features" style="list-style: none; padding: 0;">
+            <li><i class="fas fa-check"></i> Accesso a tutti i corsi online</li>
+            <li><i class="fas fa-check"></i> 2 corsi in presenza inclusi</li>
+            <li><i class="fas fa-check"></i> Materiali esclusivi</li>
+            <li><i class="fas fa-check"></i> Webinar mensili</li>
+            <li><i class="fas fa-check"></i> Supporto prioritario</li>
+          </ul>
+          <a href="#" class="btn-primary" style="display: block; text-align: center; margin-top: 20px;">Scegli Professional</a>
+        </div>
+
+        <!-- Piano Enterprise -->
+        <div class="pricing-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <div class="pricing-header" style="text-align: center; margin-bottom: 20px;">
+            <h3>Enterprise</h3>
+            <div class="price">
+              <span>Contattaci</span>
+            </div>
+          </div>
+          <ul class="pricing-features" style="list-style: none; padding: 0;">
+            <li><i class="fas fa-check"></i> Formazione aziendale personalizzata</li>
+            <li><i class="fas fa-check"></i> Docenza in-house</li>
+            <li><i class="fas fa-check"></i> Materiali personalizzati</li>
+            <li><i class="fas fa-check"></i> Account manager dedicato</li>
+            <li><i class="fas fa-check"></i> Reporting avanzato</li>
+          </ul>
+          <a href="contatti.html" class="btn-secondary" style="display: block; text-align: center; margin-top: 20px;">Richiedi Preventivo</a>
+        </div>
+      </div>
+
+      <!-- Metodi di Pagamento -->
+      <div class="payment-info" style="text-align: center; margin-top: 40px;">
+        <h3>Metodi di Pagamento Accettati</h3>
+        <div class="payment-methods" style="margin: 20px 0;">
+          <i class="fab fa-cc-visa fa-2x" style="margin: 0 10px;"></i>
+          <i class="fab fa-cc-mastercard fa-2x" style="margin: 0 10px;"></i>
+          <i class="fab fa-cc-amex fa-2x" style="margin: 0 10px;"></i>
+          <i class="fab fa-paypal fa-2x" style="margin: 0 10px;"></i>
+        </div>
+        <p>Pagamenti sicuri e garantiti. Fatturazione immediata.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Area E-Learning -->
+  <section id="area-riservata" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="pre-heading">AREA E-LEARNING</span>
+        <h2 class="section-title">Piattaforma di Formazione Online</h2>
+        <p class="section-subtitle">Accedi ai tuoi corsi e contenuti formativi quando e dove vuoi</p>
+      </div>
+
+      <div class="elearning-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 40px 0;">
+        <div class="feature">
+          <i class="fas fa-play-circle fa-2x"></i>
+          <h4>Video Lezioni</h4>
+          <p>Contenuti professionali in HD con sottotitoli</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-file-pdf fa-2x"></i>
+          <h4>Materiali Didattici</h4>
+          <p>Slide, dispense e risorse scaricabili</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-users fa-2x"></i>
+          <h4>Forum Community</h4>
+          <p>Confrontati con colleghi e docenti</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-mobile-alt fa-2x"></i>
+          <h4>App Mobile</h4>
+          <p>Studia anche da smartphone e tablet</p>
+        </div>
+      </div>
+
+      <div class="login-section" style="background: var(--light-bg); padding: 40px; border-radius: 10px; text-align: center; margin-top: 40px;">
+        <h3>Già Iscritto?</h3>
+        <p>Accedi alla piattaforma per continuare il tuo percorso formativo</p>
+        <div class="hero-buttons" style="margin-top: 20px;">
+          <a href="area-riservata.html" class="cta-button">Accedi</a>
+          <a href="contatti.html" class="btn-secondary">Supporto Tecnico</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Finale -->
+  <section class="section" style="text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://picsum.photos/1920/600?random=10'); background-size: cover; background-position: center; color: white; padding: 80px 0;">
+    <div class="container">
+      <h2 class="section-title" style="color: white;">Investi nel Tuo Futuro Professionale</h2>
+      <p class="section-subtitle" style="margin-bottom: 30px; font-size: 1.2em;">Inizia oggi il tuo percorso di crescita con Kleros</p>
+      
+      <div class="cta-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0;">
+        <div class="cta-feature">
+          <i class="fas fa-calendar-check fa-2x"></i>
+          <h4>Prossimo Corso</h4>
+          <p>16 Giugno 2025</p>
+        </div>
+        <div class="cta-feature">
+          <i class="fas fa-users fa-2x"></i>
+          <h4>Posti Disponibili</h4>
+          <p>Solo 5 rimasti</p>
+        </div>
+        <div class="cta-feature">
+          <i class="fas fa-percentage fa-2x"></i>
+          <h4>Sconto Early Bird</h4>
+          <p>-20% fino al 20/06</p>
+        </div>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#prezzi" class="cta-button" style="font-size: 1.2em; padding: 15px 40px;">Iscriviti Ora</a>
+        <a href="contatti.html" class="btn-secondary" style="font-size: 1.2em; padding: 15px 40px;">Richiedi Informazioni</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Kleros</h3>
+          <ul class="footer-links">
+            <li><a href="chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="consulenza.html">Consulenza</a></li>
+            <li><a href="prodotti.html">Prodotti</a></li>
+            <li><a href="consulenti.html">Consulenti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Risorse</h3>
+          <ul class="footer-links">
+            <li><a href="formazione.html">Formazione</a></li>
+            <li><a href="editoria.html">Editoria</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">Termini di Servizio</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contatti</h3>
+          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
+          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
+          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

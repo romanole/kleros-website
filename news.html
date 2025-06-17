@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  <title>News & Eventi - Kleros</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/promo-tabs.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link active">News</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('https://picsum.photos/1920/600?grayscale'); height: 40vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">News & Eventi</h1>
+      <p class="hero-subtitle">Scopri le novità, partecipa agli eventi e accedi alle risorse Kleros</p>
+    </div>
+  </section>
+
+  <!-- Calendar of Events -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Eventi Gratuiti</h2>
+        <p class="section-subtitle">Partecipa ai nostri eventi formativi e informativi</p>
+      </div>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">15</span>
+            <span class="month">LUG</span>
+          </div>
+          <div class="event-details">
+            <h3>Webinar: Gestione Patrimoniale Innovativa</h3>
+            <p>Scopri le nuove strategie per la gestione del patrimonio nell'era digitale.</p>
+            <div class="event-meta">
+              <span><i class="fas fa-clock"></i> 14:00 - 15:30</span>
+              <span><i class="fas fa-video"></i> Online</span>
+            </div>
+            <a href="#" class="btn-primary">Registrati Ora</a>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">22</span>
+            <span class="month">LUG</span>
+          </div>
+          <div class="event-details">
+            <h3>Workshop: Software myarp@ 2.0</h3>
+            <p>Presentazione delle nuove funzionalità e casi d'uso pratici.</p>
+            <div class="event-meta">
+              <span><i class="fas fa-clock"></i> 10:00 - 12:00</span>
+              <span><i class="fas fa-map-marker-alt"></i> Milano</span>
+            </div>
+            <a href="#" class="btn-primary">Registrati Ora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Articoli sul Wealth Management</h2>
+        <p class="section-subtitle">Approfondimenti e analisi dal nostro team di esperti</p>
+      </div>
+      <div class="articles-grid">
+        <article class="article-card">
+          <img src="https://picsum.photos/400/250?random=1" alt="Articolo 1" class="article-image">
+          <div class="article-content">
+            <span class="article-category">Strategia</span>
+            <h3>Pianificazione Patrimoniale Post-Covid</h3>
+            <p>Analisi delle nuove strategie di gestione patrimoniale nel contesto attuale.</p>
+            <a href="#" class="btn-secondary">Leggi l'articolo</a>
+          </div>
+        </article>
+        <article class="article-card">
+          <img src="https://picsum.photos/400/250?random=2" alt="Articolo 2" class="article-image">
+          <div class="article-content">
+            <span class="article-category">Tecnologia</span>
+            <h3>Innovazione nella Consulenza Finanziaria</h3>
+            <p>Come la tecnologia sta trasformando il settore della consulenza.</p>
+            <a href="#" class="btn-secondary">Leggi l'articolo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Risorse e Guide</h2>
+        <p class="section-subtitle">Strumenti e materiali per la tua crescita professionale</p>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <i class="fas fa-book-open resource-icon"></i>
+          <h3>Guide alla Pianificazione</h3>
+          <p>Download gratuiti delle nostre guide pratiche per consulenti.</p>
+          <a href="#" class="btn-secondary">Scarica Guide</a>
+        </div>
+        <div class="resource-card">
+          <i class="fas fa-chart-line resource-icon"></i>
+          <h3>Case Studies</h3>
+          <p>Esempi pratici e best practices nel wealth management.</p>
+          <a href="#" class="btn-secondary">Scopri i Case Studies</a>
+        </div>
+        <div class="resource-card">
+          <i class="fas fa-laptop-code resource-icon"></i>
+          <h3>Aggiornamenti Software</h3>
+          <p>Ultime novità e changelog dei nostri strumenti.</p>
+          <a href="#" class="btn-secondary">Vedi Aggiornamenti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Domande Frequenti</h2>
+        <p class="section-subtitle">Risposte alle domande più comuni</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Come posso partecipare agli eventi?</h3>
+          <p class="faq-answer">La partecipazione è gratuita previa registrazione. Clicca sul pulsante "Registrati Ora" nell'evento di tuo interesse.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Posso rivedere gli eventi passati?</h3>
+          <p class="faq-answer">Sì, tutti gli eventi vengono registrati e resi disponibili nell'Area Riservata per i nostri clienti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Magazine Download CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Scarica il nostro Magazine</h2>
+        <p>Ricevi gratuitamente l'ultimo numero del magazine Kleros con approfondimenti, interviste e analisi.</p>
+        <form class="cta-form">
+          <input type="email" placeholder="Inserisci la tua email" required>
+          <button type="submit" class="btn-primary">Scarica Ora</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a> | <a href="#">Termini di Servizio</a></p>
+    <p>Email: info@kleros.it | Telefono: +39 02 12345678</p>
+    <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
