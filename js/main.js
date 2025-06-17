@@ -72,35 +72,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileToggle.classList.remove('active');
             }
         });
-    });    // Handle Header Visibility on Scroll
-    const header = document.querySelector('header');
-    if (header) {
-        // Initial state - transparent header
-        header.classList.remove('scrolled');
-        
-        // Update header on scroll
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Add scrolled class after scrolling a bit
-            if (scrollTop > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Check scroll position on page load
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 100) {
+    });    // Handle Header Visibility on Scroll    const hero = document.querySelector('.hero, .hero-section');
+    
+    function updateHeaderState() {
+        // Get current page info
+        const path = window.location.pathname.toLowerCase();
+        const isSoftwarePage = path.includes('software.html');
+        const isAreaRiservata = path.includes('area-riservata.html');
+        const isHomePage = path.includes('index.html') || path === '/';
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Area Riservata: always white header
+        if (isAreaRiservata) {
             header.classList.add('scrolled');
+            document.body.classList.add('area-riservata');
+            return;
+        }
+
+        // Software page: always transparent header
+        if (isSoftwarePage) {
+            header.classList.remove('scrolled');
+            document.body.classList.add('software');
+            return;
+        }
+
+        // Other pages: transparent on top, white when scrolled
+        if (scrollTop > 100 || !hero) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
     }
+
+    // Update header state on page load
+    updateHeaderState();
+
+    // Update header state on scroll
+    window.addEventListener('scroll', updateHeaderState);
+
+    // Update header state on window resize (in case hero visibility changes)
+    window.addEventListener('resize', updateHeaderState);
 
     // Active Nav Link
     const currentLocation = location.pathname;
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
         if (currentLocation.includes(linkPath) && linkPath !== '#' && linkPath !== '/') {
@@ -111,20 +127,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            
-            if(targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
