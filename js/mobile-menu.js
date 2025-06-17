@@ -2,9 +2,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    let touchStartX = 0;
+    let touchEndX = 0;
     
     if (mobileToggle && navMenu) {
         mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Menu');
         
         mobileToggle.addEventListener('click', (e) => {
             e.preventDefault();
