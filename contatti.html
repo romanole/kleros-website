@@ -244,24 +244,29 @@
             <h3 class="card-title">Richiesta Informazioni</h3>
             <p class="card-text">Hai domande sui nostri servizi? Compila il modulo e ti contatteremo al pi� presto.</p>
             <form class="contact-form">
-              <div class="form-group">
-                <input type="text" placeholder="Il tuo nome" class="form-input" required />
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder="La tua email" class="form-input" required />
-              </div>
-              <div class="form-group">
-                <select name="richiesta_info_argomento" class="form-input">
-                  <option value="" disabled selected>Seleziona argomento...</option>
-                  <option value="consulenza">Consulenza Finanziaria</option>
-                  <option value="formazione">Corsi di Formazione</option>
-                  <option value="software">Software MyARP@</option>
-                  <option value="editoria">Editoria (Libri/Manuali)</option>
-                  <option value="altro">Altro</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <textarea rows="5" placeholder="Il tuo messaggio..." class="form-input"></textarea>
+              <div class="form-fields-grid">
+                <div class="form-group">
+                  <input type="text" placeholder="Il tuo nome" class="form-input" required />
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="La tua email" class="form-input" required />
+                </div>
+                <div class="form-group">
+                  <select name="richiesta_info_argomento" class="form-input">
+                    <option value="" disabled selected>Seleziona argomento...</option>
+                    <option value="consulenza">Consulenza Finanziaria</option>
+                    <option value="formazione">Corsi di Formazione</option>
+                    <option value="software">Software MyARP@</option>
+                    <option value="editoria">Editoria (Libri/Manuali)</option>
+                    <option value="altro">Altro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="tel" placeholder="Numero di telefono" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <textarea rows="5" placeholder="Il tuo messaggio..." class="form-input"></textarea>
+                </div>
               </div>
               <button type="submit" class="submit-btn">Invia Richiesta</button>
             </form>
@@ -272,23 +277,28 @@
             <h3 class="card-title">Proponi una Collaborazione</h3>
             <p class="card-text">Sei interessato a collaborare con noi? Raccontaci la tua proposta e saremo felici di valutarla.</p>
             <form class="contact-form">
-              <div class="form-group">
-                <input type="text" placeholder="Nome Referente / Azienda" class="form-input" required />
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder="Email di contatto" class="form-input" required />
-              </div>
-              <div class="form-group">
-                <select name="collaborazione_tipo" class="form-input">
-                  <option value="" disabled selected>Tipo di collaborazione...</option>
-                  <option value="consulente">Diventa Consulente Kleros</option>
-                  <option value="partnership">Partnership Commerciale</option>
-                  <option value="contenuti">Proposta Contenuti/Docenza</option>
-                  <option value="altro">Altra Proposta</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <textarea rows="5" placeholder="Descrivi la tua proposta..." class="form-input"></textarea>
+              <div class="form-fields-grid">
+                <div class="form-group">
+                  <input type="text" placeholder="Nome Referente / Azienda" class="form-input" required />
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Email di contatto" class="form-input" required />
+                </div>
+                <div class="form-group">
+                  <select name="collaborazione_tipo" class="form-input">
+                    <option value="" disabled selected>Tipo di collaborazione...</option>
+                    <option value="consulente">Diventa Consulente Kleros</option>
+                    <option value="partnership">Partnership Commerciale</option>
+                    <option value="contenuti">Proposta Contenuti/Docenza</option>
+                    <option value="altro">Altra Proposta</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="tel" placeholder="Numero di telefono" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <textarea rows="5" placeholder="Descrivi la tua proposta..." class="form-input"></textarea>
+                </div>
               </div>
               <button type="submit" class="submit-btn">Invia Proposta</button>
             </form>
