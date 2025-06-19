@@ -203,6 +203,142 @@
     .form-group textarea:invalid:not(:placeholder-shown) {
       border-color: #dc3545;
     }
+
+    /* Button Styles */
+    .cta-button,
+    .btn-secondary,
+    button[type="submit"],
+    button[type="button"] {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      min-width: 160px;
+      position: relative;
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      background-color: var(--primary-color);
+      color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      background-color: var(--primary-color-dark, #004d99);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(0,0,0,0.05);
+      transform: translateY(-1px);
+    }
+
+    /* Focus states */
+    .cta-button:focus,
+    .btn-secondary:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.3);
+    }
+
+    /* Disabled state */
+    .cta-button:disabled,
+    .btn-secondary:disabled,
+    button[type="submit"]:disabled,
+    button[type="button"]:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    .hero-buttons,
+    .form-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    /* White variation for dark backgrounds */
+    .pro-box .cta-button {
+      background-color: white;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    .pro-box .cta-button:hover {
+      background-color: #f8f9fa;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .pro-box .cta-button:focus {
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Loading state */
+    button[type="submit"].loading {
+      position: relative;
+      color: transparent;
+    }
+
+    button[type="submit"].loading::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin: -10px 0 0 -10px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.8s infinite linear;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Active state */
+    .cta-button:active,
+    .btn-secondary:active {
+      transform: translateY(1px);
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .cta-button,
+      .btn-secondary,
+      button[type="submit"],
+      button[type="button"] {
+        width: 100%;
+        margin: 0.5rem 0;
+        padding: 14px 24px;
+        font-size: 1.05rem;
+      }
+
+      .hero-buttons,
+      .form-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
