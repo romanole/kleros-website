@@ -9,6 +9,201 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/promo-tabs.css">
   <script src="js/mobile-menu.js" defer></script>
+  <style>
+    .timeline {
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-color);
+      opacity: 0.3;
+    }
+    .timeline-icon {
+      position: relative;
+      z-index: 1;
+    }
+    .benefit-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+    .process-steps .step {
+      flex: 1;
+      position: relative;
+    }
+    .process-steps .step::after {
+      content: '';
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      right: -50%;
+      height: 2px;
+      background: var(--primary-color);
+      opacity: 0.3;
+    }
+    .process-steps .step:last-child::after {
+      display: none;
+    }
+    .step-number {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: white;
+      margin: 0 auto 1rem;
+      font-weight: bold;
+    }
+    .faq-item {
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      transform: translateX(5px);
+    }
+    .hero {
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-subtitle {
+      max-width: 800px;
+      margin: 1.5rem auto;
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #333;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.1);
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    .checkbox-container input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+    }
+    .form-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Smooth transitions */
+    .timeline-item,
+    .benefit-card,
+    .feature-card,
+    .faq-item,
+    .form-container {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover effects */
+    .timeline-icon i,
+    .benefit-card i,
+    .feature-card i {
+      transition: transform 0.3s ease;
+    }
+    .timeline-icon:hover i,
+    .benefit-card:hover i,
+    .feature-card:hover i {
+      transform: scale(1.1);
+    }
+
+    /* Enhanced buttons */
+    .cta-button,
+    .btn-secondary {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* FAQ Transitions */
+    .faq-answer {
+      transition: all 0.3s ease;
+    }
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+
+    /* Form feedback */
+    .form-group input:valid,
+    .form-group textarea:valid {
+      border-color: #28a745;
+    }
+    .form-group input:invalid:not(:placeholder-shown),
+    .form-group textarea:invalid:not(:placeholder-shown) {
+      border-color: #dc3545;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -35,138 +230,147 @@
       </div>
     </div>
   </header>
-
   <!-- Hero Section -->
-  <section class="hero" style="background-image: url('https://picsum.photos/1920/600'); height: 50vh;">
+  <section class="hero" style="background-image: url('https://picsum.photos/1920/600'); height: 60vh;">
     <div class="hero-content">
-      <h1 class="hero-title">Servizi di Consulenza Patrimoniale</h1>
-      <p class="hero-subtitle">Scopri i nostri servizi di consulenza on-site e online per la gestione del tuo patrimonio.</p>
+      <h1 class="hero-title">La tua guida esperta per decisioni patrimoniali chiare e sicure</h1>
+      <p class="hero-subtitle">La gestione del patrimonio, familiare o aziendale, presenta sfide complesse e decisioni cruciali. Il nostro servizio di consulenza nasce per offrirti una visione chiara, analizzare le criticità e costruire insieme a te soluzioni personalizzate che proteggano e valorizzino i tuoi beni nel tempo. Fai il primo passo verso la serenità finanziaria.</p>
       <div class="hero-buttons">
-        <a href="contatti.html" class="cta-button">Contattaci</a>
-        <a href="#tipi-consulenza" class="btn-secondary">Scopri di più</a>
+        <a href="#prenota" class="cta-button">Prenota il tuo video-incontro gratuito</a>
+        <a href="#perche" class="btn-secondary">Scopri di più</a>
       </div>
     </div>
   </section>
 
-  <!-- Tipi di Consulenza -->
-  <section class="section features" id="tipi-consulenza">
+  <!-- Perché Scegliere la Nostra Consulenza -->
+  <section id="perche" class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Tipi di Consulenza</h2>
-        <p class="section-subtitle">Soluzioni personalizzate per ogni tua esigenza</p>
+        <h2 class="section-title">Perché affidarsi a una consulenza</h2>
+        <p class="section-subtitle">Il nostro obiettivo è trasformare la complessità in opportunità. Che tu sia un privato, una famiglia o un'azienda, ti offriamo un'analisi oggettiva e indipendente per aiutarti a navigare le tue scelte patrimoniali con maggiore consapevolezza.</p>
       </div>
-      <div class="modern-features-grid">
-        <div class="modern-feature-card">
-          <div class="modern-feature-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3 class="modern-feature-title">Pianificazione Finanziaria</h3>
-          <p class="modern-feature-text">Analisi della situazione finanziaria attuale e pianificazione strategica per il futuro.</p>
+      <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        <div class="benefit-card">
+          <i class="fas fa-search-dollar" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+          <h3>Chiarezza Assoluta</h3>
+          <p>Analizziamo la tua situazione per identificare punti di forza, criticità nascoste e opportunità non sfruttate.</p>
         </div>
-        <div class="modern-feature-card">
-          <div class="modern-feature-icon">
-            <i class="fas fa-wallet"></i>
-          </div>
-          <h3 class="modern-feature-title">Gestione del Patrimonio</h3>
-          <p class="modern-feature-text">Ottimizzazione della struttura patrimoniale per massimizzare crescita e protezione.</p>
+        <div class="benefit-card">
+          <i class="fas fa-puzzle-piece" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+          <h3>Soluzioni su Misura</h3>
+          <p>Dimentica gli approcci standard. Elaboriamo strategie concrete e personalizzate, costruite sulle tue reali esigenze e obiettivi futuri.</p>
         </div>
-        <div class="modern-feature-card">
-          <div class="modern-feature-icon">
-            <i class="fas fa-hand-holding-usd"></i>
-          </div>
-          <h3 class="modern-feature-title">Pianificazione Successoria</h3>
-          <p class="modern-feature-text">Preparazione anticipata della successione per evitare conflitti e garantire continuità.</p>
+        <div class="benefit-card">
+          <i class="fas fa-sync" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+          <h3>Visione a 360°</h3>
+          <p>Integriamo aspetti legali, fiscali e finanziari per offrirti una valutazione completa e coerente del tuo patrimonio.</p>
         </div>
-        <div class="modern-feature-card">
-          <div class="modern-feature-icon">
-            <i class="fas fa-file-invoice-dollar"></i>
-          </div>
-          <h3 class="modern-feature-title">Consulenza fiscale</h3>
-          <p class="modern-feature-text">Assistenza specialistica per ottimizzare la fiscalità e rispettare la normativa vigente.</p>
+        <div class="benefit-card">
+          <i class="fas fa-chart-line" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+          <h3>Decisioni Informate</h3>
+          <p>Ti forniamo gli strumenti e le conoscenze per prendere le decisioni giuste al momento giusto, riducendo rischi e incertezze.</p>
         </div>
-        <div class="modern-feature-card">
-          <div class="modern-feature-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3 class="modern-feature-title">Risk Management</h3>
-          <p class="modern-feature-text">Valutazione e mitigazione dei rischi che potrebbero compromettere il tuo patrimonio.</p>
+      </div>
+      <div class="note-box" style="background-color: var(--light-bg); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+        <p><strong>Nota:</strong> Il focus principale del percorso è rivolto a clienti privati e famiglie, ma le metodologie applicate si adattano con efficacia anche alle esigenze delle realtà corporate.</p>
+      </div>
+    </div>
+
+ 
+  <!-- Modalità di Consulenza -->
+  <section class="section" style="background-color: var(--light-bg);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Comodità, Flessibilità e Riservatezza: La Consulenza è Online</h2>
+        <p class="section-subtitle">Per garantirti la massima efficienza e flessibilità, il nostro servizio di consulenza si svolge principalmente online tramite video-incontro.</p>
+      </div>
+      <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
+        <div class="feature-card" style="text-align: center; padding: 2rem;">
+          <i class="fas fa-globe" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+          <h3>Accessibilità</h3>
+          <p>Puoi collegarti da qualsiasi luogo, eliminando tempi e costi di spostamento.</p>
         </div>
+        <div class="feature-card" style="text-align: center; padding: 2rem;">
+          <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+          <h3>Riservatezza</h3>
+          <p>Gli incontri avvengono in un ambiente digitale sicuro e protetto, per discutere con serenità anche gli argomenti più delicati.</p>
+        </div>
+        <div class="feature-card" style="text-align: center; padding: 2rem;">
+          <i class="fas fa-clock" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+          <h3>Efficienza</h3>
+          <p>L'approccio online ci permette di condividere documenti e analisi in tempo reale, ottimizzando ogni minuto della consulenza.</p>
+        </div>
+      </div>
+      <div class="info-box" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">E la consulenza in presenza?</h4>
+        <p>La consideriamo un'opzione secondaria, attivabile solo in casi specifici o per fasi successive del percorso, e sempre dopo un primo video-incontro conoscitivo. La tua esigenza verrà valutata durante il nostro primo colloquio.</p>
       </div>
     </div>
   </section>
 
- 
-
-  <!-- Consulenza On-Site -->
+  <!-- Processo di Consulenza -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Consulenza On-Site</h2>
-        <p class="section-subtitle">Incontri personalizzati con i nostri esperti</p>
+        <h2 class="section-title">Il Nostro Metodo: Un Percorso Chiaro in 3 Fasi</h2>
+        <p class="section-subtitle">Abbiamo sviluppato un processo trasparente ed efficace per guidarti passo dopo passo verso la soluzione ideale.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="card-content">
-            <div class="modern-feature-icon">
-              <i class="fas fa-user-tie"></i>
+      
+      <div class="timeline" style="max-width: 800px; margin: 4rem auto;">
+        <div class="timeline-item" style="display: flex; margin-bottom: 3rem; position: relative;">
+          <div class="timeline-icon" style="flex: 0 0 80px; text-align: center;">
+            <i class="fas fa-search" style="font-size: 2rem; color: var(--primary-color); background: white; padding: 1rem; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+          </div>
+          <div class="timeline-content" style="flex: 1; padding-left: 2rem;">
+            <h3>FASE 1: Analisi delle Criticità</h3>
+            <div class="phase-details">
+              <div class="what-we-do">
+                <h4><i class="fas fa-cog"></i> Cosa facciamo:</h4>
+                <p>In questa prima fase raccogliamo le informazioni essenziali e, attraverso un colloquio mirato e l'utilizzo di strumenti digitali avanzati (anche basati su AI), identifichiamo le aree di debolezza e i potenziali rischi della tua attuale gestione patrimoniale.</p>
+              </div>
+              <div class="your-value">
+                <h4><i class="fas fa-star"></i> Il tuo valore:</h4>
+                <p>Ottieni una fotografia oggettiva e chiara della situazione di partenza, fondamentale per impostare qualsiasi strategia futura.</p>
+              </div>
             </div>
-            <h3 class="card-title">Descrizione</h3>
-            <p class="card-text">Il nostro consulente si reca direttamente presso la tua sede per un'analisi approfondita.</p>
           </div>
         </div>
-        <div class="service-card">
-          <div class="card-content">
-            <div class="modern-feature-icon">
-              <i class="fas fa-star"></i>
-            </div>
-            <h3 class="card-title">Vantaggi</h3>
-            <p class="card-text">Approccio personalizzato, analisi diretta e interazione umana senza barriere digitali.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="card-content">
-            <div class="modern-feature-icon">
-              <i class="fas fa-calendar-check"></i>
-            </div>
-            <h3 class="card-title">Prenota un Incontro</h3>
-            <p class="card-text">Puoi richiedere una visita tramite il nostro modulo contatti o chiamandoci direttamente.</p>
-            <a href="contatti.html" class="cta-button">Prenota una consulenza</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Consulenza Online -->
-  <section class="section features">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Consulenza Online</h2>
-        <p class="section-subtitle">Soluzioni remote flessibili ed efficaci</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="https://picsum.photos/500/300?random=4" alt="Videoconsulto" class="card-img">
-          <div class="card-content">
-            <h3 class="card-title">Videoconsulto con Esperti</h3>
-            <p class="card-text">Colloquio video per discutere la tua situazione finanziaria in tempo reale.</p>
-            <a href="contatti.html" class="card-link">Prenota ora →</a>
+        <div class="timeline-item" style="display: flex; margin-bottom: 3rem; position: relative;">
+          <div class="timeline-icon" style="flex: 0 0 80px; text-align: center;">
+            <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--primary-color); background: white; padding: 1rem; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+          </div>
+          <div class="timeline-content" style="flex: 1; padding-left: 2rem;">
+            <h3>FASE 2: Valutazione Anonima della Situazione Patrimoniale</h3>
+            <div class="phase-details">
+              <div class="what-we-do">
+                <h4><i class="fas fa-cog"></i> Cosa facciamo:</h4>
+                <p>Procediamo con una valutazione aggregata e anonimizzata dei dati patrimoniali. Questo ci consente di effettuare analisi quantitative e qualitative senza entrare nel dettaglio di dati sensibili, garantendo la tua massima privacy.</p>
+              </div>
+              <div class="your-value">
+                <h4><i class="fas fa-star"></i> Il tuo valore:</h4>
+                <p>Hai una stima imparziale e data-driven del tuo patrimonio, confrontata con benchmark di riferimento, per comprenderne il reale potenziale.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="service-card">
-          <img src="https://picsum.photos/500/300?random=5" alt="Analisi Patrimoniale" class="card-img">
-          <div class="card-content">
-            <h3 class="card-title">Analisi Patrimoniale Remota</h3>
-            <p class="card-text">Utilizzo di strumenti digitali per una valutazione completa da remoto.</p>
-            <a href="prodotti.html" class="card-link">Scopri di più →</a>
+
+        <div class="timeline-item" style="display: flex; margin-bottom: 3rem; position: relative;">
+          <div class="timeline-icon" style="flex: 0 0 80px; text-align: center;">
+            <i class="fas fa-file-alt" style="font-size: 2rem; color: var(--primary-color); background: white; padding: 1rem; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
           </div>
-        </div>
-        <div class="service-card">
-          <img src="https://picsum.photos/500/300?random=6" alt="Tool Online" class="card-img">
-          <div class="card-content">
-            <h3 class="card-title">Accesso ai Tool Interattivi</h3>
-            <p class="card-text">Durante la consulenza puoi visualizzare e modificare i tuoi dati insieme al consulente.</p>
-            <a href="prodotti.html" class="card-link">Esplora i tool →</a>
+          <div class="timeline-content" style="flex: 1; padding-left: 2rem;">
+            <h3>FASE 3: Analisi di Dettaglio e Proposta di Soluzioni Personalizzate</h3>
+            <div class="phase-details">
+              <div class="what-we-do">
+                <h4><i class="fas fa-cog"></i> Cosa facciamo:</h4>
+                <p>Sulla base delle analisi precedenti, elaboriamo una o più proposte strategiche concrete. Ogni soluzione è dettagliata, motivata e include un piano d'azione chiaro per l'implementazione.</p>
+              </div>
+              <div class="your-value">
+                <h4><i class="fas fa-star"></i> Il tuo valore:</h4>
+                <p>Ricevi un percorso operativo "chiavi in mano", pronto per essere attuato, che risponde esattamente ai tuoi obiettivi di protezione, ottimizzazione o crescita.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -181,6 +385,147 @@
       <div class="hero-buttons">
         <a href="contatti.html" class="cta-button">Prenota una consulenza</a>
         <a href="tel:+390212345678" class="btn-secondary">Chiamaci ora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form di Richiesta -->
+  <section id="prenota" class="section" style="background-color: var(--light-bg);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Inizia il Tuo Percorso: Richiedi il Tuo Video-Incontro Gratuito</h2>
+        <p class="section-subtitle">Compila il modulo sottostante per richiedere il tuo primo colloquio conoscitivo di 30 minuti, senza alcun impegno.</p>
+      </div>
+
+      <div class="process-steps" style="max-width: 600px; margin: 2rem auto; text-align: center;">
+        <div class="step-list" style="display: flex; justify-content: space-between; margin-bottom: 3rem;">
+          <div class="step">
+            <div class="step-number">1</div>
+            <p>Invia la tua richiesta</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <p>Valutazione interna</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <p>Ricevi il codice di prenotazione</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <form id="consulenza-form" class="contact-form">
+          <div class="form-group">
+            <label for="nome">Nome e Cognome *</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="telefono">Telefono (facoltativo)</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+          
+          <div class="form-group">
+            <label for="area">Area di interesse principale *</label>
+            <select id="area" name="area" required>
+              <option value="">Seleziona un'opzione</option>
+              <option value="patrimonio">Gestione Patrimonio Familiare</option>
+              <option value="passaggio">Passaggio Generazionale</option>
+              <option value="fiscale">Ottimizzazione Fiscale</option>
+              <option value="protezione">Protezione Patrimoniale</option>
+              <option value="aziendale">Consulenza Aziendale</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="messaggio">Descrivi brevemente la tua situazione *</label>
+            <textarea id="messaggio" name="messaggio" rows="4" maxlength="500" required></textarea>
+            <small>Massimo 500 caratteri</small>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-container">
+              <input type="checkbox" required>
+              <span class="checkmark"></span>
+              Dichiaro di aver letto e accettato l'<a href="privacy.html">informativa sulla privacy</a>
+            </label>
+          </div>
+          
+          <div class="form-buttons" style="text-align: center; margin-top: 2rem;">
+            <button type="submit" class="cta-button">Richiedi Video-Incontro</button>
+            <button type="button" class="btn-secondary">Richiedi informazioni specifiche</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Box Professionisti -->
+  <section class="section">
+    <div class="container">
+      <div class="pro-box" style="background-color: var(--primary-color); color: white; padding: 3rem; border-radius: 8px; text-align: center;">
+        <h2>Sei un Professionista o Rappresenti un'Azienda?</h2>
+        <p style="margin: 1.5rem 0;">Collaboriamo con commercialisti, avvocati, notai, assicuratori e istituti bancari per offrire un supporto specialistico ai loro clienti. Possiamo integrare le tue competenze con la nostra analisi patrimoniale strategica, creando un valore aggiunto tangibile e rafforzando la relazione con il cliente.</p>
+        <a href="contatti.html" class="cta-button" style="background-color: white; color: var(--primary-color);">Contattaci per Soluzioni Corporate e Partnership</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="background-color: var(--light-bg);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Risposte alle Tue Domande</h2>
+        <p class="section-subtitle">Le domande più frequenti sulla nostra consulenza</p>
+      </div>
+
+      <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+        <div class="faq-item" style="background: white; margin-bottom: 1rem; border-radius: 8px; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.5rem; cursor: pointer; font-weight: 600;">
+            <i class="fas fa-chevron-down" style="margin-right: 1rem;"></i>
+            In cosa consiste esattamente il video-incontro gratuito?
+          </div>
+          <div class="faq-answer" style="padding: 0 1.5rem 1.5rem;">
+            È un colloquio conoscitivo di 30 minuti in cui ascolteremo le tue esigenze, ti spiegheremo nel dettaglio il nostro metodo e valuteremo insieme se e come possiamo aiutarti. Non include l'elaborazione di soluzioni, ma serve a definire il perimetro di un eventuale intervento.
+          </div>
+        </div>
+
+        <div class="faq-item" style="background: white; margin-bottom: 1rem; border-radius: 8px; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.5rem; cursor: pointer; font-weight: 600;">
+            <i class="fas fa-chevron-down" style="margin-right: 1rem;"></i>
+            Come viene garantita la mia privacy?
+          </div>
+          <div class="faq-answer" style="padding: 0 1.5rem 1.5rem;">
+            La tua privacy è la nostra massima priorità. Tutti i dati sono trattati in conformità al GDPR. Il processo di valutazione anonima (Fase 2) è studiato appositamente per analizzare la situazione senza accedere a dati personali sensibili fino a quando non sarà strettamente necessario e con il tuo esplicito consenso.
+          </div>
+        </div>
+
+        <div class="faq-item" style="background: white; margin-bottom: 1rem; border-radius: 8px; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.5rem; cursor: pointer; font-weight: 600;">
+            <i class="fas fa-chevron-down" style="margin-right: 1rem;"></i>
+            Posso richiedere subito una consulenza in presenza?
+          </div>
+          <div class="faq-answer" style="padding: 0 1.5rem 1.5rem;">
+            La nostra modalità standard è online per garantire efficienza e accessibilità. La consulenza in presenza non è prenotabile direttamente ma viene concordata solo in seguito al primo video-incontro, qualora emerga una specifica necessità.
+          </div>
+        </div>
+
+        <div class="faq-item" style="background: white; margin-bottom: 1rem; border-radius: 8px; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.5rem; cursor: pointer; font-weight: 600;">
+            <i class="fas fa-chevron-down" style="margin-right: 1rem;"></i>
+            Cosa succede dopo il primo incontro?
+          </div>
+          <div class="faq-answer" style="padding: 0 1.5rem 1.5rem;">
+            Se deciderai di procedere, ti invieremo un preventivo dettagliato per il percorso di consulenza completo (Fasi 1-3). Sarai libero di accettare senza alcun obbligo.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -235,6 +580,48 @@
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // FAQ Toggle
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        const answer = question.nextElementSibling;
+        answer.style.display = 'none'; // Initially hide all answers
+        
+        question.addEventListener('click', () => {
+          const isOpen = answer.style.display === 'block';
+          
+          // Close all answers first
+          document.querySelectorAll('.faq-answer').forEach(a => {
+            a.style.display = 'none';
+          });
+          document.querySelectorAll('.fa-chevron-down').forEach(icon => {
+            icon.style.transform = 'rotate(0deg)';
+          });
+          
+          // Toggle clicked question
+          if (!isOpen) {
+            answer.style.display = 'block';
+            question.querySelector('.fa-chevron-down').style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
