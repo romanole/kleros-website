@@ -2281,3 +2281,168 @@ body:not([class*="index"]):not([class*="software"]) header:not(.scrolled) .logo-
 body:not([class*="index"]):not([class*="software"]) header:not(.scrolled) .nav-link {
     color: var(--text-color) !important;
 }
+
+/* New styles for services page */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.service-card p {
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.service-card .cta-button {
+  align-self: center;
+  margin-top: auto;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.feature-item i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.process-steps {
+  margin-top: 3rem;
+}
+
+.process-step {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.process-step h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.process-step ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.process-step li {
+  margin-bottom: 0.5rem;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Service Details Unified Layout */
+.service-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.service-step {
+  margin-bottom: 3rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid var(--primary-color);
+}
+
+.service-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-title {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-step p {
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.service-list {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.service-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.service-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .service-step {
+    padding-left: 1.5rem;
+  }
+  
+  .step-title {
+    font-size: 1.3rem;
+  }
+}
