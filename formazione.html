@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preload" href="css/style.css" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
@@ -57,6 +57,7 @@
           <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
           <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
           <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
@@ -66,141 +67,248 @@
   </header>
 
   <!-- Sezione 1: Hero Section - Titolo e Introduzione -->
-  <section id="main-content" class="hero formation-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1920/600?gravity=center'); min-height: 70vh; display: flex; align-items: center;">
-    <div class="hero-content container">
-      <h1 class="hero-title">La Tua Crescita Professionale nella Consulenza Patrimoniale Inizia Qui</h1>
-      <p class="hero-subtitle">Dalla formazione operativa dell'Accademia ai percorsi flessibili online, fino ai progetti su misura per le aziende. Costruiamo insieme le competenze per eccellere.</p>
+  <section id="main-content" class="hero formation-hero" style="position: relative; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--tertiary-color) 100%); overflow: hidden;">
+    <!-- Overlay per migliorare il contrasto -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--overlay-dark); z-index: 1;"></div>
+    
+    <!-- Background decorativo -->
+    <div style="position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; z-index: 1;"></div>
+    <div style="position: absolute; bottom: -15%; left: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; z-index: 1;"></div>
+    
+    <div class="hero-content container" style="position: relative; z-index: 2; text-align: center; color: var(--white); max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div style="margin-bottom: 60px;">
+        <span style="display: inline-block; padding: 8px 24px; background: var(--overlay-light); color: var(--primary-color); border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px; backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.2);">Formazione Professionale</span>
+        
+        <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.2; margin-bottom: 30px; text-shadow: 0 4px 20px var(--black); color: var(--white);">
+          La tua crescita professionale nella <span style="background: linear-gradient(135deg, var(--white) 0%, var(--tertiary-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: none;">consulenza patrimoniale</span> inizia qui
+        </h1>
+        
+        <p class="hero-subtitle" style="font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6; margin: 0 auto 40px; max-width: 800px; opacity: 0.95; text-shadow: 0 2px 10px var(--black); color: var(--white);">
+          Dalla formazione operativa dell'Accademia ai percorsi flessibili online, fino ai progetti su misura per le aziende. Costruiamo insieme le competenze per eccellere
+        </p>
+      </div>
       
-      <div class="hero-quiz-box">
-        <h3><i class="fas fa-question-circle"></i> Non sai da dove iniziare?</h3>
-        <p>Rispondi a poche domande e scopri il percorso formativo Kleros perfetto per le tue esigenze e il tuo livello di preparazione.</p>
-        <a href="#test-formativo" class="cta-button btn-lg">Fai il Test e Trova il Tuo Corso</a>
+      <div class="hero-quiz-box" style="background: var(--overlay-light); backdrop-filter: blur(20px); border-radius: 24px; padding: 50px 40px; margin: 0 auto; max-width: 600px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.2); color: var(--text-color);">
+        <div style="margin-bottom: 25px;">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ffd89b, #19547b); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 10px 30px rgba(255, 216, 155, 0.3);">
+            <i class="fas fa-question-circle" style="font-size: 36px; color: white;"></i>
+          </div>
+          <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; color: var(--text-color);">Non sai da dove iniziare?</h3>
+        </div>
+        
+        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; opacity: 0.9; color: var(--text-color);">
+          Rispondi a poche domande e scopri il percorso formativo Kleros perfetto per le tue esigenze e il tuo livello di preparazione
+        </p>
+        
+        <a href="#test-formativo" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0, 133, 164, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+          <i class="fas fa-play" style="margin-right: 10px;"></i>
+          Fai il test e trova il tuo corso
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Quick Links Navigation -->
-  <section class="quick-links">
-    <div class="container">
-      <div class="quick-links-container">
-        <a href="#accademia" class="link-button"><i class="fas fa-graduation-cap"></i> Accademia del Patrimonialista</a>
-        <a href="#online" class="link-button"><i class="fas fa-laptop"></i> Formazione Online</a>
-        <a href="#aziende" class="link-button"><i class="fas fa-users"></i> Corsi su Misura per Aziende</a>
-        <a href="#risorse" class="link-button"><i class="fas fa-book"></i> Risorse Editoriali</a>
-        <a href="#faq" class="link-button"><i class="fas fa-question-circle"></i> FAQ</a>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- Sezione 2: I Nostri Pilastri Formativi -->
-  <section id="pilastri-formativi" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="pre-heading">PERCORSI FORMATIVI</span>
-        <h2 class="section-title">I Nostri Pilastri Formativi</h2>
-        <p class="section-subtitle">Tre percorsi formativi distinti per rispondere alle diverse esigenze professionali</p>
+  <section id="pilastri-formativi" class="section" style="padding: 120px 0; background: var(--white); position: relative; overflow: hidden;">
+    <!-- Background decorativo -->
+    <div style="position: absolute; top: -30%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0, 133, 164, 0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -20%; right: -15%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(81, 165, 197, 0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-header" style="text-align: center; margin-bottom: 80px;">
+        <span style="display: inline-block; padding: 8px 24px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Percorsi Formativi</span>
+        
+        <h2 class="section-title" style="font-size: 3.2rem; font-weight: 700; color: #2c3e50; margin-bottom: 30px; line-height: 1.2;">
+          I Nostri <span style="background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Pilastri Formativi</span>
+        </h2>
+        
+        <p class="section-subtitle" style="font-size: 1.3rem; color: #6c757d; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+          Tre percorsi formativi distinti per rispondere alle diverse esigenze professionali
+        </p>
       </div>
 
-      <div class="pillars-grid">
+      <div class="pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
         <!-- Accademia del Patrimonialista -->
-        <div id="accademia" class="pillar-card">
-          <div class="pillar-icon">
-            <i class="fas fa-graduation-cap"></i>
+        <div id="accademia" class="pillar-card" style="background: var(--white); border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(0, 133, 164, 0.1); display: flex; flex-direction: column; min-height: 500px;">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -30px; right: -30px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(0, 133, 164, 0.08), rgba(81, 165, 197, 0.08)); border-radius: 50%; opacity: 0.6;"></div>
+          
+          <div class="pillar-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(0, 133, 164, 0.3); position: relative; z-index: 2;">
+            <i class="fas fa-graduation-cap" style="font-size: 36px; color: var(--white);"></i>
           </div>
-          <h3 class="pillar-title">ACCADEMIA DEL PATRIMONIALISTA</h3>
-          <p class="pillar-tagline">Per chi vuole imparare a fare il mestiere del consulente.</p>
-          <div class="pillar-description">
-            <p>Percorso completo con lezioni in presenza e online, tutoraggio costante e accesso alla piattaforma per diventare un professionista operativo.</p>
+          
+          <h3 class="pillar-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-color); margin-bottom: 15px; text-align: center; position: relative; z-index: 2;">ACCADEMIA DEL PATRIMONIALISTA</h3>
+          
+          <p class="pillar-tagline" style="font-size: 1.1rem; color: var(--primary-color); font-weight: 600; text-align: center; margin-bottom: 25px; position: relative; z-index: 2;">
+            Un percorso che consente di imparare anche con casi pratici tutto quello che serve per essere un patrimonialista al top
+          </p>
+          
+          <div class="pillar-description" style="background: linear-gradient(135deg, var(--light-bg), var(--off-white)); padding: 25px; border-radius: 16px; margin-bottom: auto; border-left: 4px solid var(--primary-color); position: relative; z-index: 2; flex-grow: 1;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0; font-size: 1rem;">
+              Percorso completo con lezioni in presenza e online, tutoraggio costante e accesso alla piattaforma per diventare un professionista operativo
+            </p>
           </div>
-          <a href="#accademia-details" class="btn-pillar">Scopri l'Accademia</a>
+          
+          <a href="#accademia-details" style="display: block; width: 100%; padding: 16px 24px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--white); text-decoration: none; border-radius: 12px; font-weight: 600; text-align: center; transition: all 0.3s ease; position: relative; z-index: 2; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 30px;">
+            <i class="fas fa-arrow-right" style="margin-right: 8px;"></i>
+            Scopri l'Accademia
+          </a>
         </div>
 
         <!-- Formazione Online -->
-        <div id="online" class="pillar-card">
-          <div class="pillar-icon">
-            <i class="fas fa-laptop"></i>
+        <div id="online" class="pillar-card" style="background: var(--white); border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(81, 165, 197, 0.1); display: flex; flex-direction: column; min-height: 500px;">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -30px; right: -30px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(81, 165, 197, 0.08), rgba(162, 198, 210, 0.08)); border-radius: 50%; opacity: 0.6;"></div>
+          
+          <div class="pillar-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary-color), var(--tertiary-color)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(81, 165, 197, 0.3); position: relative; z-index: 2;">
+            <i class="fas fa-laptop" style="font-size: 36px; color: var(--white);"></i>
           </div>
-          <h3 class="pillar-title">FORMAZIONE ONLINE</h3>
-          <p class="pillar-tagline">Per chi vuole imparare con flessibilità e autonomia.</p>
-          <div class="pillar-description">
-            <p>Percorsi modulari, pillole formative e corsi on-demand da fruire dove e quando vuoi, componendo il tuo piano di studi personalizzato.</p>
+          
+          <h3 class="pillar-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-color); margin-bottom: 15px; text-align: center; position: relative; z-index: 2;">FORMAZIONE ONLINE</h3>
+          
+          <p class="pillar-tagline" style="font-size: 1.1rem; color: var(--secondary-color); font-weight: 600; text-align: center; margin-bottom: 25px; position: relative; z-index: 2;">
+            Per chi vuole imparare con flessibilità e autonomia
+          </p>
+          
+          <div class="pillar-description" style="background: linear-gradient(135deg, var(--light-bg), var(--off-white)); padding: 25px; border-radius: 16px; margin-bottom: auto; border-left: 4px solid var(--secondary-color); position: relative; z-index: 2; flex-grow: 1;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0; font-size: 1rem;">
+              Percorsi modulari, pillole formative e corsi on-demand e podcast da fruire dove e quando vuoi, componendo il tuo piano di studi personalizzato
+            </p>
           </div>
-          <a href="#online-details" class="btn-pillar">Esplora i Corsi Online</a>
+          
+          <a href="#online-details" style="display: block; width: 100%; padding: 16px 24px; background: linear-gradient(135deg, var(--secondary-color), var(--tertiary-color)); color: var(--white); text-decoration: none; border-radius: 12px; font-weight: 600; text-align: center; transition: all 0.3s ease; position: relative; z-index: 2; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 30px;">
+            <i class="fas fa-arrow-right" style="margin-right: 8px;"></i>
+            Esplora i Corsi Online
+          </a>
         </div>
 
         <!-- Corsi su Misura per Aziende -->
-        <div id="aziende" class="pillar-card">
-          <div class="pillar-icon">
-            <i class="fas fa-users"></i>
+        <div id="aziende" class="pillar-card" style="background: var(--white); border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(144, 27, 6, 0.1); display: flex; flex-direction: column; min-height: 500px;">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -30px; right: -30px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(144, 27, 6, 0.08), rgba(108, 20, 5, 0.08)); border-radius: 50%; opacity: 0.6;"></div>
+          
+          <div class="pillar-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), #6c1405); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(144, 27, 6, 0.3); position: relative; z-index: 2;">
+            <i class="fas fa-users" style="font-size: 36px; color: var(--white);"></i>
           </div>
-          <h3 class="pillar-title">CORSI SU MISURA PER AZIENDE</h3>
-          <p class="pillar-tagline">Per chi vuole formare il proprio team con un piano ad hoc.</p>
-          <div class="pillar-description">
-            <p>Progettiamo interventi formativi, eventi e webinar su misura per le esigenze specifiche di banche, reti di consulenti e aziende.</p>
+          
+          <h3 class="pillar-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-color); margin-bottom: 15px; text-align: center; position: relative; z-index: 2;">CORSI SU MISURA PER AZIENDE</h3>
+          
+          <p class="pillar-tagline" style="font-size: 1.1rem; color: var(--accent-color); font-weight: 600; text-align: center; margin-bottom: 25px; position: relative; z-index: 2;">
+            Per chi vuole formare il proprio team con un piano ad hoc
+          </p>
+          
+          <div class="pillar-description" style="background: linear-gradient(135deg, var(--light-bg), var(--off-white)); padding: 25px; border-radius: 16px; margin-bottom: auto; border-left: 4px solid var(--accent-color); position: relative; z-index: 2; flex-grow: 1;">
+            <p style="color: #6c757d; line-height: 1.6; margin: 0; font-size: 1rem;">
+              Progettiamo interventi formativi, eventi e webinar su misura per le esigenze specifiche di banche, reti di consulenti e aziende
+            </p>
           </div>
-          <a href="#aziende-details" class="btn-pillar">Richiedi un Progetto Formativo</a>
+          
+          <a href="#aziende-details" style="display: block; width: 100%; padding: 16px 24px; background: linear-gradient(135deg, var(--accent-color), #6c1405); color: var(--white); text-decoration: none; border-radius: 12px; font-weight: 600; text-align: center; transition: all 0.3s ease; position: relative; z-index: 2; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 30px;">
+            <i class="fas fa-arrow-right" style="margin-right: 8px;"></i>
+            Richiedi un Progetto Formativo
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Sezione 4: Risorse Editoriali e Contenuti di Valore -->
-  <section id="risorse" class="section" style="background: white;">
-    <div class="container">
-      <div class="section-header">
-        <span class="pre-heading">CONTENUTI DI VALORE</span>
-        <h2 class="section-title">Risorse Editoriali e Contenuti di Valore</h2>
-        <p class="section-subtitle">Fonti autorevoli di conoscenza per supportare la tua formazione e crescita professionale</p>
+  <section id="risorse" class="section" style="padding: 120px 0; background: white; position: relative; overflow: hidden;">
+    <!-- Background decorativo -->
+    <div style="position: absolute; top: -20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(52, 152, 219, 0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -15%; left: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(46, 204, 113, 0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-header" style="text-align: center; margin-bottom: 80px;">
+        <span style="display: inline-block; padding: 8px 24px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Contenuti di Valore</span>
+        
+        <h2 class="section-title" style="font-size: 3.2rem; font-weight: 700; color: #2c3e50; margin-bottom: 30px; line-height: 1.2;">
+          Risorse <span style="background: linear-gradient(135deg, #3498db, #2980b9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Editoriali</span> e Contenuti di Valore
+        </h2>
+        
+        <p class="section-subtitle" style="font-size: 1.3rem; color: #6c757d; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+          Fonti autorevoli di conoscenza per supportare la tua formazione e crescita professionale
+        </p>
       </div>
 
-      <div class="risorse-grid">
+      <div class="risorse-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto;">
         <!-- Blocco 1: I Nostri Libri e Manuali -->
-        <div class="risorsa-card">
-          <div class="risorsa-header">
-            <h3>I Nostri Libri e Manuali</h3>
-            <p>Approfondisci le tematiche chiave con le nostre pubblicazioni, scritte da esperti per i professionisti.</p>
+        <div class="risorsa-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); position: relative; overflow: hidden; border: 1px solid rgba(52, 152, 219, 0.1);">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -30px; right: -30px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1)); border-radius: 50%; opacity: 0.6;"></div>
+          
+          <div class="risorsa-header" style="text-align: center; margin-bottom: 40px; position: relative; z-index: 2;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3);">
+              <i class="fas fa-book" style="font-size: 36px; color: white;"></i>
+            </div>
+            <h3 style="font-size: 1.8rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px;">I Nostri Libri e Manuali</h3>
+            <p style="color: #6c757d; font-size: 1.1rem; line-height: 1.6;">Approfondisci le tematiche chiave con le nostre pubblicazioni, scritte da esperti per i professionisti</p>
           </div>
           
-          <div class="risorsa-content">
-            <div class="book-showcase">
-              <div class="book">
-                <img src="https://picsum.photos/200/300?random=30" alt="Manuale del Patrimonialista">
-                <h4>Manuale del Patrimonialista</h4>
+          <div class="risorsa-content" style="margin-bottom: 40px; position: relative; z-index: 2;">
+            <div class="book-showcase" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
+              <div class="book" style="text-align: center; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div style="width: 100%; height: 150px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 12px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);">
+                  <i class="fas fa-book-open" style="font-size: 48px; color: white;"></i>
+                </div>
+                <h4 style="font-size: 0.9rem; font-weight: 600; color: #2c3e50; margin: 0; line-height: 1.3;">Manuale del Patrimonialista</h4>
               </div>
-              <div class="book">
-                <img src="https://picsum.photos/200/300?random=31" alt="Guida agli Investimenti">
-                <h4>Guida agli Investimenti</h4>
+              <div class="book" style="text-align: center; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div style="width: 100%; height: 150px; background: linear-gradient(135deg, #2ecc71, #27ae60); border-radius: 12px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(46, 204, 113, 0.3);">
+                  <i class="fas fa-chart-line" style="font-size: 48px; color: white;"></i>
+                </div>
+                <h4 style="font-size: 0.9rem; font-weight: 600; color: #2c3e50; margin: 0; line-height: 1.3;">Guida agli Investimenti</h4>
               </div>
-              <div class="book">
-                <img src="https://picsum.photos/200/300?random=32" alt="Pianificazione Successoria">
-                <h4>Pianificazione Successoria</h4>
+              <div class="book" style="text-align: center; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                <div style="width: 100%; height: 150px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 12px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);">
+                  <i class="fas fa-users-cog" style="font-size: 48px; color: white;"></i>
+                </div>
+                <h4 style="font-size: 0.9rem; font-weight: 600; color: #2c3e50; margin: 0; line-height: 1.3;">Pianificazione Successoria</h4>
               </div>
             </div>
           </div>
           
-          <div class="risorsa-cta">
-            <a href="editoria.html" class="btn-primary">Vai al Catalogo Editoriale</a>
+          <div class="risorsa-cta" style="text-align: center; position: relative; z-index: 2;">
+            <a href="editoria.html" style="display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-external-link-alt" style="margin-right: 8px;"></i>
+              Vai al Catalogo Editoriale
+            </a>
           </div>
         </div>
         
         <!-- Blocco 2: Il Magazine Mensile -->
-        <div class="risorsa-card">
-          <div class="risorsa-header">
-            <h3>Il Magazine Mensile</h3>
-            <p>Rimani aggiornato su normative, strategie e casi di studio con il nostro magazine riservato.</p>
+        <div class="risorsa-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); position: relative; overflow: hidden; border: 1px solid rgba(46, 204, 113, 0.1);">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -30px; right: -30px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1)); border-radius: 50%; opacity: 0.6;"></div>
+          
+          <div class="risorsa-header" style="text-align: center; margin-bottom: 40px; position: relative; z-index: 2;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #2ecc71, #27ae60); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 15px 40px rgba(46, 204, 113, 0.3);">
+              <i class="fas fa-newspaper" style="font-size: 36px; color: white;"></i>
+            </div>
+            <h3 style="font-size: 1.8rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px;">Il Magazine Mensile</h3>
+            <p style="color: #6c757d; font-size: 1.1rem; line-height: 1.6;">Rimani aggiornato su normative, strategie e casi di studio con il nostro magazine riservato</p>
           </div>
           
-          <div class="risorsa-content">
-            <div class="magazine-cover">
-              <img src="https://picsum.photos/400/500?random=33" alt="Ultimo numero del magazine">
-              <div class="magazine-label">Ultimo Numero</div>
-              <h4>La Consulenza Patrimoniale nel 2025</h4>
-              <p>Tendenze, innovazioni e sfide del settore</p>
+          <div class="risorsa-content" style="margin-bottom: 40px; position: relative; z-index: 2;">
+            <div class="magazine-cover" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); text-align: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; top: 0; right: 0; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 8px 16px; border-radius: 0 20px 0 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Ultimo Numero</div>
+              
+              <div style="width: 200px; height: 250px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 16px; margin: 20px auto 25px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                <i class="fas fa-chart-bar" style="font-size: 64px; color: white; position: relative; z-index: 2;"></i>
+              </div>
+              
+              <h4 style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px;">La Consulenza Patrimoniale nel 2025</h4>
+              <p style="color: #6c757d; font-size: 1rem; line-height: 1.5; margin: 0;">Tendenze, innovazioni e sfide del settore</p>
             </div>
           </div>
           
-          <div class="risorsa-cta">
-            <a href="#" class="btn-primary">Scarica una Copia Omaggio</a>
+          <div class="risorsa-cta" style="text-align: center; position: relative; z-index: 2;">
+            <a href="#" style="display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-download" style="margin-right: 8px;"></i>
+              Scarica una Copia Omaggio
+            </a>
           </div>
         </div>
       </div>
@@ -208,62 +316,92 @@
   </section>
 
   <!-- Sezione 5: Domande Frequenti (FAQ) -->
-  <section class="section" id="faq" style="background: #f8f9fa;">
-    <div class="container">
-      <div class="section-header">
-        <span class="pre-heading">SUPPORTO</span>
-        <h2 class="section-title">Domande Frequenti</h2>
-        <p class="section-subtitle">Risposte ai dubbi più comuni sulla nostra offerta formativa</p>
+  <section class="section" id="faq" style="padding: 120px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); position: relative; overflow: hidden;">
+    <!-- Background decorativo -->
+    <div style="position: absolute; top: -25%; right: -15%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(155, 89, 182, 0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -20%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(231, 76, 60, 0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-header" style="text-align: center; margin-bottom: 80px;">
+        <span style="display: inline-block; padding: 8px 24px; background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Supporto</span>
+        
+        <h2 class="section-title" style="font-size: 3.2rem; font-weight: 700; color: #2c3e50; margin-bottom: 30px; line-height: 1.2;">
+          Domande <span style="background: linear-gradient(135deg, #9b59b6, #8e44ad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Frequenti</span>
+        </h2>
+        
+        <p class="section-subtitle" style="font-size: 1.3rem; color: #6c757d; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+          Risposte ai dubbi più comuni sulla nostra offerta formativa
+        </p>
       </div>
       
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Qual è la differenza pratica tra l'Accademia e un corso online avanzato?</h3>
-            <i class="fas fa-chevron-down"></i>
+      <div class="faq-container" style="max-width: 900px; margin: 0 auto;">
+        <div class="faq-item" style="background: white; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid rgba(155, 89, 182, 0.1); transition: all 0.3s ease;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; padding: 30px; cursor: pointer; transition: all 0.3s ease; position: relative;">
+            <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0; flex: 1; color: #2c3e50; line-height: 1.4;">Qual è la differenza pratica tra l'Accademia e un corso online avanzato?</h3>
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 20px; transition: all 0.3s ease;">
+              <i class="fas fa-chevron-down" style="font-size: 16px; color: white; transition: all 0.3s ease;"></i>
+            </div>
           </div>
-          <div class="faq-answer">
-            <p>L'Accademia offre un percorso formativo completo con lezioni in presenza, tutoraggio personalizzato e sessioni pratiche sugli strumenti di lavoro. I corsi online avanzati invece offrono approfondimenti specifici su singoli argomenti con maggiore flessibilità di fruizione, ma senza il lavoro pratico e il confronto diretto con i docenti che caratterizza l'Accademia.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Posso iscrivermi all'Accademia in qualsiasi momento dell'anno?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Sì, il percorso dell'Accademia è strutturato in modo ciclico con ingressi liberi durante tutto l'anno. Una volta iscritto, verrai inserito nel ciclo formativo in corso e potrai recuperare eventuali lezioni precedenti grazie alle registrazioni disponibili nell'area riservata.</p>
+          <div class="faq-answer" style="padding: 0 30px 30px; color: #6c757d; line-height: 1.6; font-size: 1rem; display: none;">
+            <div style="background: linear-gradient(135deg, #faf9ff, #f4f1ff); padding: 25px; border-radius: 16px; border-left: 4px solid #9b59b6;">
+              <p style="margin: 0;">L'Accademia offre un percorso formativo completo con lezioni in presenza, tutoraggio personalizzato e sessioni pratiche sugli strumenti di lavoro. I corsi online avanzati invece offrono approfondimenti specifici su singoli argomenti con maggiore flessibilità di fruizione, ma senza il lavoro pratico e il confronto diretto con i docenti che caratterizza l'Accademia.</p>
+            </div>
           </div>
         </div>
         
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>I corsi online rilasciano un attestato?</h3>
-            <i class="fas fa-chevron-down"></i>
+        <div class="faq-item" style="background: white; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid rgba(155, 89, 182, 0.1); transition: all 0.3s ease;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; padding: 30px; cursor: pointer; transition: all 0.3s ease; position: relative;">
+            <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0; flex: 1; color: #2c3e50; line-height: 1.4;">Posso iscrivermi all'Accademia in qualsiasi momento dell'anno?</h3>
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 20px; transition: all 0.3s ease;">
+              <i class="fas fa-chevron-down" style="font-size: 16px; color: white; transition: all 0.3s ease;"></i>
+            </div>
           </div>
-          <div class="faq-answer">
-            <p>Tutti i corsi online rilasciano un attestato di completamento digitale che certifica le ore di formazione svolte e gli argomenti trattati. I percorsi completi o tematici rilasciano inoltre una certificazione di competenza che può essere condivisa su LinkedIn e altri canali professionali.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Come funziona l'acquisto dei corsi o l'iscrizione all'Accademia?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Per i corsi online, puoi effettuare l'acquisto direttamente dal catalogo corsi sul nostro sito, pagando con carta di credito, PayPal o bonifico bancario. Per l'iscrizione all'Accademia, invece, è necessario compilare il modulo di iscrizione e attendere un colloquio conoscitivo con il responsabile didattico per valutare il tuo livello di preparazione e definire il percorso più adatto.</p>
+          <div class="faq-answer" style="padding: 0 30px 30px; color: #6c757d; line-height: 1.6; font-size: 1rem; display: none;">
+            <div style="background: linear-gradient(135deg, #faf9ff, #f4f1ff); padding: 25px; border-radius: 16px; border-left: 4px solid #9b59b6;">
+              <p style="margin: 0;">Sì, il percorso dell'Accademia è strutturato in modo ciclico con ingressi liberi durante tutto l'anno. Una volta iscritto, verrai inserito nel ciclo formativo in corso e potrai recuperare eventuali lezioni precedenti grazie ad un piano personalizzato</p>
+            </div>
           </div>
         </div>
         
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>A chi mi rivolgo se ho bisogno di un corso per la mia azienda?</h3>
-            <i class="fas fa-chevron-down"></i>
+        <div class="faq-item" style="background: white; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid rgba(155, 89, 182, 0.1); transition: all 0.3s ease;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; padding: 30px; cursor: pointer; transition: all 0.3s ease; position: relative;">
+            <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0; flex: 1; color: #2c3e50; line-height: 1.4;">I corsi online rilasciano un attestato?</h3>
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 20px; transition: all 0.3s ease;">
+              <i class="fas fa-chevron-down" style="font-size: 16px; color: white; transition: all 0.3s ease;"></i>
+            </div>
           </div>
-          <div class="faq-answer">
-            <p>Per le soluzioni formative aziendali, puoi contattare direttamente il nostro team di Formazione Corporate compilando il form nella sezione dedicata o telefonando al numero +39 02 1234567. Un nostro esperto ti ricontatterà entro 24 ore per analizzare le tue esigenze e proporti una soluzione su misura.</p>
+          <div class="faq-answer" style="padding: 0 30px 30px; color: #6c757d; line-height: 1.6; font-size: 1rem; display: none;">
+            <div style="background: linear-gradient(135deg, #faf9ff, #f4f1ff); padding: 25px; border-radius: 16px; border-left: 4px solid #9b59b6;">
+              <p style="margin: 0;">Tutti i corsi online rilasciano un attestato di completamento digitale che certifica le ore di formazione svolte e gli argomenti trattati. I percorsi completi o tematici rilasciano inoltre una certificazione di competenza che può essere condivisa su LinkedIn e altri canali professionali.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item" style="background: white; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid rgba(155, 89, 182, 0.1); transition: all 0.3s ease;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; padding: 30px; cursor: pointer; transition: all 0.3s ease; position: relative;">
+            <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0; flex: 1; color: #2c3e50; line-height: 1.4;">Come funziona l'acquisto dei corsi o l'iscrizione all'Accademia?</h3>
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 20px; transition: all 0.3s ease;">
+              <i class="fas fa-chevron-down" style="font-size: 16px; color: white; transition: all 0.3s ease;"></i>
+            </div>
+          </div>
+          <div class="faq-answer" style="padding: 0 30px 30px; color: #6c757d; line-height: 1.6; font-size: 1rem; display: none;">
+            <div style="background: linear-gradient(135deg, #faf9ff, #f4f1ff); padding: 25px; border-radius: 16px; border-left: 4px solid #9b59b6;">
+              <p style="margin: 0;">Per i corsi online, puoi effettuare l'acquisto direttamente dal catalogo corsi sul nostro sito, pagando con carta di credito, PayPal o bonifico bancario. Per l'iscrizione all'Accademia, invece, è necessario compilare il modulo di iscrizione e attendere un colloquio conoscitivo con il responsabile didattico per valutare il tuo livello di preparazione e definire il percorso più adatto.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item" style="background: white; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid rgba(155, 89, 182, 0.1); transition: all 0.3s ease;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; padding: 30px; cursor: pointer; transition: all 0.3s ease; position: relative;">
+            <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0; flex: 1; color: #2c3e50; line-height: 1.4;">A chi mi rivolgo se ho bisogno di un corso per la mia azienda?</h3>
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 20px; transition: all 0.3s ease;">
+              <i class="fas fa-chevron-down" style="font-size: 16px; color: white; transition: all 0.3s ease;"></i>
+            </div>
+          </div>
+          <div class="faq-answer" style="padding: 0 30px 30px; color: #6c757d; line-height: 1.6; font-size: 1rem; display: none;">
+            <div style="background: linear-gradient(135deg, #faf9ff, #f4f1ff); padding: 25px; border-radius: 16px; border-left: 4px solid #9b59b6;">
+              <p style="margin: 0;">Per le soluzioni formative aziendali, puoi contattare direttamente il nostro team di Formazione Corporate compilando il form nella sezione dedicata o telefonando al numero +39 02 1234567. Un nostro esperto ti ricontatterà entro 24 ore per analizzare le tue esigenze e proporti una soluzione su misura.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -271,49 +409,212 @@
   </section>
 
   <style>
-    /* FAQ accordion styles */
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
+    /* Enhanced styles for modern formazione page */
+    
+    /* Hero section enhancements */
+    .formation-hero .hero-quiz-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.15) !important;
     }
     
-    .faq-item {
-      background: #fff;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    /* Pillar cards hover effects */
+    .pillar-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.15) !important;
+    }
+    
+    .pillar-card:hover .pillar-icon {
+      transform: scale(1.1);
+    }
+    
+    /* Resource cards hover effects */
+    .risorsa-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.12) !important;
+    }
+    
+    .book:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
+    }
+    
+    /* FAQ enhancements */
+    .faq-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.12) !important;
+    }
+    
+    .faq-question.active .fas {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      transition: all 0.4s ease;
       overflow: hidden;
     }
     
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
-    .faq-question:hover {
-      background-color: rgba(0, 0, 0, 0.02);
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
     
-    .faq-question h3 {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin: 0;
-      flex: 1;
+    .pillar-card {
+      animation: fadeInUp 0.6s ease-out;
     }
     
-    .faq-question i {
-      font-size: 18px;
-      color: #666;
-      transition: all 0.3s ease;
+    .pillar-card:nth-child(1) { animation-delay: 0.1s; }
+    .pillar-card:nth-child(2) { animation-delay: 0.2s; }
+    .pillar-card:nth-child(3) { animation-delay: 0.3s; }
+    
+    .risorsa-card {
+      animation: fadeInScale 0.6s ease-out;
     }
     
-    .faq-question.active i {
-      transform: rotate(180deg);
+    .risorsa-card:nth-child(1) { animation-delay: 0.2s; }
+    .risorsa-card:nth-child(2) { animation-delay: 0.4s; }
+    
+    .faq-item {
+      animation: fadeInUp 0.4s ease-out;
     }
+    
+    .faq-item:nth-child(1) { animation-delay: 0.1s; }
+    .faq-item:nth-child(2) { animation-delay: 0.2s; }
+    .faq-item:nth-child(3) { animation-delay: 0.3s; }
+    .faq-item:nth-child(4) { animation-delay: 0.4s; }
+    .faq-item:nth-child(5) { animation-delay: 0.5s; }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .pillars-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+      }
+      
+      .risorse-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+      }
+      
+      .book-showcase {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+      
+      .pillar-card,
+      .risorsa-card {
+        padding: 30px 25px !important;
+      }
+      
+      .faq-question {
+        padding: 20px !important;
+      }
+      
+      .faq-question h3 {
+        font-size: 1rem !important;
+      }
+      
+      .hero-quiz-box {
+        padding: 30px 25px !important;
+      }
+    }
+    
+    /* Enhanced button hover effects */
+    .pillar-card a:hover,
+    .risorsa-card a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .hero-quiz-box a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 216, 155, 0.6);
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // FAQ Toggle functionality
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        question.addEventListener('click', () => {
+          const isActive = question.classList.contains('active');
+          
+          // Close all FAQ items
+          faqItems.forEach(otherItem => {
+            const otherQuestion = otherItem.querySelector('.faq-question');
+            const otherAnswer = otherItem.querySelector('.faq-answer');
+            otherQuestion.classList.remove('active');
+            otherAnswer.style.display = 'none';
+          });
+          
+          // Open clicked item if it wasn't active
+          if (!isActive) {
+            question.classList.add('active');
+            answer.style.display = 'block';
+          }
+        });
+      });
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll('.pillar-card, .risorsa-card, .faq-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    });
+  </script>
     
     .faq-answer {
       max-height: 0;
@@ -557,25 +858,25 @@
   </section>
 
   <!-- Footer -->
-  <footer style="background: #2c3e50; color: white; padding: 40px 0 20px;">
+  <footer style="background: #000000; color: white; padding: 30px 0 15px; font-family: 'Palanquin', sans-serif;">
     <div class="container">
-      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px;">
         <div class="footer-about">
-          <img src="logo.png" alt="Kleros Logo" style="height: 35px; margin-bottom: 15px;">
-          <p style="margin-bottom: 15px; line-height: 1.6; opacity: 0.8; font-size: 0.9rem;">Kleros supporta i professionisti del patrimonio con servizi, formazione e soluzioni tecnologiche avanzate per ottimizzare la consulenza e garantire risultati superiori.</p>
-          <div class="social-links" style="display: flex; gap: 10px;">
-            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
-            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>
+          <img src="logo.png" alt="Kleros Logo" style="height: 45px; margin-bottom: 25px;">
+          <p style="margin-bottom: 25px; line-height: 1.7; opacity: 0.8; font-size: 0.95rem;">Kleros supporta i professionisti del patrimonio con servizi, formazione e soluzioni tecnologiche avanzate per ottimizzare la consulenza e garantire risultati superiori.</p>
+          <div class="social-links" style="display: flex; gap: 15px;">
+            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         
         <div class="footer-links">
-          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Collegamenti Rapidi
-            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Collegamenti Rapidi
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: white;"></span>
           </h3>
-          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 8px;">
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 12px;">
             <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Home</a></li>
             <li><a href="chi-siamo.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Chi Siamo</a></li>
             <li><a href="servizi.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Servizi</a></li>
@@ -586,57 +887,57 @@
         </div>
         
         <div class="footer-contact">
-          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Contatti
-            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Contatti
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: white;"></span>
           </h3>
-          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 15px;">
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 20px;">
             <li style="display: flex; align-items: flex-start;">
-              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                <i class="fas fa-map-marker-alt" style="color: #3498db; font-size: 12px;"></i>
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-map-marker-alt" style="color: white;"></i>
               </div>
               <div>
-                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">Via Roma 123,<br>20123 Milano, Italia</p>
+                <p style="margin: 0; line-height: 1.4;">Via Roma 123,<br>20123 Milano, Italia</p>
               </div>
             </li>
             <li style="display: flex; align-items: flex-start;">
-              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                <i class="fas fa-phone" style="color: #3498db; font-size: 12px;"></i>
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-phone" style="color: white;"></i>
               </div>
               <div>
-                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">+39 02 12345678</p>
+                <p style="margin: 0; line-height: 1.4;">+39 02 12345678</p>
               </div>
             </li>
             <li style="display: flex; align-items: flex-start;">
-              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                <i class="fas fa-envelope" style="color: #3498db; font-size: 12px;"></i>
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-envelope" style="color: white;"></i>
               </div>
               <div>
-                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">info@kleros.it</p>
+                <p style="margin: 0; line-height: 1.4;">info@kleros.it</p>
               </div>
             </li>
           </ul>
         </div>
         
         <div class="footer-newsletter">
-          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Newsletter
-            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Newsletter
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: white;"></span>
           </h3>
-          <p style="margin-bottom: 12px; line-height: 1.5; opacity: 0.8; font-size: 0.85rem;">Iscriviti per rimanere aggiornato sulle ultime novità e risorse.</p>
-          <form style="display: flex; margin-bottom: 12px;">
-            <input type="email" placeholder="La tua email" style="flex: 1; padding: 10px 12px; border: none; border-radius: 4px 0 0 4px; background: rgba(255,255,255,0.1); color: white; font-size: 0.9rem;">
-            <button type="submit" style="background: #3498db; color: white; border: none; padding: 0 15px; border-radius: 0 4px 4px 0; transition: all 0.3s ease;"><i class="fas fa-paper-plane"></i></button>
+          <p style="margin-bottom: 20px; line-height: 1.6; opacity: 0.8;">Iscriviti per rimanere aggiornato sulle ultime novità e risorse.</p>
+          <form style="display: flex; margin-bottom: 20px;">
+            <input type="email" placeholder="La tua email" style="flex: 1; padding: 12px 15px; border: none; border-radius: 5px 0 0 5px; background: rgba(255,255,255,0.1); color: white;">
+            <button type="submit" style="background: #3498db; color: white; border: none; padding: 0 20px; border-radius: 0 5px 5px 0; transition: all 0.3s ease;"><i class="fas fa-paper-plane"></i></button>
           </form>
-          <p style="font-size: 0.8rem; opacity: 0.7;">Ti invieremo solo contenuti rilevanti. Niente spam.</p>
+          <p style="font-size: 0.85rem; opacity: 0.7;">Ti invieremo solo contenuti rilevanti. Niente spam.</p>
         </div>
       </div>
       
-      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
-        <div class="footer-links" style="margin-bottom: 15px;">
-          <a href="privacy.html" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Privacy Policy</a>
-          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Termini di Servizio</a>
-          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Cookie Policy</a>
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 20px;">
+          <a href="privacy.html" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Privacy Policy</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Termini di Servizio</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Cookie Policy</a>
         </div>
-        <p style="margin-top: 8px; opacity: 0.6; font-size: 0.85rem;">© 2025 Kleros – Tutti i diritti riservati.</p>
+        <p style="margin-top: 10px; opacity: 0.6; font-size: 0.9rem;">© 2025 Kleros – Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>

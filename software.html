@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preload" href="css/style.css" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/mobile-menu.js" defer></script>
@@ -176,7 +176,7 @@
     /* Sezione 2: Il Ciclo della Consulenza */
     .consulting-cycle {
       padding: 6rem 2rem;
-      background: #f8f9fa;
+      background: var(--background-light, #f8f9fa);
     }
 
     .section-header {
@@ -187,14 +187,14 @@
 
     .section-title {
       font-size: clamp(2rem, 4vw, 2.5rem);
-      color: #333;
+      color: var(--text-dark, #2c3e50);
       margin-bottom: 1.5rem;
     }
 
     .section-intro {
       font-size: 1.1rem;
       line-height: 1.6;
-      color: #666;
+      color: var(--text-light, #6c757d);
       max-width: 700px;
       margin: 0 auto;
     }
@@ -215,7 +215,7 @@
       left: 10%;
       width: 80%;
       height: 4px;
-      background: #007bff;
+      background: var(--primary-color, #0085a4);
       z-index: 1;
     }
 
@@ -233,7 +233,7 @@
       top: 0;
       width: 60px;
       height: 60px;
-      background: #007bff;
+      background: var(--primary-color, #0085a4);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -280,11 +280,11 @@
     }
 
     .step-section-title.soluzione {
-      color: #007bff;
+      color: var(--primary-color, #0085a4);
     }
 
     .step-text {
-      color: #555;
+      color: var(--text-light, #6c757d);
       line-height: 1.6;
     }
 
@@ -990,6 +990,115 @@
         grid-column: auto;
       }
     }
+
+    /* Modules Section Enhanced Styles */
+    .modules-section .tab-content {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease-in-out;
+    }
+
+    .modules-section .tab-content.active {
+      opacity: 1;
+      transform: translateY(0);
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .modules-section .module-card {
+      transition: all 0.3s ease;
+    }
+
+    .modules-section .module-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.15) !important;
+    }
+
+    .modules-section .feature-item {
+      transition: all 0.3s ease;
+    }
+
+    .modules-section .feature-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12) !important;
+    }
+
+    .modules-section .tab-button {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modules-section .tab-button:hover:not(.active) {
+      background: rgba(52, 152, 219, 0.1) !important;
+      color: #3498db !important;
+      transform: translateY(-1px);
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modules-section .module-icon {
+      animation: fadeInScale 0.8s ease-out 0.2s both;
+    }
+
+    .modules-section .module-section {
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .modules-section .module-section:nth-child(1) { animation-delay: 0.1s; }
+    .modules-section .module-section:nth-child(2) { animation-delay: 0.2s; }
+    .modules-section .module-section:nth-child(3) { animation-delay: 0.3s; }
+    .modules-section .module-section:nth-child(4) { animation-delay: 0.4s; }
+
+    /* Responsive improvements for modules */
+    @media (max-width: 768px) {
+      .modules-section .module-card {
+        padding: 40px 30px !important;
+      }
+      
+      .modules-section .tabs-navigation {
+        max-width: 100% !important;
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+      }
+      
+      .modules-section .tab-button {
+        font-size: 12px !important;
+        padding: 14px 16px !important;
+      }
+      
+      .modules-section .module-content-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+      }
+      
+      .modules-section .feature-item {
+        flex-direction: column !important;
+        text-align: center !important;
+      }
+      
+      .modules-section .feature-icon {
+        margin: 0 0 15px 0 !important;
+      }
+    }
+
   </style>
 
   <script>
@@ -1000,14 +1109,29 @@
       
       tabButtons.forEach(button => {
         button.addEventListener('click', () => {
-          // Remove active class from all buttons and contents
-          tabButtons.forEach(btn => btn.classList.remove('active'));
-          tabContents.forEach(content => content.classList.remove('active'));
+          // Remove active class and update styles for all buttons
+          tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.style.background = 'transparent';
+            btn.style.color = '#6c757d';
+          });
           
-          // Add active class to current button and corresponding content
+          // Hide all tab contents
+          tabContents.forEach(content => {
+            content.classList.remove('active');
+            content.style.display = 'none';
+          });
+          
+          // Add active class and styles to current button
           button.classList.add('active');
+          button.style.background = 'linear-gradient(135deg, #3498db, #2980b9)';
+          button.style.color = 'white';
+          
+          // Show corresponding content
           const targetId = button.getAttribute('data-tab');
-          document.getElementById(targetId).classList.add('active');
+          const targetContent = document.getElementById(targetId);
+          targetContent.classList.add('active');
+          targetContent.style.display = 'block';
         });
       });
 
@@ -1052,6 +1176,7 @@
           <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
           <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
           <li class="nav-item"><a href="software.html" class="nav-link active">Software</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
@@ -1061,13 +1186,20 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="main-content" class="hero-software">
-    <div class="hero-content">
-      <h1 class="hero-title">Governa la complessità del patrimonio:<br>Il know how di Kleros a portata di click </h1>
-      <p class="hero-subtitle">myarp@® è l'unica piattaforma software progettata da Kleros per digitalizzare e potenziare l'intero processo di analisi, tutela e trasmissione del patrimonio. Un ecosistema flessibile, pensato sia per il singolo professionista che per le complesse esigenze di banche, reti e compagnie assicurative</p>
+  <section id="main-content" class="hero-software" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--tertiary-color) 100%); position: relative; overflow: hidden;">
+    <!-- Hero background pattern -->
+    <div style="position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -15%; left: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+    
+    <!-- Optional background image overlay -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('https://picsum.photos/1920/1080?tech'); background-size: cover; background-position: center; opacity: 0.1; mix-blend-mode: overlay;"></div>
+    
+    <div class="hero-content" style="position: relative; z-index: 2;">
+      <h1 class="hero-title" style="color: var(--white); text-shadow: 0 4px 20px var(--black);">Governa la complessità del patrimonio:<br>Il know how di Kleros a portata di click </h1>
+      <p class="hero-subtitle" style="color: var(--white); text-shadow: 0 2px 10px var(--black);">myarp@® è l'unica piattaforma software progettata da Kleros per digitalizzare e potenziare l'intero processo di analisi, tutela e trasmissione del patrimonio. Un ecosistema flessibile, pensato sia per il singolo professionista che per le complesse esigenze di banche, reti e compagnie assicurative</p>
       
-      <div class="hero-video-container">
-        <video class="hero-video" controls poster="img/software/video-poster.jpg">
+      <div class="hero-video-container" style="background: var(--overlay-light); padding: 20px; border-radius: 16px; backdrop-filter: blur(10px); box-shadow: 0 20px 60px rgba(0,0,0,0.2);">
+        <video class="hero-video" controls poster="img/software/video-poster.jpg" style="width: 100%; border-radius: 12px;">
           <source src="video/myarp-demo.mp4" type="video/mp4">
           Il tuo browser non supporta il tag video.
         </video>
@@ -1150,232 +1282,394 @@
   </section>
 
   <!-- Sezione 3: I Moduli della Piattaforma -->
-  <section class="modules-section">
-    <div class="section-header">
-      <h2 class="section-title">I moduli della piattaforma: componi la tua analisi</h2>
-      <p class="section-intro">
-        myarp@® offre tre distinti moduli, ciascuno progettato per rispondere a esigenze specifiche della consulenza patrimoniale
-        Scegli quello più adatto alle tue necessità o combina più moduli per un'esperienza completa
-      </p>
-    </div>
+  <section class="modules-section" style="padding: 120px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); position: relative; overflow: hidden;">
+    <!-- Background decorativo -->
+    <div style="position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -30%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(46, 204, 113, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-header" style="text-align: center; margin-bottom: 80px;">
+        <span style="display: inline-block; padding: 8px 24px; background: linear-gradient(135deg, var(--primary-color, #0085a4), var(--secondary-color, #51a5c5)); color: white; border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Moduli della Piattaforma</span>
+        <h2 class="section-title" style="font-size: 3.2rem; font-weight: 700; color: var(--text-dark, #2c3e50); margin-bottom: 30px; line-height: 1.2;">
+          Componi la Tua <span style="background: linear-gradient(135deg, var(--primary-color, #0085a4), var(--secondary-color, #51a5c5)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Analisi Perfetta</span>
+        </h2>
+        <p class="section-intro" style="font-size: 1.3rem; color: #6c757d; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+          myarp@® offre tre distinti moduli, ciascuno progettato per rispondere a esigenze specifiche della consulenza patrimoniale. Scegli quello più adatto alle tue necessità o combina più moduli per un'esperienza completa.
+        </p>
+      </div>
 
-    <div class="tabs-container">
-      <div class="tabs-nav">
-        <button class="tab-button active" data-tab="module-kai">myarp@® K-AI</button>
-        <button class="tab-button" data-tab="module-anonimo">myarp@® Anonimo</button>
-        <button class="tab-button" data-tab="module-dettaglio">myarp@® Dettaglio</button>
-        
+      <!-- Tabs Navigation -->
+      <div class="tabs-navigation" style="display: flex; justify-content: center; margin-bottom: 60px; background: white; border-radius: 60px; padding: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); max-width: 600px; margin-left: auto; margin-right: auto;">
+        <button class="tab-button active" data-tab="module-kai" style="flex: 1; padding: 16px 24px; border: none; background: linear-gradient(135deg, var(--primary-color, #0085a4), var(--secondary-color, #51a5c5)); color: white; border-radius: 50px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">K-AI</button>
+        <button class="tab-button" data-tab="module-anonimo" style="flex: 1; padding: 16px 24px; border: none; background: transparent; color: #6c757d; border-radius: 50px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">Anonimo</button>
+        <button class="tab-button" data-tab="module-dettaglio" style="flex: 1; padding: 16px 24px; border: none; background: transparent; color: #6c757d; border-radius: 50px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">Dettaglio</button>
       </div>
 
       <!-- Module 1: K-AI -->
-      <div id="module-kai" class="tab-content active">
-        <div class="module-header">
-          <div class="module-icon">
-            <i class="fas fa-robot"></i>
-          </div>
-          <div class="module-title-container">
-            <h3 class="module-title">myarp@® K-AI</h3>
-            <p class="module-subtitle">L'Assistente Intelligente per la scoperta delle criticità</p>
-          </div>
-        </div>
-
-        <div class="module-content-grid">
-          <div class="module-section">
-            <h4 class="module-section-title">A chi si rivolge</h4>
-            <p class="module-description">
-              Al consulente che necessita di un primo "ice-breaker" efficace e innovativo con il cliente
-            </p>
+      <div id="module-kai" class="tab-content active" style="display: block;">
+        <div class="module-card" style="background: white; border-radius: 24px; padding: 60px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1)); border-radius: 50%; opacity: 0.5;"></div>
+          
+          <div class="module-header" style="text-align: center; margin-bottom: 50px; position: relative; z-index: 2;">
+            <div class="module-icon" style="width: 100px; height: 100px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3);">
+              <i class="fas fa-robot" style="font-size: 48px; color: white;"></i>
+            </div>
+            <h3 class="module-title" style="font-size: 2.5rem; font-weight: 700; color: var(--text-dark, #2c3e50); margin-bottom: 15px;">myarp@® K-AI</h3>
+            <p class="module-subtitle" style="font-size: 1.2rem; color: #3498db; font-weight: 500;">L'Assistente Intelligente per la scoperta delle criticità</p>
           </div>
 
-          <div class="module-section">
-            <h4 class="module-section-title">A cosa serve</h4>
-            <p class="module-description">
-              Analizzare in modo preliminare le potenziali criticità patrimoniali tramite una breve intervista
-              anonima supportata dall'Intelligenza Artificiale, per avviare la conversazione consulenziale su basi concrete
-            </p>
-          </div>
+          <div class="module-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 50px;">
+            <div class="module-section" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 16px; border-left: 4px solid #3498db;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: var(--text-dark, #2c3e50); margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-users" style="color: #3498db; margin-right: 12px; font-size: 20px;"></i>
+                A chi si rivolge
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Al consulente che necessita di un primo "ice-breaker" efficace e innovativo con il cliente
+              </p>
+            </div>
 
-          <div class="module-section">
-            <h4 class="module-section-title">Come funziona</h4>
-            <p class="module-description">
-              Il cliente risponde a una serie di domande guidate. L'AI elabora le risposte applicando la metodologia Kleros
-            </p>
-          </div>
+            <div class="module-section" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 16px; border-left: 4px solid #2ecc71;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-target" style="color: #2ecc71; margin-right: 12px; font-size: 20px;"></i>
+                A cosa serve
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Analizzare in modo preliminare le potenziali criticità patrimoniali tramite una breve intervista anonima supportata dall'Intelligenza Artificiale, per avviare la conversazione consulenziale su basi concrete
+              </p>
+            </div>
 
-          <div class="module-section">
-            <h4 class="module-section-title">Cosa ottieni</h4>
-            <ul class="features-list">
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-video"></i></span>
-                <div class="feature-text">
-                  <strong>Un resoconto video dell'intervista "raccontato" da un avatar </strong>
+            <div class="module-section" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 30px; border-radius: 16px; border-left: 4px solid #e74c3c;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-cogs" style="color: #e74c3c; margin-right: 12px; font-size: 20px;"></i>
+                Come funziona
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Il cliente risponde a una serie di domande guidate. L'AI elabora le risposte applicando la metodologia Kleros in tempo reale
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #fff5f5, #ffe6e6); padding: 30px; border-radius: 16px; border-left: 4px solid #f39c12; grid-column: 1 / -1;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 25px; display: flex; align-items: center;">
+                <i class="fas fa-gift" style="color: #f39c12; margin-right: 12px; font-size: 20px;"></i>
+                Cosa ottieni
+              </h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-video" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Resoconto Video Personalizzato</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Un resoconto video dell'intervista "raccontato" da un avatar intelligente</p>
+                  </div>
                 </div>
-              </li>
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-file-pdf"></i></span>
-                <div class="feature-text">
-                  <strong>Un report web e PDF con l'analisi delle criticità rilevate e le aree di intervento suggerite </strong>
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-file-pdf" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Report Completo PDF</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Un report web e PDF con l'analisi delle criticità rilevate e le aree di intervento suggerite</p>
+                  </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="module-cta">
-          <a href="#video-kai" class="btn-primary">Guarda come funziona K-AI</a>
-          <a href="#contatti" class="btn-secondary-outline">Richiedi Info</a>
+          <div class="module-cta" style="text-align: center; position: relative; z-index: 2;">
+            <a href="#video-kai" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; margin-right: 20px; box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-play" style="margin-right: 10px;"></i>
+              Guarda come funziona K-AI
+            </a>
+            <a href="#contatti" style="display: inline-block; padding: 18px 40px; background: transparent; color: #3498db; text-decoration: none; border: 2px solid #3498db; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-info-circle" style="margin-right: 10px;"></i>
+              Richiedi Info
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- Module 2: Anonimo -->
-      <div id="module-anonimo" class="tab-content">
-        <div class="module-header">
-          <div class="module-icon">
-            <i class="fas fa-shield-alt"></i>
+      <div id="module-anonimo" class="tab-content" style="display: none;">
+        <div class="module-card" style="background: white; border-radius: 24px; padding: 60px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1)); border-radius: 50%; opacity: 0.5;"></div>
+          
+          <div class="module-header" style="text-align: center; margin-bottom: 50px; position: relative; z-index: 2;">
+            <div class="module-icon" style="width: 100px; height: 100px; background: linear-gradient(135deg, #2ecc71, #27ae60); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(46, 204, 113, 0.3);">
+              <i class="fas fa-shield-alt" style="font-size: 48px; color: white;"></i>
+            </div>
+            <h3 class="module-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px;">myarp@® Anonimo</h3>
+            <p class="module-subtitle" style="font-size: 1.2rem; color: #2ecc71; font-weight: 500;">Simulazioni rapide, riservate e senza impegno</p>
           </div>
-          <div class="module-title-container">
-            <h3 class="module-title">myarp@® Anonimo</h3>
-            <p class="module-subtitle">Simulazioni rapide, riservate e senza impegno</p>
+
+          <div class="module-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 50px;">
+            <div class="module-section" style="background: linear-gradient(135deg, #f8fffe, #e8f8f5); padding: 30px; border-radius: 16px; border-left: 4px solid #2ecc71;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-user-tie" style="color: #2ecc71; margin-right: 12px; font-size: 20px;"></i>
+                A chi si rivolge
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Al professionista che vuole fornire subito un valore tangibile al cliente, per dettagliare meglio le possibili criticità
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #f8fffe, #e8f8f5); padding: 30px; border-radius: 16px; border-left: 4px solid #3498db;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-bullseye" style="color: #3498db; margin-right: 12px; font-size: 20px;"></i>
+                A cosa serve
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Effettuare un'analisi patrimoniale rapida e sicura senza registrazione. Ideale per simulare scenari (successione, fiscalità) e comprendere l'impatto di determinate scelte
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #f8fffe, #e8f8f5); padding: 30px; border-radius: 16px; border-left: 4px solid #e74c3c;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-mouse-pointer" style="color: #e74c3c; margin-right: 12px; font-size: 20px;"></i>
+                Come funziona
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Inserimento di un set minimale di informazioni familiari e patrimoniali in un'interfaccia guidata e intuitiva
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #f0fff4, #e6fffa); padding: 30px; border-radius: 16px; border-left: 4px solid #f39c12; grid-column: 1 / -1;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 25px; display: flex; align-items: center;">
+                <i class="fas fa-clipboard-list" style="color: #f39c12; margin-right: 12px; font-size: 20px;"></i>
+                Cosa ottieni (Output del Dossier)
+              </h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-video" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Resoconto Video Personalizzato</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Un resoconto video dell'intervista "raccontato" da un avatar intelligente</p>
+                  </div>
+                </div>
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-file-pdf" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Report Completo PDF</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Un report web e PDF con l'analisi delle criticità rilevate e le aree di intervento suggerite</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="module-cta" style="text-align: center; position: relative; z-index: 2;">
+            <a href="#video-kai" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; margin-right: 20px; box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-play" style="margin-right: 10px;"></i>
+              Guarda come funziona K-AI
+            </a>
+            <a href="#contatti" style="display: inline-block; padding: 18px 40px; background: transparent; color: #3498db; text-decoration: none; border: 2px solid #3498db; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-info-circle" style="margin-right: 10px;"></i>
+              Richiedi Info
+            </a>
           </div>
         </div>
+      </div>
 
-        <div class="module-content-grid">
-          <div class="module-section">
-            <h4 class="module-section-title">A chi si rivolge</h4>
-            <p class="module-description">
-              Al professionista che vuole fornire subito un valore tangibile al cliente, per dettagliare meglio le possibili criticità
-            </p>
+      <!-- Module 2: Anonimo -->
+      <div id="module-anonimo" class="tab-content" style="display: none;">
+        <div class="module-card" style="background: white; border-radius: 24px; padding: 60px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1)); border-radius: 50%; opacity: 0.5;"></div>
+          
+          <div class="module-header" style="text-align: center; margin-bottom: 50px; position: relative; z-index: 2;">
+            <div class="module-icon" style="width: 100px; height: 100px; background: linear-gradient(135deg, #2ecc71, #27ae60); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(46, 204, 113, 0.3);">
+              <i class="fas fa-shield-alt" style="font-size: 48px; color: white;"></i>
+            </div>
+            <h3 class="module-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px;">myarp@® Anonimo</h3>
+            <p class="module-subtitle" style="font-size: 1.2rem; color: #2ecc71; font-weight: 500;">Simulazioni rapide, riservate e senza impegno</p>
           </div>
 
-          <div class="module-section">
-            <h4 class="module-section-title">A cosa serve</h4>
-            <p class="module-description">
-              Effettuare un'analisi patrimoniale rapida e sicura senza registrazione. Ideale per
-              simulare scenari (successione, fiscalità) e comprendere l'impatto di determinate scelte
-            </p>
+          <div class="module-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 50px;">
+            <div class="module-section" style="background: linear-gradient(135deg, #f8fffe, #e8f8f5); padding: 30px; border-radius: 16px; border-left: 4px solid #2ecc71;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-user-tie" style="color: #2ecc71; margin-right: 12px; font-size: 20px;"></i>
+                A chi si rivolge
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Al professionista che vuole fornire subito un valore tangibile al cliente, per dettagliare meglio le possibili criticità
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #f8fffe, #e8f8f5); padding: 30px; border-radius: 16px; border-left: 4px solid #3498db;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-bullseye" style="color: #3498db; margin-right: 12px; font-size: 20px;"></i>
+                A cosa serve
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Effettuare un'analisi patrimoniale rapida e sicura senza registrazione. Ideale per simulare scenari (successione, fiscalità) e comprendere l'impatto di determinate scelte
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #f8fffe, #e8f8f5); padding: 30px; border-radius: 16px; border-left: 4px solid #e74c3c;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-mouse-pointer" style="color: #e74c3c; margin-right: 12px; font-size: 20px;"></i>
+                Come funziona
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Inserimento di un set minimale di informazioni familiari e patrimoniali in un'interfaccia guidata e intuitiva
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #f0fff4, #e6fffa); padding: 30px; border-radius: 16px; border-left: 4px solid #f39c12; grid-column: 1 / -1;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 25px; display: flex; align-items: center;">
+                <i class="fas fa-clipboard-list" style="color: #f39c12; margin-right: 12px; font-size: 20px;"></i>
+                Cosa ottieni (Output del Dossier)
+              </h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-video" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Resoconto Video Personalizzato</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Un resoconto video dell'intervista "raccontato" da un avatar intelligente</p>
+                  </div>
+                </div>
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-file-pdf" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Report Completo PDF</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Un report web e PDF con l'analisi delle criticità rilevate e le aree di intervento suggerite</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="module-section">
-            <h4 class="module-section-title">Come funziona</h4>
-            <p class="module-description">
-              Inserimento di un set minimale di informazioni familiari e patrimoniali in un'interfaccia guidata
-            </p>
+          <div class="module-cta" style="text-align: center; position: relative; z-index: 2;">
+            <a href="#demo" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-play" style="margin-right: 10px;"></i>
+              Prova Ora la Demo Gratuita
+            </a>
           </div>
-
-          <div class="module-section">
-            <h4 class="module-section-title">Cosa ottieni (Output del Dossier)</h4>
-            <ul class="features-list">
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-chart-pie"></i></span>
-                <div class="feature-text">
-                  <strong>Rilevazione delle criticità di dettaglio sui diversi ambiti, Familiare, Patrimoniale, Aziendale e Previdenziale</strong>
-                </div>
-              </li>
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-calculator"></i></span>
-                <div class="feature-text">
-                  <strong>Simulazione della successione legittima e calcolo della fiscalità</strong>
-                </div>
-              </li>
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-hourglass-half"></i></span>
-                <div class="feature-text">
-                  <strong>Simulazione dell'ereditometro fiscale e del longevity risk </strong>
-                </div>
-              </li>
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-tasks"></i></span>
-                <div class="feature-text">
-                  <strong>Proposta di macro-azioni consigliate per la pianificazione</strong>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="module-cta">
-          <a href="#demo" class="btn-primary">Prova Ora la Demo Gratuita</a>
         </div>
       </div>
 
       <!-- Module 3: Dettaglio -->
-      <div id="module-dettaglio" class="tab-content">
-        <div class="module-header">
-          <div class="module-icon">
-            <i class="fas fa-file-signature"></i>
-          </div>
-          <div class="module-title-container">
-            <h3 class="module-title">myarp@® Dettaglio</h3>
-            <p class="module-subtitle">L'Analisi approfondita per il professionista esigente</p>
-          </div>
-        </div>
-
-        <div class="module-content-grid">
-          <div class="module-section">
-            <h4 class="module-section-title">A chi si rivolge</h4>
-            <p class="module-description">
-              Al consulente patrimoniale, private banker, commercialista o avvocato che necessita di un dossier
-              completo e dettagliato per il cliente, con dati puntuali e certificati
-            </p>
+      <div id="module-dettaglio" class="tab-content" style="display: none;">
+        <div class="module-card" style="background: white; border-radius: 24px; padding: 60px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+          <!-- Card background pattern -->
+          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1)); border-radius: 50%; opacity: 0.5;"></div>
+          
+          <div class="module-header" style="text-align: center; margin-bottom: 50px; position: relative; z-index: 2;">
+            <div class="module-icon" style="width: 100px; height: 100px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(155, 89, 182, 0.3);">
+              <i class="fas fa-file-signature" style="font-size: 48px; color: white;"></i>
+            </div>
+            <h3 class="module-title" style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px;">myarp@® Dettaglio</h3>
+            <p class="module-subtitle" style="font-size: 1.2rem; color: #9b59b6; font-weight: 500;">L'Analisi approfondita per il professionista esigente</p>
           </div>
 
-          <div class="module-section">
-            <h4 class="module-section-title">A cosa serve</h4>
-            <p class="module-description">
-              Gestire in modo completo l'analisi patrimoniale, arricchendola con dati puntuali
-              (immobili, posizioni pensionistiche, etc.) importati tramite API per la massima precisione
-            </p>
+          <div class="module-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 50px;">
+            <div class="module-section" style="background: linear-gradient(135deg, #faf9ff, #f4f1ff); padding: 30px; border-radius: 16px; border-left: 4px solid #9b59b6;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-user-graduate" style="color: #9b59b6; margin-right: 12px; font-size: 20px;"></i>
+                A chi si rivolge
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Al consulente patrimoniale, private banker, commercialista o avvocato che necessita di un dossier completo e dettagliato per il cliente, con dati puntuali e certificati
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #faf9ff, #f4f1ff); padding: 30px; border-radius: 16px; border-left: 4px solid #3498db;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-crosshairs" style="color: #3498db; margin-right: 12px; font-size: 20px;"></i>
+                A cosa serve
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Gestire in modo completo l'analisi patrimoniale, arricchendola con dati puntuali (immobili, posizioni pensionistiche, etc.) importati tramite API per la massima precisione
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #faf9ff, #f4f1ff); padding: 30px; border-radius: 16px; border-left: 4px solid #e74c3c;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                <i class="fas fa-tools" style="color: #e74c3c; margin-right: 12px; font-size: 20px;"></i>
+                Come funziona
+              </h4>
+              <p class="module-description" style="color: #6c757d; line-height: 1.6; font-size: 1rem;">
+                Accesso all'area riservata, inserimento dati di dettaglio o importazione tramite servizi esterni, elaborazione del dossier completo
+              </p>
+            </div>
+
+            <div class="module-section" style="background: linear-gradient(135deg, #fdfcff, #f8f5ff); padding: 30px; border-radius: 16px; border-left: 4px solid #f39c12; grid-column: 1 / -1;">
+              <h4 class="module-section-title" style="font-size: 1.3rem; font-weight: 700; color: #2c3e50; margin-bottom: 25px; display: flex; align-items: center;">
+                <i class="fas fa-star" style="color: #f39c12; margin-right: 12px; font-size: 20px;"></i>
+                Cosa ottieni (in aggiunta al modulo Anonimo)
+              </h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px  20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-database" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Dati Certificati</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Analisi basate su dati puntuali e certificati per la massima affidabilità</p>
+                  </div>
+                </div>
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-balance-scale" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Normativa di Riferimento</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Allegato completo sulla normativa di riferimento utilizzata nell'analisi</p>
+                  </div>
+                </div>
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #2ecc71, #27ae60); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-building" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Analisi Immobiliare</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Allegato di analisi dettagliata dei beni immobiliari e loro valutazione</p>
+                  </div>
+                </div>
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                  <div class="feature-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #f39c12, #e67e22); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0;">
+                    <i class="fas fa-clipboard-list" style="color: white; font-size: 20px;"></i>
+                  </div>
+                  <div class="feature-text">
+                    <strong style="color: #2c3e50; font-size: 1.1rem; display: block; margin-bottom: 8px;">Note Tecniche</strong>
+                    <p style="color: #6c757d; margin: 0; line-height: 1.5;">Note tecniche di dettaglio sulle soluzioni consigliate e loro implementazione</p>
+                  </div>
+                </div>
+                <div class="feature-item" style="display: flex; align-items: flex-start; padding: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); grid-column: 1 / -1; position: relative; overflow: hidden;">
+                  <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                  <div class="feature-icon" style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0; position: relative; z-index: 2;">
+                    <i class="fas fa-sync" style="color: white; font-size: 24px;"></i>
+                  </div>
+                  <div class="feature-text" style="position: relative; z-index: 2;">
+                    <strong style="color: white; font-size: 1.3rem; display: block; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">🚀 Dossier Dinamico</strong>
+                    <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.6; font-size: 1.1rem; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Il dossier si aggiorna automaticamente in base a modifiche patrimoniali, normative o familiari per essere sempre attuale</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="module-section">
-            <h4 class="module-section-title">Come funziona</h4>
-            <p class="module-description">
-              Accesso all'area riservata, inserimento dati di dettaglio o importazione tramite servizi esterni,
-              elaborazione del dossier completo
-            </p>
+          <div class="module-cta" style="text-align: center; position: relative; z-index: 2;">
+            <a href="#pricing" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; margin-right: 20px; box-shadow: 0 10px 30px rgba(155, 89, 182, 0.3); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-shopping-cart" style="margin-right: 10px;"></i>
+              Acquista Crediti
+            </a>
+            <a href="#plans" style="display: inline-block; padding: 18px 40px; background: transparent; color: #9b59b6; text-decoration: none; border: 2px solid #9b59b6; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-list-alt" style="margin-right: 10px;"></i>
+              Scopri i Piani
+            </a>
           </div>
-
-          <div class="module-section">
-            <h4 class="module-section-title">Cosa ottieni (in aggiunta al modulo Anonimo)</h4>
-            <ul class="features-list">
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-database"></i></span>
-                <div class="feature-text">
-                  <strong>Analisi basate su dati puntuali e certificati</strong>
-                </div>
-              </li>
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-balance-scale"></i></span>
-                <div class="feature-text">
-                  <strong>Allegato sulla normativa di riferimento utilizzata</strong>
-                </div>
-              </li>
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-building"></i></span>
-                <div class="feature-text">
-                  <strong>Allegato di analisi di dettaglio dei beni immobiliari</strong>
-                </div>
-              </li>
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-clipboard-list"></i></span>
-                <div class="feature-text">
-                  <strong>Note tecniche di dettaglio sulle soluzioni consigliate</strong>
-                </div>
-              </li>
-              <li class="feature-item">
-                <span class="feature-icon"><i class="fas fa-sync"></i></span>
-                <div class="feature-text">
-                  <strong class="highlight-text">Dossier Dinamico:</strong> il dossier si aggiorna automaticamente in base a modifiche 
-                  patrimoniali, normative o familiari
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="module-cta">
-          <a href="#pricing" class="btn-primary">Acquista Crediti</a>
-          <a href="#plans" class="btn-secondary-outline">Scopri i Piani</a>
         </div>
       </div>
     </div>
@@ -1532,6 +1826,96 @@
     </div>
   </section>
 
+  <!-- Footer -->
+  <footer style="background: #000000; color: white; padding: 30px 0 15px; font-family: 'Palanquin', sans-serif;">
+    <div class="container">
+      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px;">
+        <div class="footer-about">
+          <img src="logo.png" alt="Kleros Logo" style="height: 45px; margin-bottom: 25px;">
+          <p style="margin-bottom: 25px; line-height: 1.7; opacity: 0.8; font-size: 0.95rem;">Kleros supporta i professionisti del patrimonio con servizi, formazione e soluzioni tecnologiche avanzate per ottimizzare la consulenza e garantire risultati superiori.</p>
+          <div class="social-links" style="display: flex; gap: 15px;">
+            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Collegamenti Rapidi
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db;"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 12px;">
+            <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Home</a></li>
+            <li><a href="chi-siamo.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Chi Siamo</a></li>
+            <li><a href="servizi.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Servizi</a></li>
+            <li><a href="formazione.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Formazione</a></li>
+            <li><a href="software.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Software</a></li>
+            <li><a href="contatti.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Contatti</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Contatti
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db;"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 20px;">
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-map-marker-alt" style="color: #3498db;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.4;">Via Roma 123,<br>20123 Milano, Italia</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-phone" style="color: #3498db;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.4;">+39 02 12345678</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-envelope" style="color: #3498db;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.4;">info@kleros.it</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Newsletter
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db;"></span>
+          </h3>
+          <p style="margin-bottom: 20px; line-height: 1.6; opacity: 0.8;">Iscriviti per rimanere aggiornato sulle ultime novità e risorse.</p>
+          <form style="display: flex; margin-bottom: 20px;">
+            <input type="email" placeholder="La tua email" style="flex: 1; padding: 12px 15px; border: none; border-radius: 5px 0 0 5px; background: rgba(255,255,255,0.1); color: white;">
+            <button type="submit" style="background: #3498db; color: white; border: none; padding: 0 20px; border-radius: 0 5px 5px 0; transition: all 0.3s ease;"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p style="font-size: 0.85rem; opacity: 0.7;">Ti invieremo solo contenuti rilevanti. Niente spam.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 20px;">
+          <a href="privacy.html" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Privacy Policy</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Termini di Servizio</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Cookie Policy</a>
+        </div>
+        <p style="margin-top: 10px; opacity: 0.6; font-size: 0.9rem;">© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
 
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/scroll-to-top.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/cookie-consent.js"></script>
 </body>
 </html>

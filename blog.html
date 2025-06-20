@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog - Kleros | Approfondimenti, Magazine e Eventi</title>
+  <meta name="description" content="Blog di Kleros: articoli di approfondimento, magazine mensile, eventi e risorse per professionisti della consulenza patrimoniale.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/mobile-menu.js" defer></script>
+  <script src="js/favicon-generator.js" defer></script>
+  <script src="js/scroll-to-top.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+  
+  <!-- Structured Data for Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Kleros",
+    "description": "Approfondimenti, magazine e eventi sulla consulenza patrimoniale",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kleros",
+      "sameAs": "https://example.com"
+    }
+  }
+  </script>
+
+  <style>
+    /* Blog Specific Styles */    .blog-hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--tertiary-color) 100%);
+      color: var(--white);
+      padding: 140px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(0,133,164,0.1) 0%, rgba(81,165,197,0.1) 50%, rgba(162,198,210,0.1) 100%);
+      pointer-events: none;
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      padding: 12px 24px;
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .filter-tab.active,
+    .filter-tab:hover {
+      background: var(--primary-color);
+      color: var(--white);
+    }
+
+    .magazine-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 60px 0;
+      margin-bottom: 80px;
+      border-radius: 20px;
+    }
+
+    .magazine-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .magazine-cover {
+      flex-shrink: 0;
+      width: 200px;
+      height: 280px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 48px;
+      box-shadow: 0 15px 40px rgba(0, 133, 164, 0.3);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .blog-card-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 48px;
+    }
+
+    .blog-card-content {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--tertiary-color);
+      color: var(--white);
+      font-size: 12px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      width: fit-content;
+    }
+
+    .blog-date {
+      color: #6c757d;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .blog-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .blog-excerpt {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    .blog-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      width: fit-content;
+      margin-top: auto;
+    }
+
+    .blog-cta:hover {
+      transform: translateX(5px);
+      box-shadow: 0 10px 25px rgba(0, 133, 164, 0.3);
+    }
+
+    .events-section {
+      background: var(--light-bg);
+      padding: 80px 0;
+      margin: 80px 0;
+    }
+
+    .event-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .event-date {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      background: var(--primary-color);
+      color: var(--white);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .lead-form {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+      .magazine-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .magazine-cover {
+        width: 150px;
+        height: 210px;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .filter-tabs {
+        gap: 8px;
+      }
+
+      .filter-tab {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
+  
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>
+        <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
+          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="blog-hero">
+    <div class="container" style="position: relative; z-index: 2;">
+      <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">Blog Kleros</h1>
+      <p style="font-size: 1.3rem; opacity: 0.95; max-width: 700px; margin: 0 auto 40px; line-height: 1.7;">Approfondimenti, magazine mensile, eventi e risorse per professionisti della consulenza patrimoniale</p>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
+        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">Magazine Mensile</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">Articoli Esperti</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">Eventi Live</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="section" style="padding-top: 80px;">
+    <div class="container">
+      <div class="filter-tabs">
+        <a href="#" class="filter-tab active" data-filter="all">Tutti</a>
+        <a href="#" class="filter-tab" data-filter="magazine">Magazine</a>
+        <a href="#" class="filter-tab" data-filter="blog">Articoli</a>
+        <a href="#" class="filter-tab" data-filter="eventi">Eventi</a>
+        <a href="#" class="filter-tab" data-filter="patrimonio">Patrimonio</a>
+        <a href="#" class="filter-tab" data-filter="formazione">Formazione</a>
+        <a href="#" class="filter-tab" data-filter="assicurativo">Assicurativo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Magazine Section -->
+  <section class="section magazine-section" data-category="magazine">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--text-color);">
+        <i class="fas fa-star" style="color: var(--accent-color); margin-right: 15px;"></i>
+        Magazine Mensile Kleros
+      </h2>
+      
+      <div class="magazine-card">
+        <div class="magazine-cover">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <div style="flex-grow: 1;">
+          <span class="blog-tag" style="background: var(--accent-color);">Magazine</span>
+          <h3 style="font-size: 2rem; font-weight: 700; color: var(--text-color); margin-bottom: 20px;">Magazine Giugno 2025</h3>
+          <p style="color: #6c757d; line-height: 1.6; margin-bottom: 30px; font-size: 1.1rem;">
+            Il magazine mensile di Kleros con approfondimenti esclusivi su consulenza patrimoniale, mercati finanziari, normative e strategie operative per professionisti del settore.
+          </p>
+          
+          <!-- Lead Generation Form -->
+          <div class="lead-form" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); margin-bottom: 30px;">
+            <h4 style="margin-bottom: 20px; color: var(--text-color);">Scarica il Magazine Completo</h4>
+            <form id="magazine-form" style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 15px; align-items: end;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <input type="text" name="nome" placeholder="Nome*" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <input type="email" name="email" placeholder="Email*" required>
+              </div>
+              <button type="submit" style="padding: 15px 30px; background: linear-gradient(135deg, var(--accent-color), #6c1405); color: var(--white); border: none; border-radius: 10px; font-weight: 600; cursor: pointer; white-space: nowrap;">
+                <i class="fas fa-download" style="margin-right: 8px;"></i>
+                Scarica Ora
+              </button>
+            </form>
+            <p style="font-size: 12px; color: #6c757d; margin-top: 10px;">*Compilando il form accetti di ricevere comunicazioni da Kleros. Privacy Policy</p>
+          </div>
+          
+          <div style="display: flex; gap: 15px;">
+            <a href="#" class="blog-cta" style="background: linear-gradient(135deg, var(--accent-color), #6c1405);">
+              <i class="fas fa-eye" style="margin-right: 8px;"></i>
+              Anteprima Gratuita
+            </a>
+            <a href="#newsletter" style="color: var(--primary-color); text-decoration: underline; align-self: center;">
+              Iscriviti alla Newsletter
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Articles -->
+  <section class="section" style="padding: 80px 0;">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: var(--text-color);">Articoli di Approfondimento</h2>
+      
+      <div class="blog-grid">
+        <!-- Article 1 -->
+        <article class="blog-card" data-category="blog patrimonio">
+          <div class="blog-card-image">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-tag">Patrimonio</span>
+            <div class="blog-date">15 Giugno 2025</div>
+            <h3 class="blog-title">Strategie di Diversificazione Patrimoniale nel 2025</h3>
+            <p class="blog-excerpt">Analisi delle migliori strategie per diversificare il patrimonio in un contesto di mercati volatili e incertezza economica. Scopri gli approcci più efficaci per proteggere e far crescere il capitale.</p>
+            <a href="#" class="blog-cta">
+              <span>Leggi l'articolo</span>
+              <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card" data-category="blog assicurativo">
+          <div class="blog-card-image">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-tag" style="background: var(--secondary-color);">Assicurativo</span>
+            <div class="blog-date">10 Giugno 2025</div>
+            <h3 class="blog-title">Nuove Normative Assicurative: Cosa Cambia per i Consulenti</h3>
+            <p class="blog-excerpt">Aggiornamento completo sulle recenti modifiche normative nel settore assicurativo e il loro impatto sulla consulenza. Guida pratica per adeguarsi ai nuovi requisiti.</p>
+            <a href="#" class="blog-cta">
+              <span>Leggi l'articolo</span>
+              <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card" data-category="blog formazione">
+          <div class="blog-card-image">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-tag" style="background: var(--accent-color);">Formazione</span>
+            <div class="blog-date">5 Giugno 2025</div>
+            <h3 class="blog-title">Come Diventare un Consulente Patrimoniale di Successo</h3>
+            <p class="blog-excerpt">Le competenze essenziali, gli strumenti necessari e il percorso formativo ideale per eccellere nella consulenza patrimoniale moderna. Consigli pratici e best practices del settore.</p>
+            <a href="#" class="blog-cta">
+              <span>Leggi l'articolo</span>
+              <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="blog-card" data-category="blog patrimonio">
+          <div class="blog-card-image">
+            <i class="fas fa-coins"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-tag">Patrimonio</span>
+            <div class="blog-date">1 Giugno 2025</div>
+            <h3 class="blog-title">Investimenti ESG: Tendenze e Opportunità</h3>
+            <p class="blog-excerpt">L'evoluzione degli investimenti sostenibili e il loro ruolo nella pianificazione patrimoniale. Come integrare i criteri ESG nelle strategie di investimento dei clienti.</p>
+            <a href="#" class="blog-cta">
+              <span>Leggi l'articolo</span>
+              <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="blog-card" data-category="blog formazione">
+          <div class="blog-card-image">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-tag" style="background: var(--accent-color);">Formazione</span>
+            <div class="blog-date">28 Maggio 2025</div>
+            <h3 class="blog-title">Digitalizzazione nella Consulenza: Strumenti e Metodologie</h3>
+            <p class="blog-excerpt">Come la tecnologia sta trasformando la consulenza patrimoniale. Gli strumenti digitali indispensabili per modernizzare il proprio approccio professionale.</p>
+            <a href="#" class="blog-cta">
+              <span>Leggi l'articolo</span>
+              <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="blog-card" data-category="blog patrimonio">
+          <div class="blog-card-image">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-tag">Patrimonio</span>
+            <div class="blog-date">25 Maggio 2025</div>
+            <h3 class="blog-title">Pianificazione Successoria: Guida Completa 2025</h3>
+            <p class="blog-excerpt">Tutto quello che serve sapere sulla pianificazione successoria moderna. Strumenti, strategie e aspetti legali per una consulenza completa e professionale.</p>
+            <a href="#" class="blog-cta">
+              <span>Leggi l'articolo</span>
+              <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Load More -->
+      <div style="text-align: center; margin-top: 50px;">
+        <button id="load-more" style="padding: 15px 40px; background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+          <i class="fas fa-plus" style="margin-right: 8px;"></i>
+          Carica Altri Articoli
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events-section" data-category="eventi">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: var(--text-color);">Eventi e Webinar</h2>
+      
+      <!-- Upcoming Event -->
+      <div class="event-card">
+        <div class="event-date">
+          <div style="font-size: 24px;">25</div>
+          <div style="font-size: 12px;">GIU</div>
+        </div>
+        <div style="flex-grow: 1;">
+          <span class="blog-tag" style="background: var(--accent-color);">Webinar</span>
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Webinar: Mercati Finanziari Q3 2025</h3>
+          <p style="color: #6c757d; margin-bottom: 20px;">Analisi dei mercati finanziari e outlook per il terzo trimestre 2025. Esperti di settore condivideranno insights e strategie operative.</p>
+          <div style="display: flex; gap: 15px; align-items: center;">
+            <a href="#" class="blog-cta" style="background: linear-gradient(135deg, var(--accent-color), #6c1405);">
+              <i class="fas fa-calendar-plus" style="margin-right: 8px;"></i>
+              Iscriviti Gratuitamente
+            </a>
+            <span style="color: #6c757d; font-size: 14px;">
+              <i class="fas fa-clock" style="margin-right: 5px;"></i>
+              18:00 - 19:30
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Past Event -->
+      <div class="event-card">
+        <div class="event-date" style="background: #6c757d;">
+          <div style="font-size: 24px;">15</div>
+          <div style="font-size: 12px;">GIU</div>
+        </div>
+        <div style="flex-grow: 1;">
+          <span class="blog-tag" style="background: #6c757d;">Evento Passato</span>
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Serata Formativa: Consulenza Patrimoniale Avanzata</h3>
+          <p style="color: #6c757d; margin-bottom: 20px;">Serata dedicata alle tecniche avanzate di consulenza patrimoniale. Casi pratici e metodologie innovative per professionisti del settore.</p>
+          <div style="display: flex; gap: 15px; align-items: center;">
+            <a href="#" class="blog-cta" style="background: #6c757d;">
+              <i class="fas fa-play" style="margin-right: 8px;"></i>
+              Rivedi l'Evento
+            </a>
+            <span style="color: #6c757d; font-size: 14px;">
+              <i class="fas fa-users" style="margin-right: 5px;"></i>
+              45 partecipanti
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop -->
+      <div class="event-card">
+        <div class="event-date">
+          <div style="font-size: 24px;">30</div>
+          <div style="font-size: 12px;">GIU</div>
+        </div>
+        <div style="flex-grow: 1;">
+          <span class="blog-tag" style="background: var(--primary-color);">Workshop</span>
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Workshop Pratico: Software myarp@®</h3>
+          <p style="color: #6c757d; margin-bottom: 20px;">Workshop hands-on per imparare a utilizzare al meglio la piattaforma myarp@®. Sessione pratica con esperti del prodotto.</p>
+          <div style="display: flex; gap: 15px; align-items: center;">
+            <a href="#" class="blog-cta">
+              <i class="fas fa-ticket-alt" style="margin-right: 8px;"></i>
+              Prenota il Tuo Posto
+            </a>
+            <span style="color: #6c757d; font-size: 14px;">
+              <i class="fas fa-map-marker-alt" style="margin-right: 5px;"></i>
+              Milano - Sede Kleros
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter" class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--white); padding: 80px 0;">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Rimani Sempre Aggiornato</h2>
+      <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Iscriviti alla nostra newsletter per ricevere articoli, magazine e inviti agli eventi direttamente nella tua inbox.
+      </p>
+      
+      <form style="max-width: 500px; margin: 0 auto; display: flex; gap: 15px;">
+        <input type="email" placeholder="La tua email" style="flex: 1; padding: 15px 20px; border: none; border-radius: 50px; font-size: 16px;">
+        <button type="submit" style="padding: 15px 30px; background: var(--accent-color); color: var(--white); border: none; border-radius: 50px; font-weight: 600; cursor: pointer; white-space: nowrap;">
+          <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+          Iscriviti
+        </button>
+      </form>
+      
+      <p style="font-size: 14px; opacity: 0.7; margin-top: 20px;">
+        Riceverai al massimo 2 email al mese. Puoi annullare l'iscrizione in qualsiasi momento.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="padding: 80px 0; background: var(--light-bg);">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 30px; color: var(--text-color);">Hai Bisogno di Consulenza Personalizzata?</h2>
+      <p style="font-size: 1.2rem; color: #6c757d; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        I nostri esperti sono a tua disposizione per supportarti nel percorso di crescita professionale e aziendale.
+      </p>
+      
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="consulenza.html" class="blog-cta" style="font-size: 1.1rem; padding: 18px 35px;">
+          <i class="fas fa-handshake" style="margin-right: 10px;"></i>
+          Richiedi Consulenza
+        </a>
+        <a href="formazione.html" style="padding: 18px 35px; background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center;">
+          <i class="fas fa-graduation-cap" style="margin-right: 10px;"></i>
+          Scopri la Formazione
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #000000; color: white; padding: 30px 0 15px; font-family: 'Palanquin', sans-serif;">
+    <div class="container">
+      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+        <div class="footer-about">
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Kleros
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--secondary-color, #51a5c5);"></span>
+          </h3>
+          <p style="line-height: 1.6; opacity: 0.8;">Il punto di riferimento per la consulenza patrimoniale e la formazione professionale. Aiutiamo professionisti e aziende a crescere attraverso soluzioni innovative e percorsi formativi di eccellenza.</p>
+        </div>
+        <div class="footer-links">
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Link Utili
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--secondary-color, #51a5c5);"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 12px;"><a href="servizi.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease;">Servizi</a></li>
+            <li style="margin-bottom: 12px;"><a href="consulenza.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease;">Consulenza</a></li>
+            <li style="margin-bottom: 12px;"><a href="formazione.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease;">Formazione</a></li>
+            <li style="margin-bottom: 12px;"><a href="software.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease;">Software</a></li>
+            <li style="margin-bottom: 12px;"><a href="blog.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease;">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Contatti
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--secondary-color, #51a5c5);"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-map-marker-alt" style="color: var(--secondary-color, #51a5c5);"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.4;">Via Example 123<br>20100 Milano, Italia</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-phone" style="color: var(--secondary-color, #51a5c5);"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.4;">+39 02 12345678</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="fas fa-envelope" style="color: var(--secondary-color, #51a5c5);"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.4;">info@kleros.it</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Newsletter
+            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--secondary-color, #51a5c5);"></span>
+          </h3>
+          <p style="margin-bottom: 20px; line-height: 1.6; opacity: 0.8;">Iscriviti per rimanere aggiornato sulle ultime novità e risorse.</p>
+          <form style="display: flex; margin-bottom: 20px;">
+            <input type="email" placeholder="La tua email" style="flex: 1; padding: 12px 15px; border: none; border-radius: 5px 0 0 5px; background: rgba(255,255,255,0.1); color: white;">
+            <button type="submit" style="background: var(--secondary-color, #51a5c5); color: white; border: none; padding: 0 20px; border-radius: 0 5px 5px 0; transition: all 0.3s ease;"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p style="font-size: 0.85rem; opacity: 0.7;">Ti invieremo solo contenuti rilevanti. Niente spam.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 20px;">
+          <a href="privacy.html" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Privacy Policy</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Termini di Servizio</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Cookie Policy</a>
+        </div>
+        <p style="margin-top: 10px; opacity: 0.6; font-size: 0.9rem;">© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  
+  <!-- Blog Functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Filter functionality
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const blogCards = document.querySelectorAll('[data-category]');
+      
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Remove active class from all tabs
+          filterTabs.forEach(t => t.classList.remove('active'));
+          // Add active class to clicked tab
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          blogCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 100);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+      
+      // Magazine form submission
+      const magazineForm = document.getElementById('magazine-form');
+      if (magazineForm) {
+        magazineForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form data
+          const formData = new FormData(this);
+          const nome = formData.get('nome');
+          const email = formData.get('email');
+          
+          // Simulate form submission
+          if (nome && email) {
+            alert('Grazie ' + nome + '! Il download del magazine inizierà a breve. Controlla la tua email per maggiori dettagli.');
+            
+            // Reset form
+            this.reset();
+            
+            // Here you would typically send the data to your backend
+            // and trigger the actual download
+          }
+        });
+      }
+      
+      // Load more functionality
+      const loadMoreBtn = document.getElementById('load-more');
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+          // Simulate loading more articles
+          this.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Caricamento...';
+          
+          setTimeout(() => {
+            this.innerHTML = '<i class="fas fa-check" style="margin-right: 8px;"></i>Tutti gli articoli caricati';
+            this.style.background = '#28a745';
+            this.style.color = 'white';
+            this.style.borderColor = '#28a745';
+            this.disabled = true;
+          }, 2000);
+        });
+      }
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
