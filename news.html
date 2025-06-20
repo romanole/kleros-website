@@ -2,15 +2,74 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  <title>News & Eventi - Kleros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>News & Eventi - Kleros</title>
+  <meta name="description" content="Aggiornamenti, eventi, webinar e risorse informative di Kleros per la consulenza patrimoniale e finanziaria">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="css/news.css" as="style">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/promo-tabs.css">
-  <script src="js/mobile-menu.js" defer></script>
+  <link rel="stylesheet" href="css/news.css">  <script src="js/mobile-menu.js" defer></script>
+  <script src="js/news.js" defer></script>
+  <script src="js/favicon-generator.js" defer></script>
+  <script src="js/scroll-to-top.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+  
+  <!-- Structured Data for News Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "headline": "News & Eventi - Kleros",
+    "description": "Aggiornamenti, eventi, webinar e risorse informative di Kleros per la consulenza patrimoniale e finanziaria",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kleros",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/logo.png"
+      }
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "#eventi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "#blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "#press"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "#video"
+        }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
+  
   <!-- Header -->
   <header>
     <div class="container">
@@ -18,10 +77,10 @@
         <div class="logo">
           <img src="logo.png" alt="Kleros Logo" class="logo-img">
         </div>
-        <div class="mobile-toggle">
-          <i class="fas fa-bars"></i>
+        <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </div>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
           <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
@@ -33,161 +92,799 @@
           <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
         </ul>
       </div>
-    </div>
-  </header>
+    </div>  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" style="background-image: url('https://picsum.photos/1920/600?grayscale'); height: 40vh;">
-    <div class="hero-content">
-      <h1 class="hero-title">News & Eventi</h1>
-      <p class="hero-subtitle">Scopri le novità, partecipa agli eventi e accedi alle risorse Kleros</p>
+  <!-- Sezione 1: Hero Section – Il Magazine in Primo Piano -->
+  <section id="main-content" class="hero magazine-hero" style="background-color: #8ec5d2; padding: 120px 0; position: relative; overflow: hidden;">
+    <div class="container" style="position: relative; z-index: 2; text-align: center;">
+      <div class="magazine-banner" style="max-width: 800px; margin: 0 auto;">
+        <div class="magazine-content">
+          <span class="pre-heading" style="color: #262626; text-transform: uppercase; font-weight: 600; font-size: 14px; letter-spacing: 1px; display: block; margin-bottom: 10px;">WORKING AREA • NUMERO 42</span>
+          
+          <h1 class="hero-title" style="margin: 0 0 25px; font-size: 2.7rem; line-height: 1.2; color: white; font-weight: 600;">L'approfondimento mensile riservato ai professionisti</h1>
+          
+          <div class="magazine-cover" style="width: 180px; margin: 0 auto 30px; position: relative;">
+            <div class="magazine-badge" style="position: absolute; top: -10px; right: -10px; background: #d75353; color: white; padding: 5px 12px; border-radius: 30px; font-weight: 600; font-size: 11px;">
+              NUOVO
+            </div>
+            <img src="img/blog/blog-81ef62db.jpg" alt="Ultimo numero del Magazine Kleros" style="width: 100%; height: auto; border-radius: 5px; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+          </div>
+          
+          <div class="hero-buttons" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+            <a href="#magazine-form" class="cta-button primary-button" style="display: inline-flex; align-items: center; padding: 12px 25px; font-size: 0.95rem; font-weight: 500; background-color: white; color: #262626; border-radius: 5px; text-decoration: none; transition: all 0.3s ease;">
+              <i class="fas fa-file-pdf" style="margin-right: 10px;"></i>
+              Scarica gratuitamente l'ultimo numero
+            </a>
+            <a href="#" class="btn-secondary" style="display: inline-flex; align-items: center; padding: 12px 25px; font-size: 0.95rem; font-weight: 500; background-color: transparent; color: white; border: 1px solid white; border-radius: 5px; text-decoration: none; transition: all 0.3s ease;">
+              <i class="fas fa-info-circle" style="margin-right: 10px;"></i>
+              Vai all'archivio passato
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- Calendar of Events -->
+  <!-- Sezione 2: I Prossimi Appuntamenti -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Eventi Gratuiti</h2>
-        <p class="section-subtitle">Partecipa ai nostri eventi formativi e informativi</p>
+        <span class="pre-heading">CALENDARIO</span>
+        <h2 class="section-title">I Prossimi Appuntamenti</h2>
+        <p class="section-subtitle">Webinar, eventi e corsi per la tua crescita professionale</p>
       </div>
-      <div class="events-grid">
+      
+      <div class="events-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px;">
+        <!-- Evento 1 -->
         <div class="event-card">
-          <div class="event-date">
-            <span class="day">15</span>
-            <span class="month">LUG</span>
-          </div>
-          <div class="event-details">
-            <h3>Webinar: Gestione Patrimoniale Innovativa</h3>
-            <p>Scopri le nuove strategie per la gestione del patrimonio nell'era digitale.</p>
-            <div class="event-meta">
-              <span><i class="fas fa-clock"></i> 14:00 - 15:30</span>
-              <span><i class="fas fa-video"></i> Online</span>
+          <div class="event-header">
+            <div class="event-date">
+              <div class="event-day">22</div>
+              <div class="event-month-year">Giugno 2025</div>
             </div>
-            <a href="#" class="btn-primary">Registrati Ora</a>
+            <div class="event-location">
+              <i class="fas fa-video"></i>
+              Online
+            </div>
+          </div>
+          
+          <div class="event-content">
+            <h3 class="event-title">Protezione patrimoniale: strategie operative tra diritto e pianificazione</h3>
+            
+            <p class="event-description">Un approfondimento sugli strumenti più efficaci per proteggere il patrimonio con casi pratici ed esempi applicativi.</p>
+            
+            <div class="event-footer">
+              <div class="event-type webinar">Webinar</div>
+              <button class="event-button">Iscriviti Ora</button>
+            </div>
           </div>
         </div>
+        
+        <!-- Evento 2 -->
         <div class="event-card">
-          <div class="event-date">
-            <span class="day">22</span>
-            <span class="month">LUG</span>
-          </div>
-          <div class="event-details">
-            <h3>Workshop: Software myarp@ 2.0</h3>
-            <p>Presentazione delle nuove funzionalità e casi d'uso pratici.</p>
-            <div class="event-meta">
-              <span><i class="fas fa-clock"></i> 10:00 - 12:00</span>
-              <span><i class="fas fa-map-marker-alt"></i> Milano</span>
+          <div class="event-header">
+            <div class="event-date">
+              <div class="event-day">28</div>
+              <div class="event-month-year">Giugno 2025</div>
             </div>
-            <a href="#" class="btn-primary">Registrati Ora</a>
+            <div class="event-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Milano, Via dei Giardini 15
+            </div>
+          </div>
+          
+          <div class="event-content">
+            <h3 class="event-title">Workshop myarp® 3.0: Le nuove funzionalità di analisi finanziaria</h3>
+            
+            <p class="event-description">Workshop pratico sulle nuove funzionalità della piattaforma con sessioni di Q&A e networking.</p>
+            
+            <div class="event-footer">
+              <div class="event-type workshop">Workshop</div>
+              <button class="event-button">Prenota il tuo posto</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Evento 3 -->
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-date">
+              <div class="event-day">4-5</div>
+              <div class="event-month-year">Luglio 2025</div>
+            </div>
+            <div class="event-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Roma, Hotel Excelsior
+            </div>
+          </div>
+          
+          <div class="event-content">
+            <h3 class="event-title">Masterclass: La consulenza patrimoniale nel passaggio generazionale</h3>
+            
+            <p class="event-description">Due giorni intensivi per apprendere le tecniche avanzate di pianificazione successoria per imprenditori.</p>
+            
+            <div class="event-footer">
+              <div class="event-type conference">Masterclass</div>
+              <button class="event-button">Scopri il programma</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Evento 4 -->
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-date">
+              <div class="event-day">15</div>
+              <div class="event-month-year">Luglio 2025</div>
+            </div>
+            <div class="event-location">
+              <i class="fas fa-video"></i>
+              Online
+            </div>
+          </div>
+          
+          <div class="event-content">
+            <h3 class="event-title">Novità fiscali 2025: Impatti sui professionisti e strategie di adattamento</h3>
+            
+            <p class="event-description">Un webinar per analizzare le recenti novità fiscali e le strategie per adattarsi al nuovo contesto normativo.</p>
+            
+            <div class="event-footer">
+              <div class="event-type webinar">Webinar</div>
+              <button class="event-button">Iscriviti Ora</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Articles Section -->
-  <section class="section bg-light">
+      
+      <!-- Load More Events Button -->
+      <div style="text-align: center; margin-top: 30px;">
+        <button class="load-more-events">
+          <i class="fas fa-plus-circle"></i> Carica altri eventi
+        </button>      </div>
+    </div>  </section><!-- Sezione 3: Articoli e Approfondimenti (Blog) -->  <section class="section bg-light">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Articoli sul Wealth Management</h2>
-        <p class="section-subtitle">Approfondimenti e analisi dal nostro team di esperti</p>
-      </div>
-      <div class="articles-grid">
-        <article class="article-card">
-          <img src="https://picsum.photos/400/250?random=1" alt="Articolo 1" class="article-image">
-          <div class="article-content">
-            <span class="article-category">Strategia</span>
-            <h3>Pianificazione Patrimoniale Post-Covid</h3>
-            <p>Analisi delle nuove strategie di gestione patrimoniale nel contesto attuale.</p>
-            <a href="#" class="btn-secondary">Leggi l'articolo</a>
+      <div class="press-coverage" style="margin-bottom: 70px;">
+        <div class="section-header" style="margin-bottom: 40px;">
+          <span class="pre-heading">INSIGHTS</span>
+          <h2 class="section-title">Dalle Nostre Analisi</h2>
+          <p class="section-subtitle">Approfondimenti e articoli dal nostro team di esperti</p>
+        </div>
+      
+      <!-- Strumenti di navigazione per il blog -->
+      <div class="blog-navigation" role="search" aria-label="Filtra articoli" style="margin-bottom: 30px;">
+        <!-- Filtri per argomento -->
+        <div class="blog-filters" role="group" aria-label="Categorie">
+          <button class="filter-button active" data-filter="all">Tutti gli argomenti</button>
+          <button class="filter-button" data-filter="patrimonio">Tutela Patrimonio</button>
+          <button class="filter-button" data-filter="passaggio">Passaggio Generazionale</button>
+          <button class="filter-button" data-filter="fiscale">Fiscalità</button>
+          <button class="filter-button" data-filter="aziende">Aziende</button>
+          <button class="filter-button" data-filter="normativa">Normativa</button>
+        </div>
+        
+        <!-- Barra di ricerca -->
+        <div class="blog-search">
+          <input type="text" class="blog-search-input" placeholder="Cerca negli articoli..." aria-label="Cerca negli articoli">
+          <span class="search-icon"><i class="fas fa-search" aria-hidden="true"></i></span>
+        </div>
+        
+        <!-- Messaggio di nessun risultato -->
+        <div class="no-results-message" aria-live="polite">
+          <i class="fas fa-search" style="font-size: 24px; color: #999; margin-bottom: 10px;" aria-hidden="true"></i>
+          <h3>Nessun risultato trovato</h3>
+          <p>Prova a modificare i filtri o la ricerca</p>        </div>
+      </div>        <!-- Griglia di articoli -->
+        <div class="press-slider">
+          <div class="press-slider-container">
+            <!-- Articolo 1 -->
+            <div class="press-card" data-category="patrimonio" role="article">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/250?random=1" alt="Articolo sulla pianificazione patrimoniale">
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Tutela Patrimonio</span>
+                  <span class="press-date">12 Giugno, 2025</span>
+                </div>
+                <h3 class="press-title">Le nuove frontiere della protezione patrimoniale tra diritto civile e trust</h3>
+                <p class="press-excerpt">Un'analisi approfondita degli strumenti più efficaci per la protezione del patrimonio familiare e aziendale nel contesto normativo attuale.</p>
+                <a href="#" class="press-link">
+                  Leggi l'articolo completo
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Articolo 2 -->
+            <div class="press-card" data-category="fiscale" role="article">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/250?random=2" alt="Articolo su fiscalità">
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Fiscalità</span>
+                  <span class="press-date">8 Giugno, 2025</span>
+                </div>
+                <h3 class="press-title">Le novità fiscali del 2025 e l'impatto sulla pianificazione patrimoniale</h3>
+                <p class="press-excerpt">Una panoramica completa delle recenti modifiche normative e delle strategie per ottimizzare il carico fiscale nel rispetto della legge.</p>
+                <a href="#" class="press-link">
+                  Leggi l'articolo completo
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Articolo 3 -->
+            <div class="press-card" data-category="passaggio" role="article">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/250?random=3" alt="Articolo su passaggio generazionale">
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Passaggio Generazionale</span>
+                  <span class="press-date">1 Giugno, 2025</span>
+                </div>
+                <h3 class="press-title">Il passaggio generazionale nelle PMI italiane: casi di successo</h3>
+                <p class="press-excerpt">Analisi di tre casi reali di trasferimento d'impresa gestiti con successo grazie a strumenti di pianificazione avanzata.</p>
+                <a href="#" class="press-link">
+                  Leggi l'articolo completo
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Articolo 4 -->
+            <div class="press-card" data-category="aziende" role="article">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/250?random=4" alt="Articolo sulla crescita aziendale">
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Aziende</span>
+                  <span class="press-date">28 Maggio, 2025</span>
+                </div>
+                <h3 class="press-title">Strategie di crescita per PMI: finanziare l'espansione in sicurezza</h3>
+                <p class="press-excerpt">Come pianificare una strategia di crescita sostenibile bilanciando rischio e opportunità per le piccole e medie imprese.</p>
+                <a href="#" class="press-link">
+                  Leggi l'articolo completo
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </article>
-        <article class="article-card">
-          <img src="https://picsum.photos/400/250?random=2" alt="Articolo 2" class="article-image">
-          <div class="article-content">
-            <span class="article-category">Tecnologia</span>
-            <h3>Innovazione nella Consulenza Finanziaria</h3>
-            <p>Come la tecnologia sta trasformando il settore della consulenza.</p>
-            <a href="#" class="btn-secondary">Leggi l'articolo</a>
+        
+        <!-- Articolo 5 -->
+        <article class="blog-card" data-category="normativa">
+          <div class="blog-image">
+            <img src="https://picsum.photos/400/250?random=5" alt="Articolo sulle normative">
+            <div class="blog-category finance">Normativa</div>
+          </div>
+          
+          <div class="blog-content">
+            <span class="blog-date">
+              <i class="far fa-calendar-alt"></i>
+              20 Maggio, 2025
+            </span>
+            
+            <h3 class="blog-title">Le nuove regole europee per la protezione dei dati sensibili in ambito finanziario</h3>
+            
+            <p class="blog-excerpt">Un'analisi delle implicazioni della recente direttiva UE sulla gestione dei dati sensibili nel settore della consulenza finanziaria.</p>
+            
+            <a href="#" class="blog-read-more">
+              Leggi l'articolo
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </article>
+          <!-- Articolo 6 -->
+        <article class="blog-card" data-category="patrimonio">
+          <div class="blog-image">
+            <img src="https://picsum.photos/400/250?random=6" alt="Articolo sulla protezione del patrimonio">
+            <div class="blog-category finance">Tutela Patrimonio</div>
+          </div>
+          
+          <div class="blog-content">
+            <span class="blog-date">
+              <i class="far fa-calendar-alt"></i>
+              15 Maggio, 2025
+            </span>
+            
+            <h3 class="blog-title">Investimenti alternativi: come diversificare il portafoglio in tempi di incertezza</h3>
+            
+            <p class="blog-excerpt">Una guida pratica agli investimenti alternativi per proteggere e far crescere il patrimonio in contesti economici volatili.</p>
+            
+            <a href="#" class="blog-read-more">
+              Leggi l'articolo
+              <i class="fas fa-arrow-right"></i>
+            </a>            </div>
+          </div>
+        </div>
+        
+        <!-- Pulsante per caricare altri articoli -->
+        <div class="load-more" style="text-align: center; margin-top: 20px;">
+          <a href="#" class="btn-secondary" style="display: inline-block; padding: 14px 30px; background: white; color: #3498db; border: 2px solid #3498db; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(52, 152, 219, 0.15);">
+            <i class="fas fa-plus-circle" style="margin-right: 10px;"></i>
+            Carica altri articoli
+          </a>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Resources Section -->
+  <!-- Sezione 4: Vetrine di Approfondimento -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Risorse e Guide</h2>
-        <p class="section-subtitle">Strumenti e materiali per la tua crescita professionale</p>
+      <!-- 4.1 Dicono di Noi (Rassegna Stampa) -->
+      <div class="press-coverage" style="margin-bottom: 70px;">
+        <div class="section-header" style="margin-bottom: 40px;">
+          <span class="pre-heading">RICONOSCIMENTI</span>
+          <h2 class="section-title">Kleros sui Media</h2>
+          <p class="section-subtitle">La nostra expertise riconosciuta dalla stampa specializzata</p>
+        </div>
+        
+        <div class="press-slider">
+          <div class="press-slider-container">
+            <div class="press-card">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/200?random=10" alt="Articolo su Il Sole 24 Ore">
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Il Sole 24 Ore</span>
+                  <span class="press-date">15 Giugno 2025</span>
+                </div>
+                <h3 class="press-title">Consulenza patrimoniale: i player innovativi</h3>
+                <p class="press-excerpt">"Kleros si distingue per l'approccio innovativo alla consulenza patrimoniale integrata con strumenti digitali all'avanguardia..."</p>
+                <a href="#" class="press-link">
+                  Leggi l'articolo completo
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <div class="press-card">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/200?random=11" alt="Articolo su Milano Finanza">
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Milano Finanza</span>
+                  <span class="press-date">8 Giugno 2025</span>
+                </div>
+                <h3 class="press-title">Software per la gestione dei patrimoni complessi</h3>
+                <p class="press-excerpt">"Il software myarp® rappresenta una svolta nella gestione dei patrimoni complessi, offrendo funzionalità di analisi predittiva..."</p>
+                <a href="#" class="press-link">
+                  Leggi l'articolo completo
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <div class="press-card">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/200?random=12" alt="Articolo su Italia Oggi">
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Italia Oggi</span>
+                  <span class="press-date">1 Giugno 2025</span>
+                </div>
+                <h3 class="press-title">La formazione dei consulenti nel nuovo contesto normativo</h3>
+                <p class="press-excerpt">"L'Accademia Kleros forma consulenti con competenze trasversali, fondamentali nel nuovo contesto normativo europeo..."</p>
+                <a href="#" class="press-link">
+                  Leggi l'articolo completo
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <div class="press-card">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/200?random=13" alt="Articolo su Advisor">
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Advisor</span>
+                  <span class="press-date">25 Maggio 2025</span>
+                </div>
+                <h3 class="press-title">I trend della consulenza patrimoniale nel 2025</h3>
+                <p class="press-excerpt">"L'approccio integrato di Kleros rappresenta un modello di riferimento per l'evoluzione della consulenza patrimoniale..."</p>
+                <a href="#" class="press-link">
+                  Leggi l'articolo completo
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="press-slider-controls">
+            <button class="press-slider-prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="press-slider-dots"></div>
+            <button class="press-slider-next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>          </div>
+          
+          <div class="press-item" style="display: none;">
+            <img src="https://picsum.photos/200/80?random=13" alt="Logo Advisor" style="height: 50px; object-fit: contain; margin-bottom: 20px;">
+            <p style="font-style: italic; color: #555; margin-bottom: 20px; line-height: 1.6; flex-grow: 1;">"La metodologia Kleros introduce un paradigma innovativo nella consulenza patrimoniale..."</p>
+            <div class="press-meta" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 15px;">
+              <span style="font-size: 14px; color: #777;">28 Maggio 2025</span>
+              <a href="#" style="color: #3498db; text-decoration: none; font-weight: 600; display: flex; align-items: center;">
+                Leggi
+                <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 12px;"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="press-item" style="display: none;">
+            <img src="https://picsum.photos/200/80?random=14" alt="Logo Class CNBC" style="height: 50px; object-fit: contain; margin-bottom: 20px;">
+            <p style="font-style: italic; color: #555; margin-bottom: 20px; line-height: 1.6; flex-grow: 1;">"Intervista con l'esperto: le strategie patrimoniali in un contesto di mercato volatile..."</p>
+            <div class="press-meta" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 15px;">
+              <span style="font-size: 14px; color: #777;">20 Maggio 2025</span>
+              <a href="#" style="color: #3498db; text-decoration: none; font-weight: 600; display: flex; align-items: center;">
+                Leggi
+                <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 12px;"></i>
+              </a>
+            </div>
+          </div>        </div>
+      </div>      <!-- 4.2 Video & Interventi -->
+      <div id="multimedia-section" class="press-coverage" style="margin-bottom: 70px;">
+        <div class="section-header" style="margin-bottom: 40px;">
+          <span class="pre-heading">MULTIMEDIA</span>
+          <h2 class="section-title">La Nostra Voce</h2>
+          <p class="section-subtitle">Interviste, webinar e interventi dei nostri esperti</p>
+        </div>
+        
+        <div class="press-slider">
+          <div class="press-slider-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; transform: none !important;">            <!-- Video 1 -->
+            <div class="press-card">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/200?random=20" alt="Webinar sulla pianificazione patrimoniale">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Webinar</span>
+                  <span class="press-date">10 Giugno 2025</span>
+                </div>
+                <h3 class="press-title">Pianificazione Patrimoniale: Strategie per imprenditori</h3>
+                <p class="press-excerpt">Una guida pratica alla pianificazione patrimoniale dedicata agli imprenditori con focus su protezione e ottimizzazione.</p>
+                <a href="#" class="press-link video-link" data-video-id="dQw4w9WgXcQ">
+                  Guarda il video
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="press-card">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/200?random=21" alt="Intervista sul passaggio generazionale">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Intervista</span>
+                  <span class="press-date">22 Maggio 2025</span>
+                </div>
+                <h3 class="press-title">Passaggio generazionale nelle PMI: intervista a Maria Rossi</h3>
+                <p class="press-excerpt">La nostra esperta analizza i casi più comuni di criticità nel passaggio generazionale delle imprese familiari.</p>
+                <a href="#" class="press-link video-link" data-video-id="dQw4w9WgXcQ">
+                  Guarda il video
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Video 3 -->
+            <div class="press-card">
+              <div class="press-image">
+                <img src="https://picsum.photos/400/200?random=22" alt="Tutorial su myarp">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="press-content">
+                <div class="press-meta">
+                  <span class="press-source">Tutorial</span>
+                  <span class="press-date">5 Maggio 2025</span>
+                </div>
+                <h3 class="press-title">myarp® 3.0: Come utilizzare l'analisi predittiva</h3>
+                <p class="press-excerpt">Un tutorial pratico sulle nuove funzionalità di analisi predittiva introdotte con myarp® 3.0.</p>
+                <a href="#" class="press-link video-link" data-video-id="j5a0jTc9S10">
+                  Guarda il video
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="resources-grid">
-        <div class="resource-card">
-          <i class="fas fa-book-open resource-icon"></i>
-          <h3>Guide alla Pianificazione</h3>
-          <p>Download gratuiti delle nostre guide pratiche per consulenti.</p>
-          <a href="#" class="btn-secondary">Scarica Guide</a>
-        </div>
-        <div class="resource-card">
-          <i class="fas fa-chart-line resource-icon"></i>
-          <h3>Case Studies</h3>
-          <p>Esempi pratici e best practices nel wealth management.</p>
-          <a href="#" class="btn-secondary">Scopri i Case Studies</a>
-        </div>
-        <div class="resource-card">
-          <i class="fas fa-laptop-code resource-icon"></i>
-          <h3>Aggiornamenti Software</h3>
-          <p>Ultime novità e changelog dei nostri strumenti.</p>
-          <a href="#" class="btn-secondary">Vedi Aggiornamenti</a>
-        </div>
+    </div>
+  </section>  <!-- Sezione 5: Newsletter Subscription -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-cta" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); border-radius: 25px; padding: 60px 40px; text-align: center; color: white; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);">
+        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
+        <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.3;"></div>
+        
+        <div style="position: relative; z-index: 2;">
+          <i class="fas fa-envelope" style="font-size: 48px; margin-bottom: 25px; opacity: 0.9;"></i>
+          <h2 style="font-size: 2.2rem; margin-bottom: 20px; font-weight: 700;">Resta Aggiornato</h2>
+          <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">Ricevi i nostri insights, analisi di mercato e aggiornamenti normativi direttamente nella tua inbox</p>
+          
+          <form class="newsletter-form" style="display: flex; max-width: 500px; margin: 0 auto; gap: 15px;">
+            <input type="email" placeholder="La tua email professionale" style="flex: 1; padding: 16px 24px; border: none; border-radius: 50px; font-size: 16px; background: rgba(255,255,255,0.95); color: #333;" required>
+            <button type="submit" style="background: #2c3e50; color: white; border: none; padding: 16px 32px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; white-space: nowrap;">
+              <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+              Iscriviti
+            </button>
+          </form>
+          
+          <p style="font-size: 13px; margin-top: 20px; opacity: 0.7;">Nessuno spam. Puoi annullare l'iscrizione in qualsiasi momento.</p>        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section bg-light">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Domande Frequenti</h2>
-        <p class="section-subtitle">Risposte alle domande più comuni</p>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Torna in alto">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <p>Utilizziamo i cookie per migliorare la tua esperienza di navigazione. Continuando a navigare accetti il nostro utilizzo dei cookie.</p>
       </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Come posso partecipare agli eventi?</h3>
-          <p class="faq-answer">La partecipazione è gratuita previa registrazione. Clicca sul pulsante "Registrati Ora" nell'evento di tuo interesse.</p>
+      <div class="cookie-buttons">
+        <button id="acceptCookies" class="accept-btn">Accetta</button>
+        <a href="privacy.html" class="privacy-link">Privacy Policy</a>
+      </div>
+    </div>  </div>
+</body>
+
+  <!-- Sezione 5: Call to Action Trasversale – Iscrizione alla Newsletter -->
+  <section class="section bg-light" style="padding: 70px 0;">
+    <div class="container">
+      <div class="newsletter-cta" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);">
+        <span class="pre-heading" style="display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 15px; border-radius: 30px; margin-bottom: 20px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">RIMANI AGGIORNATO</span>
+        
+        <h2 style="font-size: 2.2rem; margin-bottom: 20px; font-weight: 700;">Non perdere i contenuti esclusivi.</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; opacity: 0.9;">Iscriviti alla nostra newsletter per ricevere una sintesi dei migliori contenuti, aggiornamenti normativi e inviti esclusivi ai nostri eventi.</p>
+        
+        <form class="newsletter-form" style="display: flex; max-width: 600px; margin: 0 auto; flex-wrap: wrap;">
+          <input type="email" placeholder="Inserisci la tua email" required style="flex: 1; min-width: 250px; padding: 18px 25px; border: none; border-radius: 50px 0 0 50px; font-size: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+          <button type="submit" class="cta-button" style="background: #e74c3c; color: white; border: none; padding: 18px 35px; border-radius: 0 50px 50px 0; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>
+            Iscriviti
+          </button>
+        </form>
+        
+        <!-- Benefits della newsletter -->
+        <div class="newsletter-benefits" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 35px;">
+          <div class="benefit" style="display: flex; align-items: center; font-size: 0.95rem;">
+            <i class="fas fa-check-circle" style="margin-right: 10px; color: #2ecc71;"></i>
+            <span>Contenuti esclusivi</span>
+          </div>
+          <div class="benefit" style="display: flex; align-items: center; font-size: 0.95rem;">
+            <i class="fas fa-check-circle" style="margin-right: 10px; color: #2ecc71;"></i>
+            <span>Accesso anticipato agli eventi</span>
+          </div>
+          <div class="benefit" style="display: flex; align-items: center; font-size: 0.95rem;">
+            <i class="fas fa-check-circle" style="margin-right: 10px; color: #2ecc71;"></i>
+            <span>Aggiornamenti normativi</span>
+          </div>
+          <div class="benefit" style="display: flex; align-items: center; font-size: 0.95rem;">
+            <i class="fas fa-check-circle" style="margin-right: 10px; color: #2ecc71;"></i>
+            <span>Cancellazione in qualsiasi momento</span>
+          </div>
         </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Posso rivedere gli eventi passati?</h3>
-          <p class="faq-answer">Sì, tutti gli eventi vengono registrati e resi disponibili nell'Area Riservata per i nostri clienti.</p>
-        </div>
+        
+        <p style="margin-top: 25px; font-size: 0.9rem; opacity: 0.8;">Ci impegniamo a rispettare la tua privacy. Leggi la nostra <a href="privacy.html" style="color: white; text-decoration: underline;">Privacy Policy</a>.</p>
       </div>
     </div>
   </section>
-
-  <!-- Magazine Download CTA -->
-  <section class="section cta-section">
+  
+  <!-- Sezione 6: Opportunità per le Aziende (Sviluppo Commerciale) -->
+  <section class="section" style="background: white; padding: 70px 0;">
     <div class="container">
-      <div class="cta-content">
-        <h2>Scarica il nostro Magazine</h2>
-        <p>Ricevi gratuitamente l'ultimo numero del magazine Kleros con approfondimenti, interviste e analisi.</p>
-        <form class="cta-form">
-          <input type="email" placeholder="Inserisci la tua email" required>
-          <button type="submit" class="btn-primary">Scarica Ora</button>
+      <div class="business-cta" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); overflow: hidden; display: flex; flex-wrap: wrap; color: white;">
+        <div class="business-cta-content" style="flex: 3; min-width: 300px; padding: 50px;">
+          <div class="premium-badge" style="display: inline-block; background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 30px; margin-bottom: 25px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+            <i class="fas fa-star" style="margin-right: 8px; color: #f1c40f;"></i> Premium
+          </div>
+          
+          <h2 style="font-size: 2.2rem; margin-bottom: 25px; font-weight: 700;">Vuoi offrire il Magazine Kleros con il tuo Brand?</h2>
+          
+          <p style="font-size: 1.1rem; margin-bottom: 35px; line-height: 1.6; opacity: 0.9;">Il nostro magazine può diventare uno strumento di valore per la tua azienda. Offriamo soluzioni di partnership per personalizzare i contenuti e la grafica, creando un prodotto editoriale esclusivo per i tuoi clienti e la tua rete.</p>
+          
+          <div class="business-features" style="margin-bottom: 35px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px;">
+            <div class="business-feature" style="display: flex; align-items: flex-start; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
+              <i class="fas fa-check-circle" style="color: #e74c3c; margin-right: 12px; margin-top: 3px; font-size: 18px;"></i>
+              <span>Personalizzazione del brand e layout</span>
+            </div>
+            <div class="business-feature" style="display: flex; align-items: flex-start; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
+              <i class="fas fa-check-circle" style="color: #e74c3c; margin-right: 12px; margin-top: 3px; font-size: 18px;"></i>
+              <span>Contenuti su misura per il tuo target</span>
+            </div>
+            <div class="business-feature" style="display: flex; align-items: flex-start; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
+              <i class="fas fa-check-circle" style="color: #e74c3c; margin-right: 12px; margin-top: 3px; font-size: 18px;"></i>
+              <span>Distribuzione in formato digitale e cartaceo</span>
+            </div>
+            <div class="business-feature" style="display: flex; align-items: flex-start; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
+              <i class="fas fa-check-circle" style="color: #e74c3c; margin-right: 12px; margin-top: 3px; font-size: 18px;"></i>
+              <span>Reportistica su engagement e interazioni</span>
+            </div>
+          </div>
+          
+          <div class="cta-buttons" style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <a href="contatti.html?business=magazine" class="cta-button" style="display: inline-block; padding: 16px 32px; background: #e74c3c; color: white; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);">
+              <i class="fas fa-handshake" style="margin-right: 10px;"></i>
+              Richiedi una Partnership
+            </a>
+            <a href="#" class="btn-outline" style="display: inline-block; padding: 16px 32px; background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+              <i class="fas fa-file-pdf" style="margin-right: 10px;"></i>
+              Scarica la brochure
+            </a>
+          </div>
+        </div>
+        
+        <div class="business-cta-image" style="flex: 2; min-width: 300px; background: url('img/blog/blog-81ef62db.jpg') center/cover no-repeat; position: relative;">
+          <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.2);"></div>
+          
+          <!-- Badge flotante -->
+          <div class="floating-badge" style="position: absolute; top: 30px; right: 30px; background: #e74c3c; color: white; padding: 15px; border-radius: 50%; width: 100px; height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
+            <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">Inizia da</span>
+            <span style="font-size: 1.5rem; font-weight: 800;">€499</span>
+            <span style="font-size: 0.7rem; opacity: 0.8;">/mese</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Form per scaricare il Magazine - Ancoraggio per la CTA principale -->
+  <section id="magazine-form" class="section bg-light">
+    <div class="container">
+      <div class="magazine-download-form" style="max-width: 650px; margin: 0 auto; background: white; padding: 50px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08);">
+        <div class="form-header" style="text-align: center; margin-bottom: 35px;">
+          <span class="pre-heading" style="display: inline-block; background: #f5f5f5; color: #555; padding: 6px 15px; border-radius: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">RICHIESTA MAGAZINE</span>
+          <h2 class="section-title" style="margin-bottom: 15px; font-size: 2rem;">Scarica l'Ultimo Numero</h2>
+          <p style="color: #666; line-height: 1.6;">Compila il form per ricevere gratuitamente il magazine nella tua email</p>
+        </div>
+          <form class="magazine-download-form" aria-labelledby="form-title" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="name">Nome e Cognome <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" class="form-input" required placeholder="Es. Mario Rossi" aria-required="true">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" required placeholder="Es. mario.rossi@email.com" aria-required="true">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="company">Azienda/Studio Professionale</label>
+            <input type="text" id="company" name="company" class="form-input" placeholder="Es. Studio Rossi & Associati">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="profession">Professione <span aria-hidden="true">*</span></label>
+            <select id="profession" name="profession" class="form-select" required aria-required="true">
+              <option value="">Seleziona la tua professione</option>
+              <option value="commercialista">Commercialista</option>
+              <option value="avvocato">Avvocato</option>
+              <option value="notaio">Notaio</option>
+              <option value="consulente">Consulente Finanziario</option>
+              <option value="imprenditore">Imprenditore</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <div class="form-checkbox">
+              <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+              <label for="privacy">Ho letto e accetto la <a href="privacy.html">Privacy Policy</a> e acconsento al trattamento dei miei dati personali. <span aria-hidden="true">*</span></label>
+            </div>
+          </div>
+          
+          <button type="submit" class="form-submit" aria-label="Invia il modulo per scaricare il magazine">
+            <i class="fas fa-download" aria-hidden="true"></i> Scarica il Magazine
+          </button>
+          
+          <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #777;"><span aria-hidden="true">*</span> <span class="screen-reader-text">I campi contrassegnati con asterisco sono</span> Campi obbligatori</p></form>
+      </div>
+    </div>
+  </section>
+            Scarica il Magazine
+          </button>
+          
+          <p class="form-disclaimer" style="text-align: center; font-size: 0.85rem; color: #777; margin-top: 10px;">* Campi obbligatori. Riceverai il magazine all'indirizzo email indicato.</p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p><a href="privacy.html">Privacy Policy</a> | <a href="#">Termini di Servizio</a></p>
-    <p>Email: info@kleros.it | Telefono: +39 02 12345678</p>
-    <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+  <!-- Footer -->  <footer style="background: #2c3e50; color: white; padding: 40px 0 20px;">
+    <div class="container">
+      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+        <div class="footer-about">
+          <img src="logo.png" alt="Kleros Logo" style="height: 35px; margin-bottom: 15px;">
+          <p style="margin-bottom: 15px; line-height: 1.6; opacity: 0.8; font-size: 0.9rem;">Kleros supporta i professionisti del patrimonio con servizi, formazione e soluzioni tecnologiche avanzate per ottimizzare la consulenza e garantire risultati superiori.</p>
+          <div class="social-links" style="display: flex; gap: 10px;">
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>        </div>
+        
+        <div class="footer-links">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Collegamenti Rapidi
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 8px;">
+            <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Home</a></li>
+            <li><a href="chi-siamo.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Chi Siamo</a></li>
+            <li><a href="servizi.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Servizi</a></li>
+            <li><a href="formazione.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Formazione</a></li>
+            <li><a href="software.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Software</a></li>
+            <li><a href="contatti.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Contatti</a></li>        </div>
+        
+        <div class="footer-contact">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Contatti
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 15px;">
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-map-marker-alt" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">Via Roma 123,<br>20123 Milano, Italia</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-phone" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">+39 02 12345678</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-envelope" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">info@kleros.it</p>
+              </div>
+            </li>        </div>
+        
+        <div class="footer-newsletter">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Newsletter
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <p style="margin-bottom: 12px; line-height: 1.5; opacity: 0.8; font-size: 0.85rem;">Iscriviti per rimanere aggiornato sulle ultime novità e risorse.</p>
+          <form style="display: flex; margin-bottom: 12px;">
+            <input type="email" placeholder="La tua email" style="flex: 1; padding: 10px 12px; border: none; border-radius: 4px 0 0 4px; background: rgba(255,255,255,0.1); color: white; font-size: 0.9rem;">
+            <button type="submit" style="background: #3498db; color: white; border: none; padding: 0 15px; border-radius: 0 4px 4px 0; transition: all 0.3s ease;"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p style="font-size: 0.8rem; opacity: 0.7;">Ti invieremo solo contenuti rilevanti. Niente spam.</p>        </div>
+      </div>
+      
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 15px;">
+          <a href="privacy.html" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Privacy Policy</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Termini di Servizio</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Cookie Policy</a>
+        </div>
+        <p style="margin-top: 8px; opacity: 0.6; font-size: 0.85rem;">© 2025 Kleros – Tutti i diritti riservati.</p>
+      </div>
+    </div>
   </footer>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
 

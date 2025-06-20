@@ -3,12 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>myarp® - La Piattaforma Software per la Consulenza Patrimoniale | Kleros</title>
-  <meta name="description" content="myarp® è l'ecosistema software modulare di Kleros per la consulenza patrimoniale evoluta. Scopri come digitalizzare e potenziare la tua analisi patrimoniale.">
+  <title>myarp@® - La Piattaforma Software per la Consulenza Patrimoniale | Kleros</title>
+  <meta name="description" content="myarp@® è l'ecosistema software modulare di Kleros per la consulenza patrimoniale evoluta. Scopri come digitalizzare e potenziare la tua analisi patrimoniale.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/mobile-menu.js" defer></script>
+  <script src="js/favicon-generator.js" defer></script>
+  <script src="js/scroll-to-top.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+  
+  <!-- Structured Data for Software Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "myarp@®",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/OnlineOnly"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kleros"
+    }
+  }
+  </script>
 
   <style>
     /* Hero Section Styles */
@@ -1002,6 +1033,8 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
+  
   <!-- Header -->
   <header>
     <div class="container">
@@ -1009,10 +1042,10 @@
         <div class="logo">
           <img src="logo.png" alt="Kleros Logo" class="logo-img">
         </div>
-        <div class="mobile-toggle">
-          <i class="fas fa-bars"></i>
+        <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </div>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
           <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
@@ -1028,10 +1061,10 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-software">
+  <section id="main-content" class="hero-software">
     <div class="hero-content">
-      <h1 class="hero-title">Governa la Complessità del Patrimonio:<br>la Piattaforma Modulare per la Consulenza Evoluta</h1>
-      <p class="hero-subtitle">myarp® è l'unica piattaforma software progettata da Kleros per digitalizzare e potenziare l'intero processo di analisi, tutela e trasmissione del patrimonio. Un ecosistema flessibile, pensato sia per il singolo professionista che per le complesse esigenze di banche, reti e compagnie assicurative.</p>
+      <h1 class="hero-title">Governa la complessità del patrimonio:<br>Il know how di Kleros a portata di click </h1>
+      <p class="hero-subtitle">myarp@® è l'unica piattaforma software progettata da Kleros per digitalizzare e potenziare l'intero processo di analisi, tutela e trasmissione del patrimonio. Un ecosistema flessibile, pensato sia per il singolo professionista che per le complesse esigenze di banche, reti e compagnie assicurative</p>
       
       <div class="hero-video-container">
         <video class="hero-video" controls poster="img/software/video-poster.jpg">
@@ -1043,11 +1076,11 @@
       <div class="hero-buttons">
         <a href="#demo" class="cta-button">
           <i class="fas fa-play-circle mr-2"></i>
-          Prova Subito la Demo Gratuita
+          Prova subito la demo gratuita
         </a>
         <a href="#corporate" class="btn-secondary">
           <i class="fas fa-building mr-2"></i>
-          Richiedi una Presentazione Dedicata
+          Richiedi una presentazione dedicata
         </a>
       </div>
     </div>
@@ -1058,8 +1091,8 @@
   <!-- Sezione 2: Il Ciclo della Consulenza -->
   <section class="consulting-cycle">
     <div class="section-header">
-        <h2 class="section-title">Un Flusso di Lavoro Completo, dalla Criticità alla Soluzione</h2>
-        <p class="section-intro">myarp® ti accompagna in ogni fase del percorso consulenziale, permettendoti di costruire l'analisi di cui hai bisogno, quando ne hai bisogno.</p>
+        <h2 class="section-title">Un flusso di lavoro completo, dalla criticità alla soluzione</h2>
+        <p class="section-intro">myarp@® ti accompagna in ogni fase del percorso consulenziale, permettendoti di costruire l'analisi di cui hai bisogno, quando ne hai bisogno</p>
     </div>
 
     <div class="consulting-steps">
@@ -1071,11 +1104,11 @@
                 <h3 class="step-phase">FASE 1: INDIVIDUAZIONE CRITICITÀ</h3>
                 <div class="step-section">
                     <h4 class="step-section-title bisogno">Bisogno</h4>
-                    <p class="step-text">Capire rapidamente i punti deboli e le aree di rischio del cliente.</p>
+                    <p class="step-text">Capire rapidamente i punti deboli e le aree di rischio del cliente</p>
                 </div>
                 <div class="step-section">
                     <h4 class="step-section-title soluzione">Soluzione</h4>
-                    <p class="step-text">Intervista intelligente supportata da AI.</p>
+                    <p class="step-text">Intervista intelligente supportata da AI</p>
                 </div>
             </div>
         </div>
@@ -1088,11 +1121,11 @@
                 <h3 class="step-phase">FASE 2: VALUTAZIONE PATRIMONIALE</h3>
                 <div class="step-section">
                     <h4 class="step-section-title bisogno">Bisogno</h4>
-                    <p class="step-text">Avere una fotografia chiara e simulazioni concrete sulla situazione patrimoniale.</p>
+                    <p class="step-text">Avere una fotografia chiara e simulazioni concrete sulla situazione patrimoniale</p>
                 </div>
                 <div class="step-section">
                     <h4 class="step-section-title soluzione">Soluzione</h4>
-                    <p class="step-text">Analisi rapida e anonima o raccolta dati di dettaglio.</p>
+                    <p class="step-text">Analisi di dettaglio del patrimonio e delle relazioni del cliente</p>
                 </div>
             </div>
         </div>
@@ -1105,11 +1138,11 @@
                 <h3 class="step-phase">FASE 3: PROPOSTA DI SOLUZIONI</h3>
                 <div class="step-section">
                     <h4 class="step-section-title bisogno">Bisogno</h4>
-                    <p class="step-text">Elaborare un dossier professionale e proporre azioni correttive efficaci.</p>
+                    <p class="step-text">Elaborare un dossier professionale e proporre azioni correttive efficaci</p>
                 </div>
                 <div class="step-section">
                     <h4 class="step-section-title soluzione">Soluzione</h4>
-                    <p class="step-text">Generazione di report dettagliati e allegati tecnici.</p>
+                    <p class="step-text">Generazione di report dettagliati e allegati tecnici</p>
                 </div>
             </div>
         </div>
@@ -1119,18 +1152,19 @@
   <!-- Sezione 3: I Moduli della Piattaforma -->
   <section class="modules-section">
     <div class="section-header">
-      <h2 class="section-title">I Moduli della Piattaforma: Componi la Tua Analisi</h2>
+      <h2 class="section-title">I moduli della piattaforma: componi la tua analisi</h2>
       <p class="section-intro">
-        myarp® offre tre distinti moduli, ciascuno progettato per rispondere a esigenze specifiche della consulenza patrimoniale.
-        Scegli quello più adatto alle tue necessità o combina più moduli per un'esperienza completa.
+        myarp@® offre tre distinti moduli, ciascuno progettato per rispondere a esigenze specifiche della consulenza patrimoniale
+        Scegli quello più adatto alle tue necessità o combina più moduli per un'esperienza completa
       </p>
     </div>
 
     <div class="tabs-container">
       <div class="tabs-nav">
-        <button class="tab-button active" data-tab="module-kai">myarp® K-AI</button>
-        <button class="tab-button" data-tab="module-anonimo">myarp® Anonimo</button>
-        <button class="tab-button" data-tab="module-dettaglio">myarp® Dettaglio</button>
+        <button class="tab-button active" data-tab="module-kai">myarp@® K-AI</button>
+        <button class="tab-button" data-tab="module-anonimo">myarp@® Anonimo</button>
+        <button class="tab-button" data-tab="module-dettaglio">myarp@® Dettaglio</button>
+        
       </div>
 
       <!-- Module 1: K-AI -->
@@ -1140,8 +1174,8 @@
             <i class="fas fa-robot"></i>
           </div>
           <div class="module-title-container">
-            <h3 class="module-title">myarp® K-AI</h3>
-            <p class="module-subtitle">L'Assistente Intelligente per la Scoperta delle Criticità</p>
+            <h3 class="module-title">myarp@® K-AI</h3>
+            <p class="module-subtitle">L'Assistente Intelligente per la scoperta delle criticità</p>
           </div>
         </div>
 
@@ -1149,7 +1183,7 @@
           <div class="module-section">
             <h4 class="module-section-title">A chi si rivolge</h4>
             <p class="module-description">
-              Al consulente che necessita di un primo "ice-breaker" efficace e innovativo con il cliente.
+              Al consulente che necessita di un primo "ice-breaker" efficace e innovativo con il cliente
             </p>
           </div>
 
@@ -1157,14 +1191,14 @@
             <h4 class="module-section-title">A cosa serve</h4>
             <p class="module-description">
               Analizzare in modo preliminare le potenziali criticità patrimoniali tramite una breve intervista
-              anonima supportata dall'Intelligenza Artificiale, per avviare la conversazione consulenziale su basi concrete.
+              anonima supportata dall'Intelligenza Artificiale, per avviare la conversazione consulenziale su basi concrete
             </p>
           </div>
 
           <div class="module-section">
             <h4 class="module-section-title">Come funziona</h4>
             <p class="module-description">
-              Il cliente risponde a una serie di domande guidate. L'AI elabora le risposte in tempo reale.
+              Il cliente risponde a una serie di domande guidate. L'AI elabora le risposte applicando la metodologia Kleros
             </p>
           </div>
 
@@ -1174,13 +1208,13 @@
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-video"></i></span>
                 <div class="feature-text">
-                  <strong>Un resoconto video dell'intervista "raccontato" da un avatar.</strong>
+                  <strong>Un resoconto video dell'intervista "raccontato" da un avatar </strong>
                 </div>
               </li>
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-file-pdf"></i></span>
                 <div class="feature-text">
-                  <strong>Un report web e PDF con l'analisi delle criticità rilevate e le aree di intervento suggerite.</strong>
+                  <strong>Un report web e PDF con l'analisi delle criticità rilevate e le aree di intervento suggerite </strong>
                 </div>
               </li>
             </ul>
@@ -1200,8 +1234,8 @@
             <i class="fas fa-shield-alt"></i>
           </div>
           <div class="module-title-container">
-            <h3 class="module-title">myarp® Anonimo</h3>
-            <p class="module-subtitle">Simulazioni Rapide, Riservate e Senza Impegno</p>
+            <h3 class="module-title">myarp@® Anonimo</h3>
+            <p class="module-subtitle">Simulazioni rapide, riservate e senza impegno</p>
           </div>
         </div>
 
@@ -1209,8 +1243,7 @@
           <div class="module-section">
             <h4 class="module-section-title">A chi si rivolge</h4>
             <p class="module-description">
-              Al professionista che vuole fornire subito un valore tangibile al cliente, o al cliente finale
-              che desidera una prima valutazione autonoma.
+              Al professionista che vuole fornire subito un valore tangibile al cliente, per dettagliare meglio le possibili criticità
             </p>
           </div>
 
@@ -1218,14 +1251,14 @@
             <h4 class="module-section-title">A cosa serve</h4>
             <p class="module-description">
               Effettuare un'analisi patrimoniale rapida e sicura senza registrazione. Ideale per
-              simulare scenari (successione, fiscalità) e comprendere l'impatto di determinate scelte.
+              simulare scenari (successione, fiscalità) e comprendere l'impatto di determinate scelte
             </p>
           </div>
 
           <div class="module-section">
             <h4 class="module-section-title">Come funziona</h4>
             <p class="module-description">
-              Inserimento di un set minimale di informazioni familiari e patrimoniali in un'interfaccia guidata.
+              Inserimento di un set minimale di informazioni familiari e patrimoniali in un'interfaccia guidata
             </p>
           </div>
 
@@ -1235,25 +1268,25 @@
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-chart-pie"></i></span>
                 <div class="feature-text">
-                  <strong>Rilevazione e riclassificazione della posizione patrimoniale.</strong>
+                  <strong>Rilevazione delle criticità di dettaglio sui diversi ambiti, Familiare, Patrimoniale, Aziendale e Previdenziale</strong>
                 </div>
               </li>
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-calculator"></i></span>
                 <div class="feature-text">
-                  <strong>Simulazione della successione legittima e calcolo della fiscalità.</strong>
+                  <strong>Simulazione della successione legittima e calcolo della fiscalità</strong>
                 </div>
               </li>
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-hourglass-half"></i></span>
                 <div class="feature-text">
-                  <strong>Simulazione dell'Ereditometro fiscale e del longevity risk.</strong>
+                  <strong>Simulazione dell'ereditometro fiscale e del longevity risk </strong>
                 </div>
               </li>
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-tasks"></i></span>
                 <div class="feature-text">
-                  <strong>Proposta di macro-azioni consigliate per la pianificazione.</strong>
+                  <strong>Proposta di macro-azioni consigliate per la pianificazione</strong>
                 </div>
               </li>
             </ul>
@@ -1272,8 +1305,8 @@
             <i class="fas fa-file-signature"></i>
           </div>
           <div class="module-title-container">
-            <h3 class="module-title">myarp® Dettaglio</h3>
-            <p class="module-subtitle">L'Analisi Approfondita per il Professionista Esigente</p>
+            <h3 class="module-title">myarp@® Dettaglio</h3>
+            <p class="module-subtitle">L'Analisi approfondita per il professionista esigente</p>
           </div>
         </div>
 
@@ -1282,7 +1315,7 @@
             <h4 class="module-section-title">A chi si rivolge</h4>
             <p class="module-description">
               Al consulente patrimoniale, private banker, commercialista o avvocato che necessita di un dossier
-              completo e inattaccabile.
+              completo e dettagliato per il cliente, con dati puntuali e certificati
             </p>
           </div>
 
@@ -1290,7 +1323,7 @@
             <h4 class="module-section-title">A cosa serve</h4>
             <p class="module-description">
               Gestire in modo completo l'analisi patrimoniale, arricchendola con dati puntuali
-              (immobili, posizioni pensionistiche, etc.) importati tramite API per la massima precisione.
+              (immobili, posizioni pensionistiche, etc.) importati tramite API per la massima precisione
             </p>
           </div>
 
@@ -1298,7 +1331,7 @@
             <h4 class="module-section-title">Come funziona</h4>
             <p class="module-description">
               Accesso all'area riservata, inserimento dati di dettaglio o importazione tramite servizi esterni,
-              elaborazione del dossier completo.
+              elaborazione del dossier completo
             </p>
           </div>
 
@@ -1308,32 +1341,32 @@
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-database"></i></span>
                 <div class="feature-text">
-                  <strong>Analisi basate su dati puntuali e certificati.</strong>
+                  <strong>Analisi basate su dati puntuali e certificati</strong>
                 </div>
               </li>
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-balance-scale"></i></span>
                 <div class="feature-text">
-                  <strong>Allegato sulla normativa di riferimento utilizzata.</strong>
+                  <strong>Allegato sulla normativa di riferimento utilizzata</strong>
                 </div>
               </li>
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-building"></i></span>
                 <div class="feature-text">
-                  <strong>Allegato di analisi di dettaglio dei beni immobiliari.</strong>
+                  <strong>Allegato di analisi di dettaglio dei beni immobiliari</strong>
                 </div>
               </li>
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-clipboard-list"></i></span>
                 <div class="feature-text">
-                  <strong>Note tecniche di dettaglio sulle soluzioni consigliate.</strong>
+                  <strong>Note tecniche di dettaglio sulle soluzioni consigliate</strong>
                 </div>
               </li>
               <li class="feature-item">
                 <span class="feature-icon"><i class="fas fa-sync"></i></span>
                 <div class="feature-text">
                   <strong class="highlight-text">Dossier Dinamico:</strong> il dossier si aggiorna automaticamente in base a modifiche 
-                  patrimoniali, normative o familiari.
+                  patrimoniali, normative o familiari
                 </div>
               </li>
             </ul>
@@ -1351,9 +1384,9 @@
   <!-- Sezione 4: Potenzia la Tua Rete, Personalizza la Tua Consulenza (B2B) -->
   <section class="corporate-section">
     <div class="section-header">
-      <h2 class="section-title">Una Piattaforma Strategica per Banche, Reti e Compagnie</h2>
+      <h2 class="section-title">Una Piattaforma strategica e modulare per banche, reti e compagnie</h2>
       <p class="section-intro">
-        myarp® non è solo uno strumento, ma un asset per la tua organizzazione. Offriamo soluzioni su misura per integrare la piattaforma nei tuoi sistemi, formare le tue risorse e potenziare la tua offerta commerciale.
+        myarp@® non è solo uno strumento, ma un asset per la tua organizzazione grazie alla possibilità di offrire analisi modulari. Offriamo soluzioni su misura per integrare la piattaforma nei tuoi sistemi, formare le tue risorse e potenziare la tua offerta commerciale.
       </p>
     </div>
 
@@ -1365,7 +1398,7 @@
         <div class="benefit-content">
           <h3 class="benefit-title">Personalizzazione e White Label</h3>
           <p class="benefit-description">
-            Vesti myarp® con il tuo brand e crea output personalizzati, come magazine e report.
+            Vesti myarp@® con il tuo brand e crea report personalizzati
           </p>
         </div>
       </div>
@@ -1377,7 +1410,7 @@
         <div class="benefit-content">
           <h3 class="benefit-title">Formazione e Onboarding</h3>
           <p class="benefit-description">
-            Utilizza la piattaforma come strumento didattico per formare la tua rete vendita.
+            Utilizza la piattaforma come strumento didattico per formare la tua rete vendita
           </p>
         </div>
       </div>
@@ -1387,28 +1420,16 @@
           <i class="fas fa-cogs"></i>
         </div>
         <div class="benefit-content">
-          <h3 class="benefit-title">Integrazione API</h3>
+          <h3 class="benefit-title">Analisi modulari</h3>
           <p class="benefit-description">
-            Collega myarp® ai tuoi sistemi CRM e gestionali per un flusso di lavoro senza interruzioni.
+            Fornisci ai tuoi clienti solo quello che serve, con moduli personalizzati per ogni esigenza
           </p>
         </div>
       </div>
-
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <div class="benefit-content">
-          <h3 class="benefit-title">Scalabilità</h3>
-          <p class="benefit-description">
-            Gestisci team di qualsiasi dimensione con permessi e accessi differenziati.
-          </p>
-        </div>
-      </div>
-    </div>
+  
 
     <div class="corporate-cta">
-      <a href="#corporate-form" class="btn-primary">Contattaci per una Soluzione Corporate</a>
+      <a href="#corporate-form" class="btn-primary">Contattaci per una soluzione Corporate</a>
     </div>
   </section>
 
@@ -1417,7 +1438,7 @@
     <div class="section-header">
       <h2 class="section-title">Domande Frequenti</h2>
       <p class="section-intro">
-        Risposte alle domande più comuni sulla piattaforma myarp® e sui suoi servizi.
+        Risposte alle domande più comuni sulla piattaforma myarp@® e sui suoi servizi.
       </p>
     </div>
 
@@ -1428,19 +1449,10 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>La demo gratuita ti consente di accedere al modulo myarp® Anonimo senza registrazione. Potrai eseguire un'analisi patrimoniale completa ma con alcune limitazioni: il dossier generato non sarà salvabile in area riservata e non potrai accedere alle funzionalità avanzate dei moduli K-AI e Dettaglio. È comunque un ottimo punto di partenza per sperimentare le potenzialità della piattaforma.</p>
+          <p>La demo gratuita ti consente di accedere al modulo myarp@® Anonimo senza registrazione. Potrai eseguire un'analisi patrimoniale completa ma con alcune limitazioni: il dossier generato non sarà salvabile in area riservata e non potrai accedere alle funzionalità avanzate dei moduli K-AI e Dettaglio. È comunque un ottimo punto di partenza per sperimentare le potenzialità della piattaforma.</p>
         </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Cosa sono i "crediti" e come si utilizzano?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>I crediti sono l'unità di consumo della piattaforma myarp®. Ogni operazione (creazione di un dossier, aggiornamento, esportazione, etc.) richiede un determinato numero di crediti. Puoi acquistare pacchetti di crediti in base alle tue esigenze e questi non hanno scadenza. Il sistema ti avviserà sempre prima di eseguire un'operazione che consuma crediti.</p>
-        </div>
-      </div>
 
       <div class="faq-item">
         <div class="faq-question">
@@ -1448,19 +1460,10 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>Assolutamente sì. La sicurezza e la privacy sono al centro del nostro servizio. Tutti i dati sono crittografati e archiviati su server europei in conformità con il GDPR. Inoltre, il modulo myarp® Anonimo non richiede alcun dato identificativo del cliente, garantendo la massima riservatezza. I nostri sistemi sono sottoposti a regolari audit di sicurezza e adottiamo misure tecniche all'avanguardia per proteggere le informazioni.</p>
+          <p>Assolutamente sì. La sicurezza e la privacy sono al centro del nostro servizio. Tutti i dati sono crittografati e archiviati su server europei in conformità con il GDPR. Inoltre, il modulo myarp@® Anonimo non richiede alcun dato identificativo del cliente, garantendo la massima riservatezza. I nostri sistemi sono sottoposti a regolari audit di sicurezza e adottiamo misure tecniche all'avanguardia per proteggere le informazioni.</p>
         </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>È possibile integrare myarp® con altri software che già uso?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Sì, myarp® è progettato per integrarsi facilmente con altri software gestionali e CRM. Disponiamo di API documentate che permettono di collegare la piattaforma ai sistemi già in uso presso la tua organizzazione. Le integrazioni più comuni includono sistemi di CRM, software documentali e piattaforme di gestione clienti. Per soluzioni personalizzate, il nostro team tecnico è a disposizione per sviluppare connettori specifici.</p>
-        </div>
-      </div>
 
       <div class="faq-item">
         <div class="faq-question">
@@ -1489,14 +1492,14 @@
     <div class="section-header">
       <h2 class="section-title">Inizia Ora. Scegli il Tuo Percorso.</h2>
       <p class="section-intro">
-        Qualunque sia la tua esigenza, myarp® ha la soluzione giusta per te.
+        Qualunque sia la tua esigenza, myarp@® ha la soluzione giusta per te.
       </p>
     </div>
 
     <div class="paths-container">
       <div class="path-card">
         <div class="path-content">
-          <h3 class="path-title">Prova in Autonomia</h3>
+          <h3 class="path-title">Prova in autonomia</h3>
           <p class="path-description">Vuoi esplorare le potenzialità di base?</p>
         </div>
         <a href="#demo" class="path-button">ACCEDI ALLA DEMO ANONIMA</a>
@@ -1513,7 +1516,7 @@
       <div class="path-card">
         <div class="path-content">
           <h3 class="path-title">Soluzione Aziendale</h3>
-          <p class="path-description">Vuoi portare myarp® nella tua organizzazione?</p>
+          <p class="path-description">Vuoi portare myarp@® nella tua organizzazione?</p>
         </div>
         <a href="#corporate-form" class="path-button">RICHIEDI UNA PRESENTAZIONE</a>
       </div>
@@ -1523,8 +1526,8 @@
   <!-- Accesso area riservata -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Accesso area riservata myarp@</h2>
-      <p>Gli utenti registrati possono accedere all'area riservata per usufruire di contenuti esclusivi, report e strumenti avanzati.</p>
+      <h2 class="section-title">Accesso area riservata myarp@®</h2>
+      <p>Gli utenti registrati possono accedere all'area riservata per usufruire di contenuti esclusivi</p>
       <a href="area-riservata.html" class="cta-button">Accedi all'area riservata</a>
     </div>
   </section>

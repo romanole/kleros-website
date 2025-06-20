@@ -4,14 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Formazione - Kleros</title>
+  <meta name="description" content="Percorsi formativi professionali di Kleros per consulenti, manager, professionisti e aziende nel settore della consulenza patrimoniale e finanziaria.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/promo-tabs.css">
   <script src="js/mobile-menu.js" defer></script>
+  <script src="js/favicon-generator.js" defer></script>
+  <script src="js/scroll-to-top.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+  
+  <!-- Structured Data for Courses -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Formazione Professionale Kleros",
+    "description": "Percorsi formativi professionali di Kleros per consulenti, manager, professionisti e aziende nel settore della consulenza patrimoniale e finanziaria.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kleros",
+      "sameAs": "https://example.com"
+    }
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
+  
   <!-- Header -->
   <header>
     <div class="container">
@@ -19,10 +47,10 @@
         <div class="logo">
           <img src="logo.png" alt="Kleros Logo" class="logo-img">
         </div>
-        <div class="mobile-toggle">
-          <i class="fas fa-bars"></i>
+        <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </div>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
           <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
@@ -37,219 +65,269 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1920/600'); height: 60vh;">
-    <div class="hero-content">
-      <h1 class="hero-title">Formazione d'Eccellenza per Professionisti</h1>
-      <p class="hero-subtitle">Sviluppa le tue competenze con i migliori esperti del settore patrimoniale</p>
-      <div class="hero-buttons">
-        <a href="#catalogo-corsi" class="cta-button">Scopri i Corsi</a>
-        <a href="#area-riservata" class="btn-secondary">Area E-Learning</a>
+  <!-- Sezione 1: Hero Section - Titolo e Introduzione -->
+  <section id="main-content" class="hero formation-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1920/600?gravity=center'); min-height: 70vh; display: flex; align-items: center;">
+    <div class="hero-content container">
+      <h1 class="hero-title">La Tua Crescita Professionale nella Consulenza Patrimoniale Inizia Qui</h1>
+      <p class="hero-subtitle">Dalla formazione operativa dell'Accademia ai percorsi flessibili online, fino ai progetti su misura per le aziende. Costruiamo insieme le competenze per eccellere.</p>
+      
+      <div class="hero-quiz-box">
+        <h3><i class="fas fa-question-circle"></i> Non sai da dove iniziare?</h3>
+        <p>Rispondi a poche domande e scopri il percorso formativo Kleros perfetto per le tue esigenze e il tuo livello di preparazione.</p>
+        <a href="#test-formativo" class="cta-button btn-lg">Fai il Test e Trova il Tuo Corso</a>
       </div>
     </div>
   </section>
 
-  <!-- Quick Links -->
-  <section class="quick-links" style="background: white; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <!-- Quick Links Navigation -->
+  <section class="quick-links">
     <div class="container">
-      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-        <a href="#catalogo" class="link-button"><i class="fas fa-book-open"></i> Catalogo Corsi</a>
+      <div class="quick-links-container">
+        <a href="#accademia" class="link-button"><i class="fas fa-graduation-cap"></i> Accademia del Patrimonialista</a>
         <a href="#online" class="link-button"><i class="fas fa-laptop"></i> Formazione Online</a>
-        <a href="#academy" class="link-button"><i class="fas fa-graduation-cap"></i> Accademia</a>
-        <a href="#prezzi" class="link-button"><i class="fas fa-tag"></i> Prezzi e Iscrizioni</a>
+        <a href="#aziende" class="link-button"><i class="fas fa-users"></i> Corsi su Misura per Aziende</a>
+        <a href="#risorse" class="link-button"><i class="fas fa-book"></i> Risorse Editoriali</a>
+        <a href="#faq" class="link-button"><i class="fas fa-question-circle"></i> FAQ</a>
       </div>
     </div>
   </section>
 
-  <!-- Presentazione Corsi -->
-  <section id="catalogo" class="section" style="background: #f8f9fa;">
+  <!-- Sezione 2: I Nostri Pilastri Formativi -->
+  <section id="pilastri-formativi" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="pre-heading">CATALOGO FORMATIVO</span>
-        <h2 class="section-title">La Nostra Offerta Formativa</h2>
-        <p class="section-subtitle">Percorsi formativi personalizzati per ogni esigenza professionale</p>
+        <span class="pre-heading">PERCORSI FORMATIVI</span>
+        <h2 class="section-title">I Nostri Pilastri Formativi</h2>
+        <p class="section-subtitle">Tre percorsi formativi distinti per rispondere alle diverse esigenze professionali</p>
       </div>
 
-      <div class="features-grid" style="margin-bottom: 60px;">
-        <!-- Catalogo Corsi -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-book"></i>
-          </div>
-          <h3 class="feature-title">Corsi in Presenza</h3>
-          <p class="feature-text">Formazione d'aula con i migliori docenti del settore</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check"></i> Percorsi formativi certificati</li>
-            <li><i class="fas fa-check"></i> Workshop specialistici</li>
-            <li><i class="fas fa-check"></i> Seminari di approfondimento</li>
-            <li><i class="fas fa-check"></i> Formazione continua</li>
-          </ul>
-          <div class="feature-price">
-            <span>A partire da</span>
-            <strong>€299</strong>
-          </div>
-          <a href="catalogo.html" class="btn-feature">Scopri i Corsi</a>
-        </div>
-
-        <!-- Kleros Community -->
-        <div class="feature-card" id="online">
-          <div class="feature-icon">
-            <i class="fas fa-laptop"></i>
-          </div>
-          <h3 class="feature-title">Formazione Online</h3>
-          <p class="feature-text">Accesso illimitato alla piattaforma e-learning Kleros</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check"></i> Corsi on-demand</li>
-            <li><i class="fas fa-check"></i> Webinar live interattivi</li>
-            <li><i class="fas fa-check"></i> Materiali scaricabili</li>
-            <li><i class="fas fa-check"></i> Community esclusiva</li>
-          </ul>
-          <div class="feature-price">
-            <span>Abbonamento mensile</span>
-            <strong>€49</strong>
-          </div>
-          <a href="#community" class="btn-feature">Unisciti Ora</a>
-        </div>
-
-        <!-- Accademia -->
-        <div class="feature-card" id="academy">
-          <div class="feature-icon">
+      <div class="pillars-grid">
+        <!-- Accademia del Patrimonialista -->
+        <div id="accademia" class="pillar-card">
+          <div class="pillar-icon">
             <i class="fas fa-graduation-cap"></i>
           </div>
-          <h3 class="feature-title">Accademia del Patrimonialista</h3>
-          <p class="feature-text">Il percorso formativo completo per diventare un professionista certificato</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check"></i> Percorso formativo completo (200 ore)</li>
-            <li><i class="fas fa-check"></i> Certificazione professionale</li>
-            <li><i class="fas fa-check"></i> Mentoring personalizzato</li>
-            <li><i class="fas fa-check"></i> Network esclusivo</li>
-          </ul>
-          <div class="feature-price">
-            <span>Percorso completo</span>
-            <strong>€2.999</strong>
+          <h3 class="pillar-title">ACCADEMIA DEL PATRIMONIALISTA</h3>
+          <p class="pillar-tagline">Per chi vuole imparare a fare il mestiere del consulente.</p>
+          <div class="pillar-description">
+            <p>Percorso completo con lezioni in presenza e online, tutoraggio costante e accesso alla piattaforma per diventare un professionista operativo.</p>
           </div>
-          <a href="#accademia" class="btn-feature">Scopri l'Accademia</a>
+          <a href="#accademia-details" class="btn-pillar">Scopri l'Accademia</a>
+        </div>
+
+        <!-- Formazione Online -->
+        <div id="online" class="pillar-card">
+          <div class="pillar-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3 class="pillar-title">FORMAZIONE ONLINE</h3>
+          <p class="pillar-tagline">Per chi vuole imparare con flessibilità e autonomia.</p>
+          <div class="pillar-description">
+            <p>Percorsi modulari, pillole formative e corsi on-demand da fruire dove e quando vuoi, componendo il tuo piano di studi personalizzato.</p>
+          </div>
+          <a href="#online-details" class="btn-pillar">Esplora i Corsi Online</a>
+        </div>
+
+        <!-- Corsi su Misura per Aziende -->
+        <div id="aziende" class="pillar-card">
+          <div class="pillar-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="pillar-title">CORSI SU MISURA PER AZIENDE</h3>
+          <p class="pillar-tagline">Per chi vuole formare il proprio team con un piano ad hoc.</p>
+          <div class="pillar-description">
+            <p>Progettiamo interventi formativi, eventi e webinar su misura per le esigenze specifiche di banche, reti di consulenti e aziende.</p>
+          </div>
+          <a href="#aziende-details" class="btn-pillar">Richiedi un Progetto Formativo</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Catalogo Editoriale -->
-  <section id="editoria" class="section" style="background: white;">
+  <!-- Sezione 4: Risorse Editoriali e Contenuti di Valore -->
+  <section id="risorse" class="section" style="background: white;">
     <div class="container">
       <div class="section-header">
-        <span class="pre-heading">EDITORIA SPECIALIZZATA</span>
-        <h2 class="section-title">Catalogo Editoriale</h2>
-        <p class="section-subtitle">Libri e manuali professionali per il tuo aggiornamento continuo</p>
+        <span class="pre-heading">CONTENUTI DI VALORE</span>
+        <h2 class="section-title">Risorse Editoriali e Contenuti di Valore</h2>
+        <p class="section-subtitle">Fonti autorevoli di conoscenza per supportare la tua formazione e crescita professionale</p>
       </div>
 
-      <div class="publications-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
-        <!-- Pubblicazione 1 -->
-        <div class="publication-card" style="background: var(--light-bg); border-radius: 10px; overflow: hidden;">
-          <img src="https://picsum.photos/500/300?random=7" alt="Manuale del Patrimonialista" style="width: 100%; height: 200px; object-fit: cover;">
-          <div style="padding: 20px;">
-            <span class="badge" style="background: var(--primary-color); color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">Bestseller</span>
-            <h3 style="margin: 15px 0;">Manuale del Patrimonialista</h3>
-            <p>La guida completa alla gestione patrimoniale moderna. Include casi studio ed esempi pratici.</p>
-            <div class="price-tag" style="margin: 15px 0;">
-              <span class="price">€45,00</span>
-              <span class="discount" style="color: var(--primary-color); margin-left: 10px;">-15% Online</span>
+      <div class="risorse-grid">
+        <!-- Blocco 1: I Nostri Libri e Manuali -->
+        <div class="risorsa-card">
+          <div class="risorsa-header">
+            <h3>I Nostri Libri e Manuali</h3>
+            <p>Approfondisci le tematiche chiave con le nostre pubblicazioni, scritte da esperti per i professionisti.</p>
+          </div>
+          
+          <div class="risorsa-content">
+            <div class="book-showcase">
+              <div class="book">
+                <img src="https://picsum.photos/200/300?random=30" alt="Manuale del Patrimonialista">
+                <h4>Manuale del Patrimonialista</h4>
+              </div>
+              <div class="book">
+                <img src="https://picsum.photos/200/300?random=31" alt="Guida agli Investimenti">
+                <h4>Guida agli Investimenti</h4>
+              </div>
+              <div class="book">
+                <img src="https://picsum.photos/200/300?random=32" alt="Pianificazione Successoria">
+                <h4>Pianificazione Successoria</h4>
+              </div>
             </div>
-            <div class="rating" style="margin-bottom: 15px;">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span>(4.5/5 - 128 recensioni)</span>
-            </div>
-            <a href="#" class="btn-primary" style="display: block; text-align: center;">Acquista Ora</a>
+          </div>
+          
+          <div class="risorsa-cta">
+            <a href="editoria.html" class="btn-primary">Vai al Catalogo Editoriale</a>
           </div>
         </div>
-
-        <!-- Pubblicazione 2 -->
-        <div class="publication-card" style="background: var(--light-bg); border-radius: 10px; overflow: hidden;">
-          <img src="https://picsum.photos/500/300?random=8" alt="Strategie di Investimento" style="width: 100%; height: 200px; object-fit: cover;">
-          <div style="padding: 20px;">
-            <span class="badge" style="background: #28a745; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">Novità</span>
-            <h3 style="margin: 15px 0;">Strategie di Investimento</h3>
-            <p>Tecniche avanzate per la gestione del portafoglio e l'analisi dei mercati finanziari.</p>
-            <div class="price-tag" style="margin: 15px 0;">
-              <span class="price">€39,00</span>
-              <span class="discount" style="color: var(--primary-color); margin-left: 10px;">-10% Online</span>
+        
+        <!-- Blocco 2: Il Magazine Mensile -->
+        <div class="risorsa-card">
+          <div class="risorsa-header">
+            <h3>Il Magazine Mensile</h3>
+            <p>Rimani aggiornato su normative, strategie e casi di studio con il nostro magazine riservato.</p>
+          </div>
+          
+          <div class="risorsa-content">
+            <div class="magazine-cover">
+              <img src="https://picsum.photos/400/500?random=33" alt="Ultimo numero del magazine">
+              <div class="magazine-label">Ultimo Numero</div>
+              <h4>La Consulenza Patrimoniale nel 2025</h4>
+              <p>Tendenze, innovazioni e sfide del settore</p>
             </div>
-            <div class="rating" style="margin-bottom: 15px;">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(5/5 - 84 recensioni)</span>
-            </div>
-            <a href="#" class="btn-primary" style="display: block; text-align: center;">Acquista Ora</a>
+          </div>
+          
+          <div class="risorsa-cta">
+            <a href="#" class="btn-primary">Scarica una Copia Omaggio</a>
           </div>
         </div>
-
-        <!-- Pubblicazione 3 -->
-        <div class="publication-card" style="background: var(--light-bg); border-radius: 10px; overflow: hidden;">
-          <img src="https://picsum.photos/500/300?random=9" alt="Guida alla Pianificazione" style="width: 100%; height: 200px; object-fit: cover;">
-          <div style="padding: 20px;">
-            <h3 style="margin: 15px 0;">Guida alla Pianificazione Successoria</h3>
-            <p>Pianificazione successoria e protezione patrimoniale: aspetti legali e fiscali.</p>
-            <div class="price-tag" style="margin: 15px 0;">
-              <span class="price">€42,00</span>
-              <span class="discount" style="color: var(--primary-color); margin-left: 10px;">-12% Online</span>
-            </div>
-            <div class="rating" style="margin-bottom: 15px;">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span>(4/5 - 96 recensioni)</span>
-            </div>
-            <a href="#" class="btn-primary" style="display: block; text-align: center;">Acquista Ora</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bundle Offerta -->
-      <div class="bundle-offer" style="background: var(--primary-color); color: white; padding: 30px; border-radius: 10px; margin-top: 40px; text-align: center;">
-        <h3>Offerta Speciale Bundle</h3>
-        <p>Acquista tutti e 3 i manuali e risparmia il 25%</p>
-        <div class="price-tag" style="margin: 15px 0;">
-          <span style="text-decoration: line-through;">€126,00</span>
-          <span style="font-size: 1.5em; margin-left: 15px;">€94,50</span>
-        </div>
-        <a href="#" class="btn-secondary" style="background: white; color: var(--primary-color);">Acquista Bundle</a>
       </div>
     </div>
   </section>
 
-  <!-- Area Download Materiali e Calendario Completo -->
-  <section class="section" id="calendario-completo">
+  <!-- Sezione 5: Domande Frequenti (FAQ) -->
+  <section class="section" id="faq" style="background: #f8f9fa;">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Materiali Didattici e Calendario Corsi</h2>
-        <p class="section-subtitle">Accesso esclusivo a risorse premium per i nostri iscritti</p>
+        <span class="pre-heading">SUPPORTO</span>
+        <h2 class="section-title">Domande Frequenti</h2>
+        <p class="section-subtitle">Risposte ai dubbi più comuni sulla nostra offerta formativa</p>
       </div>
       
-      <div class="modern-features-grid">
-        <div class="modern-feature-card">
-          <div class="modern-feature-icon">
-            <i class="fas fa-file-pdf"></i>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Qual è la differenza pratica tra l'Accademia e un corso online avanzato?</h3>
+            <i class="fas fa-chevron-down"></i>
           </div>
-          <h3 class="modern-feature-title">Download Materiali Didattici</h3>
-          <ul class="feature-list">
-            <li>Slides dei corsi (PDF)</li>
-            <li>Esercizi pratici e risolti</li>
-            <li>Case Study reali</li>
-            <li>Modelli di Analisi Finanziaria (Excel)</li>
-            <li>Registrazioni dei webinar passati</li>
-          </ul>
-          <div style="margin-top: 1.5rem;">
-            <a href="accesso.html" class="btn-primary">Accedi ai Materiali</a>
+          <div class="faq-answer">
+            <p>L'Accademia offre un percorso formativo completo con lezioni in presenza, tutoraggio personalizzato e sessioni pratiche sugli strumenti di lavoro. I corsi online avanzati invece offrono approfondimenti specifici su singoli argomenti con maggiore flessibilità di fruizione, ma senza il lavoro pratico e il confronto diretto con i docenti che caratterizza l'Accademia.</p>
           </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Posso iscrivermi all'Accademia in qualsiasi momento dell'anno?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Sì, il percorso dell'Accademia è strutturato in modo ciclico con ingressi liberi durante tutto l'anno. Una volta iscritto, verrai inserito nel ciclo formativo in corso e potrai recuperare eventuali lezioni precedenti grazie alle registrazioni disponibili nell'area riservata.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>I corsi online rilasciano un attestato?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Tutti i corsi online rilasciano un attestato di completamento digitale che certifica le ore di formazione svolte e gli argomenti trattati. I percorsi completi o tematici rilasciano inoltre una certificazione di competenza che può essere condivisa su LinkedIn e altri canali professionali.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Come funziona l'acquisto dei corsi o l'iscrizione all'Accademia?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Per i corsi online, puoi effettuare l'acquisto direttamente dal catalogo corsi sul nostro sito, pagando con carta di credito, PayPal o bonifico bancario. Per l'iscrizione all'Accademia, invece, è necessario compilare il modulo di iscrizione e attendere un colloquio conoscitivo con il responsabile didattico per valutare il tuo livello di preparazione e definire il percorso più adatto.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>A chi mi rivolgo se ho bisogno di un corso per la mia azienda?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Per le soluzioni formative aziendali, puoi contattare direttamente il nostro team di Formazione Corporate compilando il form nella sezione dedicata o telefonando al numero +39 02 1234567. Un nostro esperto ti ricontatterà entro 24 ore per analizzare le tue esigenze e proporti una soluzione su misura.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* FAQ accordion styles */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .faq-question h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0;
+      flex: 1;
+    }
+    
+    .faq-question i {
+      font-size: 18px;
+      color: #666;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    
+    .faq-answer p {
+      margin-top: 0;
+      padding-bottom: 20px;
+    }
+  </style>
         </div>
         <div class="modern-feature-card">
           <div class="modern-feature-icon">
@@ -437,87 +515,158 @@
     </div>
   </section>
 
-  <!-- CTA Finale -->
-  <section class="section" style="text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://picsum.photos/1920/600?random=10'); background-size: cover; background-position: center; color: white; padding: 80px 0;">
+  <!-- Sezione 6: CTA Finale per lo Sviluppo Commerciale (B2B) -->
+  <section id="business-solutions" class="section business-cta" style="background: linear-gradient(135deg, #001F3F 0%, #0056b3 100%); color: white; padding: 80px 0;">
     <div class="container">
-      <h2 class="section-title" style="color: white;">Investi nel Tuo Futuro Professionale</h2>
-      <p class="section-subtitle" style="margin-bottom: 30px; font-size: 1.2em;">Inizia oggi il tuo percorso di crescita con Kleros</p>
-      
-      <div class="cta-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0;">
-        <div class="cta-feature">
-          <i class="fas fa-calendar-check fa-2x"></i>
-          <h4>Prossimo Corso</h4>
-          <p>16 Giugno 2025</p>
+      <div class="business-cta-content" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div class="business-cta-text" style="flex: 1; min-width: 300px; padding-right: 30px;">
+          <span class="badge" style="display: inline-block; background-color: rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem; margin-bottom: 15px;">Per le Aziende</span>
+          <h2 class="section-title" style="color: white; font-size: 2.2rem; margin-bottom: 20px;">Trasforma il potenziale del tuo team in risultati concreti</h2>
+          <p class="section-subtitle" style="font-size: 1.1rem; margin-bottom: 20px; opacity: 0.9;">
+            Sviluppiamo programmi formativi personalizzati che rispondono alle esigenze specifiche della tua realtà aziendale. 
+            I nostri percorsi costruiti su misura hanno aiutato oltre 200 aziende a migliorare le performance e sviluppare nuove competenze chiave.
+          </p>
+          <ul class="business-benefits" style="list-style: none; padding: 0; margin: 25px 0;">
+            <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: #4caf50; margin-right: 10px; margin-top: 3px;"></i>
+              <span>Analisi dei fabbisogni formativi e skill gap</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: #4caf50; margin-right: 10px; margin-top: 3px;"></i>
+              <span>Consulenza per fondi interprofessionali e finanziamenti</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: #4caf50; margin-right: 10px; margin-top: 3px;"></i>
+              <span>Formazione in-house o presso la nostra sede</span>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: #4caf50; margin-right: 10px; margin-top: 3px;"></i>
+              <span>Misurazione dell'efficacia e ROI della formazione</span>
+            </li>
+          </ul>
+          <div class="cta-buttons" style="margin-top: 30px;">
+            <a href="contatti.html?type=business" class="cta-button primary-button" style="display: inline-block; padding: 15px 30px; font-weight: 600; border-radius: 4px; background-color: #FF6B35; color: white; text-decoration: none; margin-right: 15px; transition: all 0.3s ease;">Richiedi una consulenza gratuita</a>
+            <a href="consulenza.html#aziende" class="cta-button secondary-button" style="display: inline-block; padding: 15px 30px; font-weight: 600; border-radius: 4px; background-color: transparent; color: white; text-decoration: none; border: 2px solid white; transition: all 0.3s ease;">Scopri le soluzioni aziendali</a>
+          </div>
         </div>
-        <div class="cta-feature">
-          <i class="fas fa-users fa-2x"></i>
-          <h4>Posti Disponibili</h4>
-          <p>Solo 5 rimasti</p>
+        <div class="business-cta-image" style="flex: 0 0 40%; min-width: 300px; margin-top: 30px;">
+          <img src="img/servizi/service-7d60c4f8.jpg" alt="Formazione aziendale Kleros" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
         </div>
-        <div class="cta-feature">
-          <i class="fas fa-percentage fa-2x"></i>
-          <h4>Sconto Early Bird</h4>
-          <p>-20% fino al 20/06</p>
-        </div>
-      </div>
-
-      <div class="hero-buttons">
-        <a href="#prezzi" class="cta-button" style="font-size: 1.2em; padding: 15px 40px;">Iscriviti Ora</a>
-        <a href="contatti.html" class="btn-secondary" style="font-size: 1.2em; padding: 15px 40px;">Richiedi Informazioni</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer style="background: #2c3e50; color: white; padding: 40px 0 20px;">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3 class="footer-heading">Kleros</h3>
-          <ul class="footer-links">
-            <li><a href="chi-siamo.html">Chi Siamo</a></li>
-            <li><a href="servizi.html">Servizi</a></li>
-            <li><a href="consulenza.html">Consulenza</a></li>
-            <li><a href="prodotti.html">Prodotti</a></li>
-            <li><a href="consulenti.html">Consulenti</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="footer-heading">Risorse</h3>
-          <ul class="footer-links">
-            <li><a href="formazione.html">Formazione</a></li>
-            <li><a href="editoria.html">Editoria</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="footer-heading">Legal</h3>
-          <ul class="footer-links">
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="#">Termini di Servizio</a></li>
-            <li><a href="#">Cookies</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h3 class="footer-heading">Contatti</h3>
-          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
-          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
-          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
-          <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+        <div class="footer-about">
+          <img src="logo.png" alt="Kleros Logo" style="height: 35px; margin-bottom: 15px;">
+          <p style="margin-bottom: 15px; line-height: 1.6; opacity: 0.8; font-size: 0.9rem;">Kleros supporta i professionisti del patrimonio con servizi, formazione e soluzioni tecnologiche avanzate per ottimizzare la consulenza e garantire risultati superiori.</p>
+          <div class="social-links" style="display: flex; gap: 10px;">
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
+        
+        <div class="footer-links">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Collegamenti Rapidi
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 8px;">
+            <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Home</a></li>
+            <li><a href="chi-siamo.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Chi Siamo</a></li>
+            <li><a href="servizi.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Servizi</a></li>
+            <li><a href="formazione.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Formazione</a></li>
+            <li><a href="software.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Software</a></li>
+            <li><a href="contatti.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Contatti</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Contatti
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 15px;">
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-map-marker-alt" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">Via Roma 123,<br>20123 Milano, Italia</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-phone" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">+39 02 12345678</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-envelope" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">info@kleros.it</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Newsletter
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <p style="margin-bottom: 12px; line-height: 1.5; opacity: 0.8; font-size: 0.85rem;">Iscriviti per rimanere aggiornato sulle ultime novità e risorse.</p>
+          <form style="display: flex; margin-bottom: 12px;">
+            <input type="email" placeholder="La tua email" style="flex: 1; padding: 10px 12px; border: none; border-radius: 4px 0 0 4px; background: rgba(255,255,255,0.1); color: white; font-size: 0.9rem;">
+            <button type="submit" style="background: #3498db; color: white; border: none; padding: 0 15px; border-radius: 0 4px 4px 0; transition: all 0.3s ease;"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p style="font-size: 0.8rem; opacity: 0.7;">Ti invieremo solo contenuti rilevanti. Niente spam.</p>
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+      
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 15px;">
+          <a href="privacy.html" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Privacy Policy</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Termini di Servizio</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Cookie Policy</a>
+        </div>
+        <p style="margin-top: 8px; opacity: 0.6; font-size: 0.85rem;">© 2025 Kleros – Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  
+  <!-- FAQ Accordion Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all FAQ questions
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      // Add click event to each question
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          // Toggle active class on the clicked question
+          this.classList.toggle('active');
+          
+          // Get the answer associated with this question
+          const answer = this.nextElementSibling;
+          
+          // Toggle visibility of the answer
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

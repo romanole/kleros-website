@@ -4,14 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kleros - Consulenza Patrimoniale</title>
+  <meta name="description" content="Kleros - Servizi professionali di consulenza patrimoniale integrata, formazione e soluzioni software per la gestione dei patrimoni.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/promo-tabs.css">
-  <script src="js/mobile-menu.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">  <link rel="stylesheet" href="css/promo-tabs.css">  <script src="js/mobile-menu.js" defer></script>
+  <script src="js/favicon-generator.js" defer></script>
+  <script src="js/scroll-to-top.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+  
+  <!-- Structured Data for Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kleros",
+    "url": "https://example.com",
+    "logo": "https://example.com/logo.png",
+    "description": "Servizi professionali di consulenza patrimoniale integrata, formazione e soluzioni software per la gestione dei patrimoni.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IT"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+39-xxx-xxxxxxx",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/kleros",
+      "https://www.linkedin.com/company/kleros",
+      "https://twitter.com/kleros"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Vai al contenuto principale</a>
 
   <!-- Header -->
   <header>
@@ -19,11 +55,10 @@
       <div class="navbar">
         <div class="logo">
           <img src="logo.png" alt="Kleros Logo" class="logo-img">
+        </div>        <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </div>
-        <button class="mobile-toggle" aria-label="Menu">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
           <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
@@ -37,9 +72,8 @@
       </div>
     </div>
   </header>
-
   <!-- Hero Section -->
-  <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/1080');">
+  <section id="main-content" class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/1080');">
     <div class="hero-content">
       <h1 class="hero-title">Costruisci, Proteggi, Cresci<br>Il Tuo Patrimonio</h1>
       <p class="hero-subtitle">Da oltre 20 anni partner di fiducia per la gestione patrimoniale integrata.<br>Consulenza professionale, formazione d'eccellenza e strumenti all'avanguardia.</p>
@@ -817,53 +851,87 @@
       </div>
     </div>
   </section>
-
   <!-- Footer -->
-  <footer>
+  <footer style="background: #2c3e50; color: white; padding: 40px 0 20px;">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3 class="footer-heading">Kleros</h3>
-          <ul class="footer-links">
-            <li><a href="chi-siamo.html">Chi Siamo</a></li>
-            <li><a href="servizi.html">Servizi</a></li>
-            <li><a href="consulenza.html">Consulenza</a></li>
-            <li><a href="software.html">Prodotti</a></li>
-            <li><a href="consulenti.html">Consulenti</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="footer-heading">Risorse</h3>
-          <ul class="footer-links">
-            <li><a href="formazione.html">Formazione</a></li>
-            <li><a href="editoria.html">Editoria</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="footer-heading">Legal</h3>
-          <ul class="footer-links">
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="#">Termini di Servizio</a></li>
-            <li><a href="#">Cookies</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h3 class="footer-heading">Contatti</h3>
-          <p><i class="fas fa-envelope"></i> info@kleros.it</p>
-          <p><i class="fas fa-phone"></i> +39 02 12345678</p>
-          <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
-          <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+        <div class="footer-about">
+          <img src="logo.png" alt="Kleros Logo" style="height: 35px; margin-bottom: 15px;">
+          <p style="margin-bottom: 15px; line-height: 1.6; opacity: 0.8; font-size: 0.9rem;">Kleros supporta i professionisti del patrimonio con servizi, formazione e soluzioni tecnologiche avanzate per ottimizzare la consulenza e garantire risultati superiori.</p>
+          <div class="social-links" style="display: flex; gap: 10px;">
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white; font-size: 16px; background: rgba(255,255,255,0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
+        
+        <div class="footer-links">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Collegamenti Rapidi
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 8px;">
+            <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Home</a></li>
+            <li><a href="chi-siamo.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Chi Siamo</a></li>
+            <li><a href="servizi.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Servizi</a></li>
+            <li><a href="formazione.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Formazione</a></li>
+            <li><a href="software.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Software</a></li>
+            <li><a href="contatti.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Contatti</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Contatti
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 15px;">
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-map-marker-alt" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">Via Roma 123,<br>20123 Milano, Italia</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-phone" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">+39 02 12345678</p>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+              <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                <i class="fas fa-envelope" style="color: #3498db; font-size: 12px;"></i>
+              </div>
+              <div>
+                <p style="margin: 0; line-height: 1.3; font-size: 0.9rem;">info@kleros.it</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600; position: relative; padding-bottom: 10px;">Newsletter
+            <span style="position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #3498db;"></span>
+          </h3>
+          <p style="margin-bottom: 12px; line-height: 1.5; opacity: 0.8; font-size: 0.85rem;">Iscriviti per rimanere aggiornato sulle ultime novità e risorse.</p>
+          <form style="display: flex; margin-bottom: 12px;">
+            <input type="email" placeholder="La tua email" style="flex: 1; padding: 10px 12px; border: none; border-radius: 4px 0 0 4px; background: rgba(255,255,255,0.1); color: white; font-size: 0.9rem;">
+            <button type="submit" style="background: #3498db; color: white; border: none; padding: 0 15px; border-radius: 0 4px 4px 0; transition: all 0.3s ease;"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p style="font-size: 0.8rem; opacity: 0.7;">Ti invieremo solo contenuti rilevanti. Niente spam.</p>
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
+      
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 15px;">
+          <a href="privacy.html" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Privacy Policy</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Termini di Servizio</a>
+          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 12px; font-size: 0.85rem;">Cookie Policy</a>
+        </div>
+        <p style="margin-top: 8px; opacity: 0.6; font-size: 0.85rem;">© 2025 Kleros – Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>
