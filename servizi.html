@@ -18,12 +18,12 @@
     <div class="container">
       <div class="navbar">
         <div class="logo">
-          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+          <a href="index.html"><img src="logo.png" alt="Kleros Logo" class="logo-img"></a>
         </div>
-        <div class="mobile-toggle">
-          <i class="fas fa-bars"></i>
+        <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </div>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
           <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
@@ -31,7 +31,6 @@
           <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
           <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
         </ul>
@@ -40,7 +39,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" style="background-image: linear-gradient(rgba(0, 133, 164, 0.6), rgba(81, 165, 197, 0.6)), url('https://picsum.photos/1920/600'); height: 45vh;">
+  <section class="hero" style="background-image: linear-gradient(rgba(0, 133, 164, 0.6), rgba(81, 165, 197, 0.6)), url('https://picsum.photos/1920/1080');">
     <div class="hero-content">
       <h1 class="hero-title" style="color: var(--white); text-shadow: 0 4px 20px var(--black);">Kleros è leader nella consulenza patrimoniale da più di 10 anni </h1>
       <p class="hero-subtitle" style="color: var(--white); text-shadow: 0 2px 10px var(--black);">Scopri i servizi per i privati e per i professionisti</p>
@@ -50,48 +49,7 @@
       </div>
     </div>
   </section>
-
-  <!-- Sezione Professionisti -->
-  <section id="professionisti" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Per i Professionisti</h2>
-        <p class="section-subtitle">Sei un professionista o rappresenti un'azienda e vuoi aiutare anche tu i tuoi clienti a conservare e tutelare il proprio patrimonio?</p>
-        <p>Kleros ti aiuta in un percorso di sviluppo commerciale articolato su quattro ambiti:</p>
-      </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-handshake"></i></div>
-          <h3>Consulenza</h3>
-          <p>Collabora con Kleros per fornire un supporto specialitistico alla tua clientela</p>
-          <a href="#consulenza-pro" class="cta-button">Scopri di più</a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-          <h3>Formazione</h3>
-          <p>Prepara il tuo team ad una nuova professione tramite la fruizione di una formazione continua e qualificata</p>
-          <a href="#formazione-pro" class="cta-button">Scopri di più</a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-          <h3>Strumenti Software</h3>
-          <p>Puoi avere a disposizione in know how di Kleros integrato con le più avanzate tecnologie grazie alla gamma software myarp@</p>
-          <a href="#software-pro" class="cta-button">Scopri di più</a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-          <h3>Sviluppo Commerciale e Marketing</h3>
-          <p>Fatti conoscere! Ti aiutiamo a sviluppare il tuo brand e a far crescere il tuo business.</p>
-          <a href="#marketing-pro" class="cta-button">Scopri di più</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- Sezione Privati -->
   <section id="privati" class="section services-section" style="background-color: var(--light-bg);">
     <div class="container">
@@ -123,6 +81,42 @@
           <h3>Tutela Patrimoniale (Cassaforte GiuridiKa)</h3>
           <p>Soluzioni avanzate per la protezione del patrimonio da aggressioni esterne e crisi familiari</p>
           <a href="#tutela-patrimoniale" class="cta-button">Scopri di più</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Professionisti -->
+  <section id="professionisti" class="section services-section" style="background-color: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Servizi per Professionisti</h2>
+        <p class="section-subtitle">Soluzioni per lo sviluppo della tua attività professionale</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-handshake"></i></div>
+          <h3>Consulenza</h3>
+          <p>Affiancamento specialistico a supporto della tua professionalità</p>
+          <a href="#consulenza-pro" class="cta-button">Scopri di più</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Formazione</h3>
+          <p>Percorsi formativi per specializzarti nella consulenza patrimoniale</p>
+          <a href="#formazione-pro" class="cta-button">Scopri di più</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Software</h3>
+          <p>Strumenti avanzati per l'analisi patrimoniale e la pianificazione successoria</p>
+          <a href="#software-pro" class="cta-button">Scopri di più</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Marketing</h3>
+          <p>Strategie e strumenti per lo sviluppo commerciale della tua attività</p>
+          <a href="#marketing-pro" class="cta-button">Scopri di più</a>
         </div>
       </div>
     </div>

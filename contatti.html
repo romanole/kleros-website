@@ -74,12 +74,12 @@
     <div class="container">
       <div class="navbar">
         <div class="logo">
-          <img src="logo.png" alt="Kleros Logo" class="logo-img">
+          <a href="index.html"><img src="logo.png" alt="Kleros Logo" class="logo-img"></a>
         </div>
-        <div class="mobile-toggle">
-          <i class="fas fa-bars"></i>
+        <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </div>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
           <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
@@ -87,7 +87,6 @@
           <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
           <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
         </ul>
@@ -96,7 +95,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" style="background-image: linear-gradient(rgba(0, 133, 164, 0.5), rgba(162, 198, 210, 0.5)), url('https://picsum.photos/1920/600?grayscale&blur=2'); height: 45vh;">
+  <section class="hero" style="background-image: linear-gradient(rgba(0, 133, 164, 0.6), rgba(162, 198, 210, 0.6)), url('https://picsum.photos/1920/1080?grayscale&blur=1');">
     <div class="hero-content">
       <h1 class="hero-title" style="color: var(--white); text-shadow: 0 4px 20px var(--black);">Contattaci</h1>
       <p class="hero-subtitle" style="color: var(--white); text-shadow: 0 2px 10px var(--black);">Hai domande o desideri fissare un appuntamento? Siamo qui per aiutarti.</p>
@@ -107,8 +106,195 @@
     </div>
   </section>
 
+  <!-- AREA CLIENTI (PRIVATI) -->
+  <section class="section" id="area-clienti">
+    <div class="container">
+      <div class="section-header" style="text-align:center; margin-bottom:40px;">
+        <h2 class="section-title">Area Clienti Privati</h2>
+        <p class="section-subtitle">Tutto ciò che serve al cliente finale</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="card-content">
+            <h3 class="card-title">Richiedi Informazioni</h3>
+            <p class="card-text">Hai domande sui nostri servizi? Compila il modulo e ti contatteremo al più presto.</p>
+            <div class="form-container" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <form class="contact-form">
+                <div class="form-group">
+                  <label for="nome">Nome e Cognome *</label>
+                  <input type="text" id="nome" name="nome" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Telefono (facoltativo)</label>
+                  <input type="tel" id="telefono" name="telefono" />
+                </div>
+                <div class="form-group">
+                  <label for="richiesta_info_argomento">Argomento *</label>
+                  <select id="richiesta_info_argomento" name="richiesta_info_argomento" required>
+                    <option value="">Seleziona argomento...</option>
+                    <option value="consulenza">Consulenza Finanziaria</option>
+                    <option value="formazione">Corsi di Formazione</option>
+                    <option value="software">Software MyARP@</option>
+                    <option value="editoria">Editoria (Libri/Manuali)</option>
+                    <option value="altro">Altro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="messaggio">Messaggio *</label>
+                  <textarea id="messaggio" name="messaggio" rows="5" maxlength="500" required></textarea>
+                  <small>Massimo 500 caratteri</small>
+                </div>
+                <div class="form-group">
+                  <label class="checkbox-container">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    Dichiaro di aver letto e accettato l'<a href="privacy.html">informativa sulla privacy</a>
+                  </label>
+                </div>
+                <div class="form-buttons" style="text-align: center; margin-top: 2rem;">
+                  <button type="submit" class="cta-button">Invia Richiesta</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Domande Frequenti (FAQ)</h2>
+        <p class="section-subtitle">Risposte alle domande più comuni sui nostri servizi</p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>Come posso richiedere una consulenza personalizzata?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>Puoi compilare il form di richiesta informazioni in questa pagina, specificando le tue esigenze, oppure contattarci telefonicamente o via email. Sarai ricontattato da un nostro consulente per un primo colloquio gratuito.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>Quali sono i requisiti per diventare un consulente Kleros?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>Cerchiamo professionisti con comprovata esperienza nel settore finanziario e una forte etica professionale. Puoi inviare la tua candidatura tramite il form "Proponi una Collaborazione". Valuteremo attentamente ogni profilo.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>I corsi di formazione online sono accessibili in qualsiasi momento?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>Sì, una volta iscritto a un corso online, avrai accesso ai materiali e alle lezioni 24/7 tramite la nostra piattaforma e-learning, permettendoti di studiare secondo i tuoi ritmi.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>Come funziona il software MyARP@?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>MyARP@ è una piattaforma software avanzata per analisi e gestione del portafoglio. Per maggiori dettagli, visita la pagina dedicata "Software MyARP@" o richiedi una demo tramite il form di contatto.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>Dove si tengono i corsi in presenza?</h3>
+          </div>
+          <div class="faq-answer">
+            <p>I nostri corsi in presenza sono organizzati periodicamente in diverse città italiane. Consulta la sezione "Formazione" per il calendario aggiornato degli eventi e le relative sedi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA PROFESSIONISTI (NETWORK) -->
+  <section class="section" id="area-professionisti">
+    <div class="container">
+      <div class="section-header" style="text-align:center; margin-bottom:40px;">
+        <h2 class="section-title">Area Professionisti & Network</h2>
+        <p class="section-subtitle">Unisciti al network Kleros: amplia i tuoi orizzonti professionali, accedi a nuove opportunità, entra in una rete qualificata.</p>
+      </div>
+      <!-- CTA motivazionale -->
+      <div class="cta-professionisti" style="text-align:center; margin-bottom:30px;">
+        <p style="font-size:1.15rem; color:var(--primary-color); font-weight:600;">Collabora con Kleros e accedi a formazione esclusiva, strumenti innovativi e una community di esperti.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="card-content">
+            <h3 class="card-title">Proponi una Collaborazione</h3>
+            <p class="card-text">Sei interessato a collaborare con noi? Raccontaci la tua proposta e saremo felici di valutarla.</p>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="referente">Nome Referente / Azienda *</label>
+                <input type="text" id="referente" name="referente" required />
+              </div>
+              <div class="form-group">
+                <label for="email-collab">Email di contatto *</label>
+                <input type="email" id="email-collab" name="email-collab" required />
+              </div>
+              <div class="form-group">
+                <label for="collaborazione_tipo">Tipo di collaborazione *</label>
+                <select id="collaborazione_tipo" name="collaborazione_tipo" required>
+                  <option value="">Tipo di collaborazione...</option>
+                  <option value="consulente">Diventa Consulente Kleros</option>
+                  <option value="partnership">Partnership Commerciale</option>
+                  <option value="contenuti">Proposta Contenuti/Docenza</option>
+                  <option value="altro">Altra Proposta</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="telefono-collab">Numero di telefono (facoltativo)</label>
+                <input type="tel" id="telefono-collab" name="telefono-collab" />
+              </div>
+              <div class="form-group">
+                <label for="linkedin">LinkedIn o Sito Web</label>
+                <input type="url" id="linkedin" name="linkedin" />
+              </div>
+              <div class="form-group">
+                <label for="proposta">Descrivi la tua proposta *</label>
+                <textarea id="proposta" name="proposta" rows="5" maxlength="500" required></textarea>
+                <small>Massimo 500 caratteri</small>
+              </div>
+              <div class="form-group">
+                <label class="checkbox-container">
+                  <input type="checkbox" required>
+                  <span class="checkmark"></span>
+                  Dichiaro di aver letto e accettato l'<a href="privacy.html">informativa sulla privacy</a>
+                </label>
+              </div>
+              <div class="form-buttons" style="text-align: center; margin-top: 2rem;">
+                <button type="submit" class="cta-button">Invia Proposta</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Network dei Consulenti -->
-  <section class="section">
+  <section class="section" id="network-consulenti">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Network dei Consulenti</h2>
@@ -226,146 +412,6 @@
           <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
           <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Form di Contatto -->
-  <section class="section features" id="richiesta-info">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Moduli di Contatto</h2>
-        <p class="section-subtitle">Compila il modulo pi� adatto alle tue esigenze</p>
-      </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="card-content">
-            <h3 class="card-title">Richiesta Informazioni</h3>
-            <p class="card-text">Hai domande sui nostri servizi? Compila il modulo e ti contatteremo al pi� presto.</p>
-            <form class="contact-form">
-              <div class="form-fields-grid">
-                <div class="form-group">
-                  <input type="text" placeholder="Il tuo nome" class="form-input" required />
-                </div>
-                <div class="form-group">
-                  <input type="email" placeholder="La tua email" class="form-input" required />
-                </div>
-                <div class="form-group">
-                  <select name="richiesta_info_argomento" class="form-input">
-                    <option value="" disabled selected>Seleziona argomento...</option>
-                    <option value="consulenza">Consulenza Finanziaria</option>
-                    <option value="formazione">Corsi di Formazione</option>
-                    <option value="software">Software MyARP@</option>
-                    <option value="editoria">Editoria (Libri/Manuali)</option>
-                    <option value="altro">Altro</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <input type="tel" placeholder="Numero di telefono" class="form-input" />
-                </div>
-                <div class="form-group">
-                  <textarea rows="5" placeholder="Il tuo messaggio..." class="form-input"></textarea>
-                </div>
-              </div>
-              <button type="submit" class="submit-btn">Invia Richiesta</button>
-            </form>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="card-content">
-            <h3 class="card-title">Proponi una Collaborazione</h3>
-            <p class="card-text">Sei interessato a collaborare con noi? Raccontaci la tua proposta e saremo felici di valutarla.</p>
-            <form class="contact-form">
-              <div class="form-fields-grid">
-                <div class="form-group">
-                  <input type="text" placeholder="Nome Referente / Azienda" class="form-input" required />
-                </div>
-                <div class="form-group">
-                  <input type="email" placeholder="Email di contatto" class="form-input" required />
-                </div>
-                <div class="form-group">
-                  <select name="collaborazione_tipo" class="form-input">
-                    <option value="" disabled selected>Tipo di collaborazione...</option>
-                    <option value="consulente">Diventa Consulente Kleros</option>
-                    <option value="partnership">Partnership Commerciale</option>
-                    <option value="contenuti">Proposta Contenuti/Docenza</option>
-                    <option value="altro">Altra Proposta</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <input type="tel" placeholder="Numero di telefono" class="form-input" />
-                </div>
-                <div class="form-group">
-                  <textarea rows="5" placeholder="Descrivi la tua proposta..." class="form-input"></textarea>
-                </div>
-              </div>
-              <button type="submit" class="submit-btn">Invia Proposta</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Domande Frequenti (FAQ)</h2>
-        <p class="section-subtitle">Risposte alle domande pi� comuni sui nostri servizi</p>
-      </div>
-      
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            <i class="fas fa-question-circle"></i>
-            <h3>Come posso richiedere una consulenza personalizzata?</h3>
-          </div>
-          <div class="faq-answer">
-            <p>Puoi compilare il form di richiesta informazioni in questa pagina, specificando le tue esigenze, oppure contattarci telefonicamente o via email. Sarai ricontattato da un nostro consulente per un primo colloquio gratuito.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <i class="fas fa-question-circle"></i>
-            <h3>Quali sono i requisiti per diventare un consulente Kleros?</h3>
-          </div>
-          <div class="faq-answer">
-            <p>Cerchiamo professionisti con comprovata esperienza nel settore finanziario e una forte etica professionale. Puoi inviare la tua candidatura tramite il form "Proponi una Collaborazione". Valuteremo attentamente ogni profilo.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <i class="fas fa-question-circle"></i>
-            <h3>I corsi di formazione online sono accessibili in qualsiasi momento?</h3>
-          </div>
-          <div class="faq-answer">
-            <p>S�, una volta iscritto a un corso online, avrai accesso ai materiali e alle lezioni 24/7 tramite la nostra piattaforma e-learning, permettendoti di studiare secondo i tuoi ritmi.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <i class="fas fa-question-circle"></i>
-            <h3>Come funziona il software MyARP@?</h3>
-          </div>
-          <div class="faq-answer">
-            <p>MyARP@ � una piattaforma software avanzata per analisi e gestione del portafoglio. Per maggiori dettagli, visita la pagina dedicata "Software MyARP@" o richiedi una demo tramite il form di contatto.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <i class="fas fa-question-circle"></i>
-            <h3>Dove si tengono i corsi in presenza?</h3>
-          </div>
-          <div class="faq-answer">
-            <p>I nostri corsi in presenza sono organizzati periodicamente in diverse citt� italiane. Consulta la sezione "Formazione" per il calendario aggiornato degli eventi e le relative sedi.</p>
-          </div>
         </div>
       </div>
     </div>
