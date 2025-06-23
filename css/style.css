@@ -489,6 +489,7 @@ header.transparent {
 .logo {
   flex-shrink: 0;
   margin-right: 6rem; /* Increased from 4rem to 6rem for even more spacing */
+  margin-left: -10rem; /* Moved logo further to the left */
 }
 
 .logo-img {
