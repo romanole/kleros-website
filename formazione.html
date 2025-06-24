@@ -1294,30 +1294,44 @@
       </div>
     </div>
   </section>
-
-  <!-- 8. Sezione Finale: Contatti e Iscrizioni -->
-  <section class="section" style="padding: 60px 0; background: var(--primary-gradient);">
-    <div class="container" style="max-width: 800px; text-align: center;">
-      <h2 class="section-title" style="color: white;">Inizia oggi il tuo percorso per diventare Patrimonialista</h2>
-      <p style="color: white; margin-bottom: 30px;">Contattaci per ricevere la brochure completa, conoscere le modalità di iscrizione e parlare con un nostro responsabile.</p>
+  <!-- 8. Sezione Finale: Contatti e Iscrizioni -->  <section class="section cta-section gradient" style="padding: 80px 0; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 0; position: relative; overflow: hidden;">
+    <!-- Elementi decorativi di sfondo -->
+    <div style="position: absolute; top: 10%; right: 5%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: 5%; left: 10%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+    
+    <div class="container" style="max-width: 800px; text-align: center; position: relative; z-index: 2;">
+      <h2 class="section-title" style="color: white; margin-bottom: 1.5rem; font-size: 2.5rem;">Inizia oggi il tuo percorso per diventare Patrimonialista</h2>
+      <p style="color: white; margin-bottom: 2rem; opacity: 1; font-size: 1.2rem; line-height: 1.6;">Contattaci per ricevere la brochure completa, conoscere le modalità di iscrizione e parlare con un nostro responsabile.</p>
       
-      <div class="contact-info" style="display: inline-block; background: white; padding: 40px 60px; border-radius: 10px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 30px;">
-        <div style="margin-bottom: 20px;">
-          <i class="fas fa-phone-alt" style="font-size: 24px; color: var(--primary-color); margin-bottom: 10px;"></i>
-          <p style="margin: 0;"><strong>Numero Verde:</strong> 800.33.02.33</p>
+      <div class="contact-info" style="display: inline-block; background: white; padding: 40px 60px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); margin-bottom: 2.5rem; width: 100%; max-width: 600px;">
+        <div style="margin-bottom: 25px; text-align: left; display: flex; align-items: center;">
+          <i class="fas fa-phone-alt" style="font-size: 26px; color: var(--primary-color); margin-right: 20px; background: rgba(0, 133, 164, 0.1); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%;"></i>
+          <div>
+            <h4 style="margin: 0 0 5px 0; color: var(--primary-color);">Numero Verde</h4>
+            <p style="margin: 0; font-size: 1.1rem; font-weight: 500;">800.33.02.33</p>
+          </div>
         </div>
         
-        <div style="margin-bottom: 20px;">
-          <i class="fas fa-envelope" style="font-size: 24px; color: var(--primary-color); margin-bottom: 10px;"></i>
-          <p style="margin: 0;"><strong>Email:</strong> community@kleros.it</p>
+        <div style="margin-bottom: 25px; text-align: left; display: flex; align-items: center;">
+          <i class="fas fa-envelope" style="font-size: 26px; color: var(--primary-color); margin-right: 20px; background: rgba(0, 133, 164, 0.1); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%;"></i>
+          <div>
+            <h4 style="margin: 0 0 5px 0; color: var(--primary-color);">Email</h4>
+            <p style="margin: 0; font-size: 1.1rem; font-weight: 500;">community@kleros.it</p>
+          </div>
         </div>
         
-        <div>
-          <i class="fas fa-globe" style="font-size: 24px; color: var(--primary-color); margin-bottom: 10px;"></i>
-          <p style="margin: 0;"><strong>Sito Web:</strong> www.kleros.it</p>
+        <div style="text-align: left; display: flex; align-items: center;">
+          <i class="fas fa-globe" style="font-size: 26px; color: var(--primary-color); margin-right: 20px; background: rgba(0, 133, 164, 0.1); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%;"></i>
+          <div>
+            <h4 style="margin: 0 0 5px 0; color: var(--primary-color);">Sito Web</h4>
+            <p style="margin: 0; font-size: 1.1rem; font-weight: 500;">www.kleros.it</p>
+          </div>
         </div>
       </div>
-        <a href="contatti.html" class="cta-button" style="background: white; color: var(--primary-color); font-size: 18px; padding: 15px 40px;">Richiedi informazioni</a>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="contatti.html" class="cta-button light" style="font-size: 1.1rem; padding: 1rem 2.5rem; box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);">RICHIEDI INFORMAZIONI</a>
+        <a href="#calendario-corsi" class="btn-secondary light" style="font-size: 1.1rem; padding: 1rem 2.5rem;">VEDI CALENDARIO CORSI</a>
+      </div>
     </div>
   </section>
   
@@ -1608,12 +1622,11 @@
           </div>
         </div>
       </div>
-      
-      <!-- 6. Sezione Finale: Form di Contatto B2B -->
-      <div id="form-contatto-aziende" style="margin: 80px 0 20px; padding: 60px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
-        <h2 class="section-title" style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">Costruiamo Insieme il Futuro delle Vostre Competenze</h2>
+        <!-- 6. Sezione Finale: Form di Contatto B2B -->
+      <div id="form-contatto-aziende" style="margin: 80px 0 20px; padding: 60px; background: linear-gradient(135deg, var(--light-bg) 0%, #e9ecef 100%); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+        <h2 class="section-title" style="text-align: center; font-size: 2.5rem; margin-bottom: 30px; color: var(--primary-color);">Costruiamo Insieme il Futuro delle Vostre Competenze</h2>
         
-        <p style="text-align: center; color: #6c757d; font-size: 1.2rem; line-height: 1.7; max-width: 800px; margin: 0 auto 40px;">
+        <p style="text-align: center; color: var(--light-text); font-size: 1.2rem; line-height: 1.7; max-width: 800px; margin: 0 auto 40px;">
           Ogni azienda ha esigenze uniche. Compila il modulo per prenotare una chiamata conoscitiva con un nostro responsabile. Analizzeremo insieme i tuoi obiettivi e ti forniremo una prima bozza di progetto formativo, senza impegno.
         </p>
         

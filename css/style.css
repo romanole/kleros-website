@@ -539,23 +539,65 @@ header.transparent {
 .cta-button {
   background: var(--primary-color);
   color: var(--white) !important;
-  padding: 0.7rem 1.5rem;
+  padding: 0.85rem 1.8rem;
   border-radius: 25px;
-  font-weight: 500;
-  font-size: 0.85rem;
+  font-weight: 600;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   flex-shrink: 0;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(var(--primary-color-rgb), 0.3);
+  box-shadow: 0 4px 10px rgba(var(--primary-color-rgb), 0.3);
+  border: 2px solid var(--primary-color);
 }
 
 .cta-button:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.4);
+  background-color: var(--white);
+  color: var(--primary-color) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(var(--primary-color-rgb), 0.4);
+}
+
+/* Varianti di stile per CTA */
+.cta-button.alt {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 10px rgba(144, 27, 6, 0.3);
+}
+
+.cta-button.alt:hover {
+  background-color: var(--white);
+  color: var(--accent-color) !important;
+  box-shadow: 0 6px 15px rgba(144, 27, 6, 0.4);
+}
+
+.cta-button.light {
+  background-color: var(--white);
+  color: var(--primary-color) !important;
+  border-color: var(--white);
+}
+
+.cta-button.light:hover {
+  background-color: transparent;
+  color: var(--white) !important;
+  border-color: var(--white);
+}
+
+/* Nuova variante gradient per maggiore enfasi */
+.cta-button.accent-gradient {
+  background: linear-gradient(135deg, var(--accent-color), #c0392b);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 15px rgba(144, 27, 6, 0.4);
+  color: var(--white) !important;
+}
+
+.cta-button.accent-gradient:hover {
+  background: var(--white);
+  color: var(--accent-color) !important;
+  border-color: var(--accent-color);
+  box-shadow: 0 6px 20px rgba(144, 27, 6, 0.5);
 }
 
 /* Mobile menu icon */
@@ -811,24 +853,110 @@ header.transparent {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  padding: 0.8rem 2rem;
+  padding: 0.85rem 1.8rem;
   background: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
-  border-radius: 50px;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-shadow: none;
 }
 
 .btn-secondary:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.btn-secondary.light {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-secondary.light:hover {
   background: var(--white);
   color: var(--primary-color);
-  transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Nuova variante per un migliore contrasto */
+.btn-secondary.accent {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-secondary.accent:hover {
+  background: var(--accent-color);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(144, 27, 6, 0.3);
+}
+
+/* Variante alta visibilità */
+.btn-secondary.high-visibility {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.15);
+}
+
+/* Path Button - Per guidare l'utente attraverso percorsi specifici */
+.path-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 1.5rem;
+  background: var(--white);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.path-button::after {
+  content: '\f061';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.path-button:hover {
+  background: var(--light-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.path-button:hover::after {
+  transform: translateX(5px);
+}
+
+.path-button.reverse {
+  flex-direction: row-reverse;
+}
+
+.path-button.reverse::after {
+  content: '\f060';
+}
+
+.path-button.accent {
+  background: var(--accent-color);
+  color: var(--white);
+}
+
+.path-button.accent:hover {
+  background: var(--accent-muted);
 }
 
 /* =========================
@@ -967,4 +1095,51 @@ header.transparent {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+}
+
+/* Stili sezioni CTA */
+.cta-section {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  background-color: var(--light-bg);
+  box-shadow: var(--shadow-md);
+}
+
+.cta-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.cta-section.primary {
+  background-color: var(--primary-color);
+}
+
+.cta-section.primary h3,
+.cta-section.primary p {
+  color: var(--white);
+}
+
+.cta-section.accent {
+  background-color: var(--accent-color);
+}
+
+.cta-section.accent h3,
+.cta-section.accent p {
+  color: var(--white);
+}
+
+.cta-section.gradient {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.cta-section.gradient h3,
+.cta-section.gradient p {
+  color: var(--white);
 }
