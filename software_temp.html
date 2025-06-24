@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>myarp@® - La Piattaforma Software per la Consulenza Patrimoniale | Kleros</title>
+  <meta name="description" content="myarp@® è l'ecosistema software modulare di Kleros per la consulenza patrimoniale evoluta. Scopri come digitalizzare e potenziare la tua analisi patrimoniale.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/mobile-menu.js" defer></script>
+  <script src="js/favicon-generator.js" defer></script>
+  <script src="js/scroll-to-top.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+  
+  <!-- Structured Data for Software Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "myarp@®",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/OnlineOnly"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kleros"
+    }
+  }
+  </script>
+
+  <style>
+    /* Hero Section Styles */
+    .hero-software {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.75) 100%);
+      color: white;
+      overflow: hidden;
+      padding-top: 80px; /* Aggiunto padding superiore per compensare l'header */
+    }
+
+    .hero-software::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('img/software/hero-bg.jpg') center/cover;
+      z-index: -1;
+      filter: blur(2px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem; /* Aumentato padding verticale */
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      line-height: 1.6;
+      margin: 0 auto 3rem;
+      max-width: 800px;
+      opacity: 0.9;
+    }
+
+    .hero-video-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .hero-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .cta-button,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 200px;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .cta-button {
+      background-color: var(--primary-color);
+      color: white;
+      border: 2px solid var(--primary-color);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background-color: var(--primary-color-dark, #004d99);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .hero-software {
+        min-height: auto;
+        padding: 6rem 0;
+        padding-top: 60px; /* Padding ridotto su mobile */
+      }
+
+      .hero-content {
+        padding: 3rem 1.5rem; /* Padding ridotto su mobile */
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .cta-button,
+      .btn-secondary {
+        width: 100%;
+      }
+    }
+
+    /* Sezione 2: Il Ciclo della Consulenza */
+    .consulting-cycle {
+      padding: 6rem 2rem;
+      background: var(--background-light, #f8f9fa);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      color: var(--text-dark, #2c3e50);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-intro {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-light, #6c757d);
+      max-width: 700px;
+      margin: 0 auto;
+    }

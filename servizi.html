@@ -16,8 +16,8 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <div class="navbar">
-        <div class="logo">
+      <div class="navbar" style="padding-left: 0;">
+        <div class="logo" style="margin-right: 6rem; margin-left: -12rem;">
           <a href="index.html"><img src="logo.png" alt="Kleros Logo" class="logo-img"></a>
         </div>
         <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
@@ -100,11 +100,10 @@
           <p>Affiancamento specialistico a supporto della tua professionalità</p>
           <a href="#consulenza-pro" class="cta-button">Scopri di più</a>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="service-card">          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
           <h3>Formazione</h3>
           <p>Percorsi formativi per specializzarti nella consulenza patrimoniale</p>
-          <a href="#formazione-pro" class="cta-button">Scopri di più</a>
+          <a href="formazione.html#accademia" class="cta-button">Scopri l'Accademia</a>
         </div>
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
@@ -117,6 +116,43 @@
           <h3>Marketing</h3>
           <p>Strategie e strumenti per lo sviluppo commerciale della tua attività</p>
           <a href="#marketing-pro" class="cta-button">Scopri di più</a>
+        </div>      </div>
+    </div>
+  </section>
+
+  <!-- CTA Community Kleros -->
+  <section class="section community-cta" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 80px 0; text-align: center;">
+    <div class="container">
+      <div class="community-content" style="max-width: 800px; margin: 0 auto;">
+        <div class="community-icon" style="width: 100px; height: 100px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(255,255,255,0.3);">
+          <i class="fas fa-users" style="font-size: 48px; color: var(--primary-color);"></i>
+        </div>
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">Entra nella Community Kleros</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; line-height: 1.6;">Unisciti alla community esclusiva dei professionisti Kleros e scopri i vantaggi di una formazione dedicata e di un accesso privilegiato alle nostre piattaforme di consulenza patrimoniale.</p>
+        
+        <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 40px 0;">
+          <div class="benefit-card" style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; backdrop-filter: blur(10px); text-align: left; border-left: 4px solid white;">
+            <i class="fas fa-graduation-cap" style="font-size: 30px; margin-bottom: 15px; color: white;"></i>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Formazione Esclusiva</h3>
+            <p style="opacity: 0.9; line-height: 1.5;">Accesso a webinar, workshop e materiali formativi riservati ai membri della community.</p>
+          </div>
+          
+          <div class="benefit-card" style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; backdrop-filter: blur(10px); text-align: left; border-left: 4px solid white;">
+            <i class="fas fa-tools" style="font-size: 30px; margin-bottom: 15px; color: white;"></i>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Strumenti Avanzati</h3>
+            <p style="opacity: 0.9; line-height: 1.5;">Utilizzo privilegiato delle piattaforme software Kleros con funzionalità premium.</p>
+          </div>
+          
+          <div class="benefit-card" style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; backdrop-filter: blur(10px); text-align: left; border-left: 4px solid white;">
+            <i class="fas fa-handshake" style="font-size: 30px; margin-bottom: 15px; color: white;"></i>
+            <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Networking Professionale</h3>
+            <p style="opacity: 0.9; line-height: 1.5;">Opportunità di networking con altri professionisti e con il team di esperti Kleros.</p>
+          </div>
+        </div>
+        
+        <div class="cta-buttons" style="margin-top: 40px;">
+          <a href="formazione.html#accademia" class="btn-primary" style="display: inline-block; padding: 15px 35px; background: white; color: var(--primary-color); border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 1.1rem; margin-right: 15px; transition: all 0.3s ease;">Scopri i Vantaggi</a>
+          <a href="contatti.html" class="btn-secondary" style="display: inline-block; padding: 15px 35px; background: transparent; color: white; border: 2px solid white; border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 1.1rem; transition: all 0.3s ease;">Contattaci</a>
         </div>
       </div>
     </div>
@@ -396,68 +432,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Dettaglio Formazione Professionisti -->
-  <section id="formazione-pro" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Formazione per Professionisti</h2>
-        <p class="section-subtitle">Da rofessionista a Esperto Patrimoniale: La formazione continua di Kleros</p>
-      </div>
-      <div class="content-wrapper" style="max-width: 800px; margin: 0 auto;">
-        <p class="intro-text">
-          Oggi il mercato della consulenza patrimoniale richiede una visione a 360 gradi. Non basta più essere esperti di un singolo settore; i clienti cercano un punto di riferimento autorevole, capace di dialogare su tematiche finanziarie, assicurative, legali e fiscali
-        </p>
-        <p class="intro-text">
-          Il nostro percorso formativo è stato progettato proprio per colmare questo gap e trasformarti nell'esperto che i clienti cercano
-        </p>
-
-        <div class="service-details">
-          <div class="service-step">
-            <h3 class="step-title">Formazione continua e flessibile</h3>
-            <p>Il sapere patrimoniale è in costante evoluzione, e il nostro approccio formativo si adatta a questa realtà:</p>
-            <ul class="service-list">
-              <li><strong>Sessioni Online:</strong> Formazione accessibile ovunque, adattabile ai tuoi impegni</li>
-              <li><strong>Incontri On-site:</strong> Approfondimenti pratici e networking in presenza</li>
-              <li><strong>Metodologie Avanzate:</strong> Le più recenti tecniche di analisi patrimoniale</li>
-              <li><strong>Aggiornamento Normativo:</strong> Rimani sempre al passo con le evoluzioni del settore</li>
-            </ul>
-          </div>
-
-          <div class="service-step">
-            <h3 class="step-title">Community Specialistica Kleros</h3>
-            <p>Molto più di un semplice corso, un vero ecosistema di crescita professionale:</p>
-            <ul class="service-list">
-              <li><strong>Network esclusivo:</strong> Entra in contatto con professionisti di alto livello</li>
-              <li><strong>Confronto sui casi:</strong> Discussione e analisi di situazioni reali</li>
-              <li><strong>Condivisione best Practice:</strong> Impara dalle esperienze di successo dei colleghi</li>
-              <li><strong>Supporto continuo:</strong> Mai solo di fronte alle sfide più complesse</li>
-            </ul>
-          </div>
-
-          <div class="service-step">
-            <h3 class="step-title">Percorso di Eccellenza</h3>
-            <p>Un programma strutturato per elevare costantemente il livello della tua consulenza:</p>
-            <ul class="service-list">
-              <li><strong>Competenze integrate:</strong> Dalla finanza al diritto, dalla fiscalità alle assicurazioni</li>
-              <li><strong>Casi pratici:</strong> Esercitazioni su situazioni reali e simulazioni</li>
-              <li><strong>Strumenti operativi:</strong> Template, checklist e materiali pronti all'uso</li>
-              <li><strong>Certificazioni:</strong> Attestati di partecipazione e specializzazione</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="cta-section" style="text-align: center; margin-top: 3rem;">
-          <h3>Eleva la tua professionalità</h3>
-          <p>Inizia oggi il tuo percorso di eccellenza con Kleros</p>
-          <div class="hero-buttons">
-            <a href="contatti.html" class="cta-button">Richiedi Informazioni</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Dettaglio Software Professionisti -->
   <section id="software-pro" class="section">
     <div class="container">
