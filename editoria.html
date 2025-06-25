@@ -1,103 +1,73 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  <title>Editoria - Kleros</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/promo-tabs.css">
-  <script src="js/mobile-menu.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reindirizzamento a Magazine - Kleros</title>
+  <meta name="description" content="Reindirizzamento alla sezione Magazine di Kleros">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="refresh" content="0;url=news.html#magazine">
+  <style>
+    body {
+      font-family: 'Palanquin', sans-serif;
+      background-color: #f5f8fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .redirect-container {
+      max-width: 600px;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #0085A4;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #0085A4, #2C3E50);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      background: linear-gradient(90deg, #00698A, #1C2E40);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="navbar">        <div class="logo" style="margin-right: 6rem; margin-left: -10rem;">
-          <a href="index.html"><img src="logo.png" alt="Kleros Logo" class="logo-img"></a>
-        </div>
-        <div class="mobile-toggle" aria-label="Menu principale" aria-expanded="false" aria-controls="nav-menu">
-          <i class="fas fa-bars" aria-hidden="true"></i>
-        </div>
-        <ul class="nav-menu" id="nav-menu">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
-          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
-          <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
-          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
-          <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
-          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
-          <li class="nav-item"><a href="area-riservata.html" class="cta-button">Area Riservata</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  
-  <!-- Hero Section -->
-  <section class="hero" style="background-image: linear-gradient(rgba(81, 165, 197, 0.6), rgba(162, 198, 210, 0.6)), url('https://picsum.photos/1920/1080?grayscale&blur=1');">
-    <div class="hero-content">
-      <h1 class="hero-title" style="color: var(--white); text-shadow: 0 4px 20px var(--black);">Editoria</h1>
-      <p class="hero-subtitle" style="color: var(--white); text-shadow: 0 2px 10px var(--black);">Libri, manuali e pubblicazioni per approfondire la tua conoscenza finanziaria.</p>
-    </div>
-  </section>
-  <!-- Pubblicazioni Section -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Libri & Manuali</h2>
-      <p style="text-align:center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Esplora il nostro catalogo editoriale dedicato a finanza personale, investimenti, pianificazione successoria e molto altro. Trova le risorse giuste per accrescere le tue competenze.</p>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="https://picsum.photos/500/300?random=1" alt="Guida Finanza Personale" class="card-img">
-          <div class="card-content">
-            <h3 class="card-title">Guida Completa alla Finanza Personale</h3>
-            <p class="card-text">Un manuale pratico per gestire al meglio le tue finanze quotidiane, dal bilancio familiare agli investimenti a lungo termine.</p>
-            <p><strong>Tematiche:</strong> Finanza personale, Budgeting, Risparmio.</p>
-            <a href="contatti.html?prodotto=guida-finanza-personale" class="btn-primary">Acquista Online</a>
-            <a href="#" class="btn-secondary">Leggi Anteprima</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <img src="https://picsum.photos/500/300?random=2" alt="Investimenti" class="card-img">
-          <div class="card-content">
-            <h3 class="card-title">Investimenti Intelligenti per il Futuro</h3>
-            <p class="card-text">Scopri le strategie di investimento più efficaci per costruire un portafoglio solido e raggiungere i tuoi obiettivi finanziari.</p>
-            <p><strong>Tematiche:</strong> Investimenti, Mercati finanziari, Gestione del portafoglio.</p>
-            <a href="contatti.html?prodotto=investimenti-intelligenti" class="btn-primary">Acquista Online</a>
-            <a href="#" class="btn-secondary">Leggi Anteprima</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <img src="https://picsum.photos/500/300?random=3" alt="Pianificazione Successoria" class="card-img">
-          <div class="card-content">
-            <h3 class="card-title">Pianificazione Successoria Senza Stress</h3>
-            <p class="card-text">Una guida essenziale per affrontare la pianificazione successoria con serenità e consapevolezza.</p>
-            <p><strong>Tematiche:</strong> Successione, Diritto di famiglia, Pianificazione patrimoniale.</p>
-            <a href="contatti.html?prodotto=pianificazione-successoria" class="btn-primary">Acquista Online</a>
-            <a href="#" class="btn-secondary">Leggi Anteprima</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-    <!-- Recensioni e Anteprime Section -->
-  <section class="section features">
-    <div class="container">
-      <h2 class="section-title">Recensioni e Anteprime</h2>
-      <p style="text-align:center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Leggi cosa dicono i nostri lettori e sfoglia le anteprime dei nostri bestseller.</p>
-      
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"Un libro essenziale per chi vuole pianificare il proprio futuro finanziario. L'ho trovato incredibilmente utile e pratico."</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-author-img">
-              <img src="https://picsum.photos/100/100?random=1" alt="Marco R.">
+  <div class="redirect-container">
+    <h1>Reindirizzamento in corso...</h1>
+    <p>Stai per essere reindirizzato alla sezione Magazine della pagina News. Se il reindirizzamento non avviene automaticamente, clicca sul pulsante qui sotto.</p>
+    <a href="news.html#magazine">Vai alla sezione Magazine</a>
+  </div>
+  <script>
+    // Redirect con un breve ritardo per permettere il caricamento della pagina
+    setTimeout(function() {
+      window.location.href = "news.html#magazine";
+    }, 2000);
+  </script>
+</body>
+</html>
             </div>
             <div class="testimonial-author-info">
               <h4>Marco R.</h4>

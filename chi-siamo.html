@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/promo-tabs.css">
+  <link rel="stylesheet" href="css/dropdown-menu.css">
   <script src="js/mobile-menu.js" defer></script>
 </head>
 <body>
@@ -25,9 +26,22 @@
         <ul class="nav-menu" id="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
-          <li class="nav-item"><a href="servizi.html" class="nav-link">Servizi</a></li>
+          <li class="nav-item dropdown">
+            <a href="servizi.html" class="nav-link">Servizi <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="servizi-privati.html" class="dropdown-item">Servizi per Privati</a></li>
+              <li><a href="servizi-professionisti.html" class="dropdown-item">Servizi per Professionisti</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a href="consulenza.html" class="nav-link">Consulenza</a></li>
-          <li class="nav-item"><a href="formazione.html" class="nav-link">Formazione</a></li>
+          <li class="nav-item dropdown">
+            <a href="formazione.html" class="nav-link">Formazione <i class="fas fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="formazione-accademia.html" class="dropdown-item">Accademia del Patrimonialista</a></li>
+              <li><a href="formazione-online.html" class="dropdown-item">Formazione Online</a></li>
+              <li><a href="formazione-aziende.html" class="dropdown-item">Corsi su Misura per Aziende</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a href="software.html" class="nav-link">Software</a></li>
           <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
@@ -243,6 +257,9 @@
             <li><a href="chi-siamo.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; font-weight: 300;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px; color: #51a5c5;"></i> Chi Siamo</a></li>
             <li><a href="servizi.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; font-weight: 300;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px; color: #51a5c5;"></i> Servizi</a></li>
             <li><a href="formazione.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; font-weight: 300;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px; color: #51a5c5;"></i> Formazione</a></li>
+            <li><a href="formazione-accademia.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; font-weight: 300; margin-left: 20px;"><i class="fas fa-angle-right" style="font-size: 10px; margin-right: 10px; color: #51a5c5;"></i> Accademia</a></li>
+            <li><a href="formazione-online.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; font-weight: 300; margin-left: 20px;"><i class="fas fa-angle-right" style="font-size: 10px; margin-right: 10px; color: #51a5c5;"></i> Online</a></li>
+            <li><a href="formazione-aziende.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; font-weight: 300; margin-left: 20px;"><i class="fas fa-angle-right" style="font-size: 10px; margin-right: 10px; color: #51a5c5;"></i> Aziende</a></li>
             <li><a href="software.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; font-weight: 300;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px; color: #51a5c5;"></i> Software</a></li>
             <li><a href="contatti.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; font-weight: 300;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px; color: #51a5c5;"></i> Contatti</a></li>
           </ul>

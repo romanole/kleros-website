@@ -40,8 +40,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // Toggle dropdown menus in mobile view
+        const dropdownItems = document.querySelectorAll('.dropdown');
+        dropdownItems.forEach(dropdown => {
+            const link = dropdown.querySelector('.nav-link');
+            if (link) {
+                link.addEventListener('click', (e) => {
+                    // Prevent navigation only in mobile view
+                    if (window.innerWidth < 992) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other open dropdowns
+                        dropdownItems.forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                                otherDropdown.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        
         // Close menu when clicking on nav links
-        navMenu.querySelectorAll('.nav-link, .cta-button').forEach(link => {
+        navMenu.querySelectorAll('.nav-link:not(.dropdown .nav-link), .cta-button, .dropdown-item').forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
                 navMenu.classList.remove('active');
