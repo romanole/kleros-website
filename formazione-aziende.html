@@ -82,17 +82,39 @@
       <!-- 1. Sezione Hero Introduttiva -->
       <div class="section-header" style="text-align: center; margin-bottom: 50px;">
         <span style="display: inline-block; padding: 8px 24px; background: linear-gradient(135deg, var(--accent-color), #6c1405); color: white; border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Formazione Aziendale</span>
-        <h2 class="section-title" style="font-size: 3rem; font-weight: 700; color: #2c3e50; margin-bottom: 30px; line-height: 1.2;">
+        <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: var(--text-color); margin-bottom: 30px; line-height: 1.2;">
           Soluzioni <span style="background: linear-gradient(135deg, var(--accent-color), #6c1405); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Su Misura</span> per la Tua Azienda
         </h2>
-        <p class="section-subtitle" style="font-size: 1.3rem; color: #6c757d; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p class="section-subtitle" style="font-size: 1.2rem; color: var(--text-color-muted); max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
           Progettiamo interventi formativi personalizzati per banche, reti di consulenti e aziende, allineati con i vostri obiettivi di business e le esigenze specifiche del vostro team.
         </p>
       </div>
       
-      <!-- Hero Background Image -->
-      <div style="text-align: center; margin-bottom: 60px; position: relative; overflow: hidden; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
-        <img src="https://picsum.photos/1200/500?aziende" alt="Formazione Aziendale Kleros" style="width: 100%; height: auto; border-radius: 16px; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      <!-- Caratteristiche principali -->
+      <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;">
+        <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color), #6c1405); color: white; font-size: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3 style="margin-bottom: 15px; color: var(--accent-color);">Progetti per Aziende</h3>
+          <p>Formazione specializzata per le diverse aree dell'organizzazione con focus sulle competenze patrimoniali e finanziarie.</p>
+        </div>
+        
+        <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color), #6c1405); color: white; font-size: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+            <i class="fas fa-university"></i>
+          </div>
+          <h3 style="margin-bottom: 15px; color: var(--accent-color);">Percorsi per Banche</h3>
+          <p>Programmi mirati per private banker e consulenti finanziari per sviluppare competenze di consulenza patrimoniale integrata.</p>
+        </div>
+        
+        <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color), #6c1405); color: white; font-size: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3 style="margin-bottom: 15px; color: var(--accent-color);">Reti Professionali</h3>
+          <p>Formazione continua per reti di consulenti, studi professionali e strutture organizzate con programmi modulari e flessibili.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -356,14 +378,19 @@
   <!-- Sezione 7: Form di Contatto B2B -->
   <section id="form-contatto-aziende" class="section" style="padding: 60px 0; background: var(--light-bg);">
     <div class="container">
-      <div style="margin: 0 auto 50px; padding: 60px; background: linear-gradient(135deg, var(--light-bg) 0%, #e9ecef 100%); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); max-width: 1000px;">
-        <h2 class="section-title" style="text-align: center; font-size: 2.5rem; margin-bottom: 30px; color: var(--accent-color);">Costruiamo Insieme il Futuro delle Vostre Competenze</h2>
+      <div style="margin: 0 auto 50px; padding: 60px; background: linear-gradient(135deg, var(--accent-color) 0%, #6c1405 100%); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); max-width: 1000px; color: white;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-bottom: 30px; text-align: center;">
+          <div style="width: 90px; height: 90px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+            <i class="fas fa-handshake" style="font-size: 40px; color: white;"></i>
+          </div>
+          <h2 class="section-title" style="width: 100%; text-align: center; font-size: 2.5rem; margin: 0 0 20px; color: white;">Costruiamo Insieme il Futuro delle Vostre Competenze</h2>
+        </div>
         
-        <p style="text-align: center; color: var(--light-text); font-size: 1.2rem; line-height: 1.7; max-width: 800px; margin: 0 auto 40px;">
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.7; max-width: 800px; margin: 0 auto 40px;">
           Ogni azienda ha esigenze uniche. Compila il modulo per prenotare una chiamata conoscitiva con un nostro responsabile. Analizzeremo insieme i tuoi obiettivi e ti forniremo una prima bozza di progetto formativo, senza impegno.
         </p>
         
-        <form class="contact-form" style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <form class="contact-form" style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #2c3e50;">
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px;">
             <div>
               <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50;">Nome e Cognome*</label>
@@ -390,6 +417,38 @@
             <div>
               <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50;">Telefono*</label>
               <input type="tel" placeholder="+39 123 456 7890" required style="width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid #dee2e6; font-size: 16px; transition: all 0.3s ease;">
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50;">Area di interesse principale*</label>
+              <select required style="width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid #dee2e6; font-size: 16px; transition: all 0.3s ease; background-color: white;">
+                <option value="" selected disabled>Seleziona un'area</option>
+                <option value="tutela-patrimonio">Tutela del Patrimonio</option>
+                <option value="passaggio-generazionale">Passaggio Generazionale</option>
+                <option value="gestione-patrimonio">Gestione Patrimonio</option>
+                <option value="previdenza">Previdenza</option>
+                <option value="strategie-commerciali">Strategie Commerciali</option>
+                <option value="altro">Altro</option>
+              </select>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 30px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50;">Messaggio</label>
+            <textarea placeholder="Descrivici brevemente le esigenze della tua organizzazione..." style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6; font-size: 16px; min-height: 150px; resize: vertical; transition: all 0.3s ease;"></textarea>
+          </div>
+          
+          <div style="margin-bottom: 30px;">
+            <label style="display: flex; align-items: flex-start; cursor: pointer; color: #6c757d;">
+              <input type="checkbox" required style="margin-right: 10px; margin-top: 3px;">
+              <span style="font-size: 14px; line-height: 1.5;">Acconsento al trattamento dei miei dati personali secondo la <a href="privacy.html" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">Privacy Policy</a>*</span>
+            </label>
+          </div>
+          
+          <button type="submit" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, var(--accent-color), #6c1405); color: white; font-weight: 600; border: none; border-radius: 50px; font-size: 16px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 25px rgba(108, 20, 5, 0.3);">Richiedi Informazioni</button>
+        </form>
+      </div>
+    </div>
+  </section>
             </div>
             <div>
               <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50;">Area di interesse principale*</label>
