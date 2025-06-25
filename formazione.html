@@ -627,64 +627,113 @@
       padding-bottom: 20px;
     }
   </style>
-        </div>        <div class="modern-feature-card">
-          <div class="modern-feature-icon">
-            <i class="fas fa-calendar-alt"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sezione: Calendario e Certificazioni -->
+  <section class="section" style="padding: 100px 0; background: var(--light-bg); position: relative; overflow: hidden;">
+    <!-- Background decorativo -->
+    <div style="position: absolute; top: -10%; left: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 133, 164, 0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -15%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(81, 165, 197, 0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <span style="display: inline-block; padding: 8px 24px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Informazioni Utili</span>
+        
+        <h2 class="section-title" style="font-size: 3.2rem; font-weight: 700; color: var(--text-color); margin-bottom: 30px; line-height: 1.2;">
+          Calendario e <span style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Certificazioni</span>
+        </h2>
+        
+        <p class="section-subtitle" style="font-size: 1.3rem; color: #6c757d; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+          Pianifica il tuo percorso formativo e scopri il valore delle nostre certificazioni professionali
+        </p>
+      </div>
+      
+      <!-- Cards Container con CSS Grid moderno e responsive -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
+        <!-- Card 1: Calendario Corsi -->
+        <div class="modern-feature-card" style="background: var(--white); border-radius: 24px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border: 1px solid rgba(0, 133, 164, 0.1); height: 100%; display: flex; flex-direction: column;">
+          <div class="modern-feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(0, 133, 164, 0.3);">
+            <i class="fas fa-calendar-alt" style="font-size: 36px; color: var(--white);"></i>
           </div>
-          <h3 class="modern-feature-title">Calendario Corsi Completo</h3>
-          <p class="modern-feature-text">Rimani aggiornato su tutte le date dei nostri corsi in presenza, webinar live e scadenze per le iscrizioni.</p>
-          <p class="modern-feature-text"><strong>Prossimi Eventi Principali:</strong></p>
-          <div class="feature-calendar" style="background: #f8f9fa; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid var(--primary-color);">
+          <h3 class="modern-feature-title" style="font-size: 1.8rem; font-weight: 700; color: var(--text-color); margin-bottom: 20px; text-align: center;">Calendario Corsi Completo</h3>
+          <p class="modern-feature-text" style="font-size: 1.1rem; line-height: 1.6; color: #6c757d; margin-bottom: 20px; text-align: center;">Rimani aggiornato su tutte le date dei nostri corsi in presenza, webinar live e scadenze per le iscrizioni.</p>
+          <p class="modern-feature-text" style="font-size: 1.1rem; font-weight: 600; color: var(--primary-color); margin-bottom: 15px; text-align: center;"><strong>Prossimi Eventi Principali:</strong></p>
+          
+          <div class="feature-calendar" style="background: var(--light-bg); border-radius: 16px; padding: 25px; margin: 0 0 30px; border-left: 4px solid var(--primary-color); flex-grow: 1;">
             <ul class="feature-list" style="list-style-type: none; padding-left: 0; margin: 0;">
-              <li style="padding: 10px 0; border-bottom: 1px solid #e9ecef; display: flex; justify-content: space-between;">
-                <span><i class="fas fa-calendar-day" style="color: var(--primary-color); margin-right: 10px;"></i><strong>15 Giugno 2025</strong></span>
-                <span>Workshop "Strategie di Investimento" - Milano</span>
+              <li style="padding: 15px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;">
+                <span style="display: flex; align-items: center; min-width: 180px;"><i class="fas fa-calendar-day" style="color: var(--primary-color); margin-right: 10px; font-size: 18px;"></i><strong>15 Giugno 2025</strong></span>
+                <span style="flex: 1;">Workshop "Strategie di Investimento" - Milano</span>
               </li>
-              <li style="padding: 10px 0; border-bottom: 1px solid #e9ecef; display: flex; justify-content: space-between;">
-                <span><i class="fas fa-calendar-day" style="color: var(--primary-color); margin-right: 10px;"></i><strong>28 Giugno 2025</strong></span>
-                <span>Seminario "Pianificazione Successoria" - Roma</span>
+              <li style="padding: 15px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;">
+                <span style="display: flex; align-items: center; min-width: 180px;"><i class="fas fa-calendar-day" style="color: var(--primary-color); margin-right: 10px; font-size: 18px;"></i><strong>28 Giugno 2025</strong></span>
+                <span style="flex: 1;">Seminario "Pianificazione Successoria" - Roma</span>
               </li>
-              <li style="padding: 10px 0; display: flex; justify-content: space-between;">
-                <span><i class="fas fa-calendar-day" style="color: var(--primary-color); margin-right: 10px;"></i><strong>10 Luglio 2025</strong></span>
-                <span>Corso "Risk Management" - Torino</span>
+              <li style="padding: 15px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;">
+                <span style="display: flex; align-items: center; min-width: 180px;"><i class="fas fa-calendar-day" style="color: var(--primary-color); margin-right: 10px; font-size: 18px;"></i><strong>10 Luglio 2025</strong></span>
+                <span style="flex: 1;">Corso "Risk Management" - Torino</span>
               </li>
             </ul>
           </div>
-          <div style="margin-top: 1.5rem;">
-            <a href="contatti.html#calendario" class="btn-primary">Visualizza Calendario</a>
+          
+          <div style="text-align: center; margin-top: auto;">
+            <a href="contatti.html#calendario" class="btn-primary" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 10px 30px rgba(0, 133, 164, 0.3);">
+              <i class="fas fa-external-link-alt" style="margin-right: 8px;"></i>
+              Visualizza Calendario
+            </a>
           </div>
         </div>
-        <div class="modern-feature-card">
-          <div class="modern-feature-icon">
-            <i class="fas fa-certificate"></i>
+        
+        <!-- Card 2: Certificazioni Rilasciate -->
+        <div class="modern-feature-card" style="background: var(--white); border-radius: 24px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border: 1px solid rgba(81, 165, 197, 0.1); height: 100%; display: flex; flex-direction: column;">
+          <div class="modern-feature-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary-color), var(--tertiary-color)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(81, 165, 197, 0.3);">
+            <i class="fas fa-certificate" style="font-size: 36px; color: var(--white);"></i>
           </div>
-          <h3 class="modern-feature-title">Certificazioni Rilasciate</h3>
-          <p class="modern-feature-text">Al completamento dei percorsi formativi e superamento dei test finali, vengono rilasciate certificazioni Kleros che attestano le competenze acquisite.</p>
-          <div class="certification-badges" style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
-            <div class="certification-badge" style="background: white; border-radius: 8px; padding: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); flex: 1; min-width: 180px; text-align: center; border-top: 3px solid var(--primary-color);">
-              <i class="fas fa-award" style="font-size: 24px; color: var(--primary-color); margin-bottom: 10px;"></i>
-              <h4 style="margin: 5px 0; font-size: 16px;">Patrimonialista</h4>
-              <span style="font-size: 12px; color: #6c757d;">Livello Base</span>
+          <h3 class="modern-feature-title" style="font-size: 1.8rem; font-weight: 700; color: var(--text-color); margin-bottom: 20px; text-align: center;">Certificazioni Rilasciate</h3>
+          <p class="modern-feature-text" style="font-size: 1.1rem; line-height: 1.6; color: #6c757d; margin-bottom: 25px; text-align: center;">Al completamento dei percorsi formativi e superamento dei test finali, vengono rilasciate certificazioni Kleros che attestano le competenze acquisite.</p>
+          
+          <div class="certification-badges" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin: 0 0 30px; flex-grow: 1;">
+            <div class="certification-badge" style="background: var(--white); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--primary-color); height: 100%; display: flex; flex-direction: column; justify-content: center;">
+              <i class="fas fa-award" style="font-size: 36px; color: var(--primary-color); margin-bottom: 15px;"></i>
+              <h4 style="margin: 0 0 10px; font-size: 18px; color: var(--text-color);">Patrimonialista</h4>
+              <span style="font-size: 14px; color: #6c757d; font-weight: 500;">Livello Base</span>
             </div>
-            <div class="certification-badge" style="background: white; border-radius: 8px; padding: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); flex: 1; min-width: 180px; text-align: center; border-top: 3px solid var(--secondary-color);">
-              <i class="fas fa-award" style="font-size: 24px; color: var(--secondary-color); margin-bottom: 10px;"></i>
-              <h4 style="margin: 5px 0; font-size: 16px;">Patrimonialista</h4>
-              <span style="font-size: 12px; color: #6c757d;">Livello Avanzato</span>
+            <div class="certification-badge" style="background: var(--white); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--secondary-color); height: 100%; display: flex; flex-direction: column; justify-content: center;">
+              <i class="fas fa-award" style="font-size: 36px; color: var(--secondary-color); margin-bottom: 15px;"></i>
+              <h4 style="margin: 0 0 10px; font-size: 18px; color: var(--text-color);">Patrimonialista</h4>
+              <span style="font-size: 14px; color: #6c757d; font-weight: 500;">Livello Avanzato</span>
             </div>
-            <div class="certification-badge" style="background: white; border-radius: 8px; padding: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); flex: 1; min-width: 180px; text-align: center; border-top: 3px solid var(--accent-color);">
-              <i class="fas fa-award" style="font-size: 24px; color: var(--accent-color); margin-bottom: 10px;"></i>
-              <h4 style="margin: 5px 0; font-size: 16px;">Consulente</h4>
-              <span style="font-size: 12px; color: #6c757d;">Specializzato</span>
+            <div class="certification-badge" style="background: var(--white); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--accent-color); height: 100%; display: flex; flex-direction: column; justify-content: center;">
+              <i class="fas fa-award" style="font-size: 36px; color: var(--accent-color); margin-bottom: 15px;"></i>
+              <h4 style="margin: 0 0 10px; font-size: 18px; color: var(--text-color);">Consulente</h4>
+              <span style="font-size: 14px; color: #6c757d; font-weight: 500;">Specializzato</span>
             </div>
           </div>
-          <p class="modern-feature-text">Le nostre certificazioni sono riconosciute nel settore finanziario e rappresentano un valore aggiunto per il tuo curriculum professionale.</p>
-          <div style="margin-top: 1.5rem;">
-            <a href="contatti.html" class="btn-primary">Richiedi Info</a>
+          
+          <p class="modern-feature-text" style="font-size: 1.1rem; line-height: 1.6; color: #6c757d; margin-bottom: 25px; text-align: center;">Le nostre certificazioni sono riconosciute nel settore finanziario e rappresentano un valore aggiunto per il tuo curriculum professionale.</p>
+          
+          <div style="text-align: center; margin-top: auto;">
+            <a href="contatti.html" class="btn-primary" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, var(--secondary-color), var(--tertiary-color)); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 10px 30px rgba(81, 165, 197, 0.3);">
+              <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
+              Richiedi Info
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Area Riservata Consulenti -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Area Riservata</h2>
+        <p class="section-subtitle">Accedi ai tuoi contenuti formativi e al tuo percorso di apprendimento</p>
+      </div>
+      <div class="about-grid">
 
   <!-- Area Riservata Consulenti -->
   <section class="section">
