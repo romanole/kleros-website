@@ -522,93 +522,45 @@
   
 
   <!-- Footer -->
-  <footer style="background: #000000; color: white; padding: 30px 0 15px; font-family: 'Palanquin', sans-serif;">
+  <footer style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--white); padding: 25px 0; font-family: 'Palanquin', sans-serif;">
     <div class="container">
-      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
-        <div class="footer-about">
-          <img src="logo.png" alt="Kleros Logo" style="height: 45px; margin-bottom: 25px;">
-          <p style="margin-bottom: 25px; line-height: 1.7; opacity: 0.8; font-size: 0.95rem;">Kleros supporta i professionisti del patrimonio con servizi, formazione e soluzioni tecnologiche avanzate per ottimizzare la consulenza e garantire risultati superiori.</p>
-          <div class="social-links" style="display: flex; gap: 15px;">
-            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
-            <a href="#" style="color: white; font-size: 18px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-youtube"></i></a>
-          </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 15px;">
+        <div style="display: flex; align-items: center;">
+          <img src="logo.png" alt="Kleros Logo" style="height: 40px; filter: brightness(0) invert(1);">
+          <span style="margin-left: 15px; font-weight: 500; font-size: 1.1rem;">Consulenza Patrimoniale</span>
         </div>
         
-        <div class="footer-links">
-          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Collegamenti Rapidi
-            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db;"></span>
-          </h3>
-          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 12px;">
-            <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Home</a></li>
-            <li><a href="chi-siamo.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Chi Siamo</a></li>
-            <li><a href="servizi.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Servizi</a></li>
-            <li><a href="formazione.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Formazione</a></li>
-            <li><a href="formazione-accademia.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; margin-left: 20px;"><i class="fas fa-angle-right" style="font-size: 10px; margin-right: 10px;"></i> Accademia</a></li>
-            <li><a href="formazione-online.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; margin-left: 20px;"><i class="fas fa-angle-right" style="font-size: 10px; margin-right: 10px;"></i> Online</a></li>
-            <li><a href="formazione-aziende.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center; margin-left: 20px;"><i class="fas fa-angle-right" style="font-size: 10px; margin-right: 10px;"></i> Aziende</a></li>
-            <li><a href="software.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Software</a></li>
-            <li><a href="contatti.html" style="color: white; text-decoration: none; opacity: 0.8; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 12px; margin-right: 10px;"></i> Contatti</a></li>
-          </ul>
+        <div style="display: flex; gap: 25px; flex-wrap: wrap; margin: 10px 0;">
+          <a href="privacy.html" style="color: var(--white); text-decoration: none; font-size: 0.9rem; opacity: 0.9; transition: opacity 0.3s ease;">Privacy Policy</a>
+          <a href="#" style="color: var(--white); text-decoration: none; font-size: 0.9rem; opacity: 0.9; transition: opacity 0.3s ease;">Cookie Policy</a>
+          <a href="#" style="color: var(--white); text-decoration: none; font-size: 0.9rem; opacity: 0.9; transition: opacity 0.3s ease;">Termini e Condizioni</a>
         </div>
         
-        <div class="footer-contact">
-          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Contatti
-            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db;"></span>
-          </h3>
-          <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 20px;">
-            <li style="display: flex; align-items: flex-start;">
-              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                <i class="fas fa-map-marker-alt" style="color: #3498db;"></i>
-              </div>
-              <div>
-                <p style="margin: 0; line-height: 1.4;">Via Roma 123,<br>20123 Milano, Italia</p>
-              </div>
-            </li>
-            <li style="display: flex; align-items: flex-start;">
-              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                <i class="fas fa-phone" style="color: #3498db;"></i>
-              </div>
-              <div>
-                <p style="margin: 0; line-height: 1.4;">+39 02 12345678</p>
-              </div>
-            </li>
-            <li style="display: flex; align-items: flex-start;">
-              <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                <i class="fas fa-envelope" style="color: #3498db;"></i>
-              </div>
-              <div>
-                <p style="margin: 0; line-height: 1.4;">info@kleros.it</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="footer-newsletter">
-          <h3 style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; position: relative; padding-bottom: 15px;">Newsletter
-            <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db;"></span>
-          </h3>
-          <p style="margin-bottom: 20px; line-height: 1.6; opacity: 0.8;">Iscriviti per rimanere aggiornato sulle ultime novità e risorse.</p>
-          <form style="display: flex; margin-bottom: 20px;">
-            <input type="email" placeholder="La tua email" style="flex: 1; padding: 12px 15px; border: none; border-radius: 5px 0 0 5px; background: rgba(255,255,255,0.1); color: white;">
-            <button type="submit" style="background: #3498db; color: white; border: none; padding: 0 20px; border-radius: 0 5px 5px 0; transition: all 0.3s ease;"><i class="fas fa-paper-plane"></i></button>
-          </form>
-          <p style="font-size: 0.85rem; opacity: 0.7;">Ti invieremo solo contenuti rilevanti. Niente spam.</p>
+        <div style="display: flex; gap: 15px;">
+          <a href="#" style="color: var(--white); font-size: 1.2rem; opacity: 0.9; transition: opacity 0.3s ease;" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" style="color: var(--white); font-size: 1.2rem; opacity: 0.9; transition: opacity 0.3s ease;" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" style="color: var(--white); font-size: 1.2rem; opacity: 0.9; transition: opacity 0.3s ease;" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
       </div>
       
-      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; text-align: center;">
-        <div class="footer-links" style="margin-bottom: 20px;">
-          <a href="privacy.html" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Privacy Policy</a>
-          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Termini di Servizio</a>
-          <a href="#" style="color: white; opacity: 0.8; text-decoration: none; margin: 0 15px; font-size: 0.9rem;">Cookie Policy</a>
-        </div>
-        <p style="margin-top: 10px; opacity: 0.6; font-size: 0.9rem;">© 2025 Kleros – Tutti i diritti riservati.</p>
+      <div style="text-align: center; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; opacity: 0.7;">
+        <p>© 2025 Kleros – Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/scroll-to-top.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 </html>
